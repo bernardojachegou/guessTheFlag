@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Bold.ttf">
+            <string>Roboto-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GuessTheFlag" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="zL8-J4-aBw">
+                                <rect key="frame" x="20" y="717" width="388" height="125"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zs1-HT-FGv">
+                                        <rect key="frame" x="0.0" y="0.0" width="388" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="50t-Fn-VYj"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="32"/>
+                                        <state key="normal" title="Play"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ox-Mr-u7X">
+                                        <rect key="frame" x="0.0" y="75" width="388" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="g0a-ak-F2E"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="32"/>
+                                        <state key="normal" title="Scoreboard"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="0ox-Mr-u7X" firstAttribute="width" secondItem="Zs1-HT-FGv" secondAttribute="width" id="2GV-Ej-auv"/>
+                                    <constraint firstItem="Zs1-HT-FGv" firstAttribute="leading" secondItem="zL8-J4-aBw" secondAttribute="leading" id="j0I-O0-bgw"/>
+                                    <constraint firstItem="0ox-Mr-u7X" firstAttribute="leading" secondItem="zL8-J4-aBw" secondAttribute="leading" id="rgC-rc-cDu"/>
+                                    <constraint firstItem="Zs1-HT-FGv" firstAttribute="top" secondItem="zL8-J4-aBw" secondAttribute="top" id="yBL-If-3cb"/>
+                                </constraints>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="xU7-Kn-K0L">
+                                <rect key="frame" x="64" y="84" width="300" height="300"/>
+                                <color key="tintColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="xU7-Kn-K0L" secondAttribute="height" multiplier="1:1" id="QVB-3c-Hb2"/>
+                                    <constraint firstAttribute="width" constant="300" id="gCy-Cs-VlL"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="zL8-J4-aBw" firstAttribute="top" relation="greaterThanOrEqual" secondItem="xU7-Kn-K0L" secondAttribute="bottom" constant="10" id="7Yc-mX-blS"/>
+                            <constraint firstItem="xU7-Kn-K0L" firstAttribute="top" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="PlN-Wu-ASX"/>
+                            <constraint firstItem="xU7-Kn-K0L" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QVE-6F-sFI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zL8-J4-aBw" secondAttribute="bottom" constant="50" id="YrG-xU-c9t"/>
+                            <constraint firstItem="xU7-Kn-K0L" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="c4e-ZY-nPV"/>
+                            <constraint firstItem="zL8-J4-aBw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="w64-br-ARc"/>
+                            <constraint firstItem="zL8-J4-aBw" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-20" id="wis-gg-rna"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="PlayButton" destination="Zs1-HT-FGv" id="drK-d3-miL"/>
+                        <outlet property="ScoreboardButton" destination="0ox-Mr-u7X" id="nuI-LD-ft6"/>
+                        <outlet property="playButton" destination="Zs1-HT-FGv" id="udf-SO-mFa"/>
+                        <outlet property="scoreboardButton" destination="0ox-Mr-u7X" id="1nM-30-I3H"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="585.98130841121497" y="92.656587473002162"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="logo" width="256" height="272"/>
+    </resources>
+</document>

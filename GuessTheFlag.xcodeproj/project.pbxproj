@@ -25,7 +25,7 @@
 		99E063D0262F178000BFF8D4 /* RobotoCondensed-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99E063BE262F178000BFF8D4 /* RobotoCondensed-LightItalic.ttf */; };
 		99E063D1262F178000BFF8D4 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99E063BF262F178000BFF8D4 /* Roboto-Light.ttf */; };
 		99E063D2262F178000BFF8D4 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99E063C0262F178000BFF8D4 /* Roboto-Black.ttf */; };
-		99E063DC262F254400BFF8D4 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E063DB262F254400BFF8D4 /* UIButton.swift */; };
+		99E063DC262F254400BFF8D4 /* DefaultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E063DB262F254400BFF8D4 /* DefaultButton.swift */; };
 		99FA6E2B262DCA7E00E8FB9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FA6E2A262DCA7E00E8FB9D /* AppDelegate.swift */; };
 		99FA6E2D262DCA7E00E8FB9D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FA6E2C262DCA7E00E8FB9D /* SceneDelegate.swift */; };
 		99FA6E2F262DCA7E00E8FB9D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FA6E2E262DCA7E00E8FB9D /* ViewController.swift */; };
@@ -72,7 +72,7 @@
 		99E063BE262F178000BFF8D4 /* RobotoCondensed-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-LightItalic.ttf"; sourceTree = "<group>"; };
 		99E063BF262F178000BFF8D4 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
 		99E063C0262F178000BFF8D4 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
-		99E063DB262F254400BFF8D4 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		99E063DB262F254400BFF8D4 /* DefaultButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultButton.swift; sourceTree = "<group>"; };
 		99FA6E27262DCA7E00E8FB9D /* GuessTheFlag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuessTheFlag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99FA6E2A262DCA7E00E8FB9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99FA6E2C262DCA7E00E8FB9D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,7 +117,7 @@
 		99E063DA262F251E00BFF8D4 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
-				99E063DB262F254400BFF8D4 /* UIButton.swift */,
+				99E063DB262F254400BFF8D4 /* DefaultButton.swift */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -352,7 +352,7 @@
 				99FA6E2F262DCA7E00E8FB9D /* ViewController.swift in Sources */,
 				99FA6E2B262DCA7E00E8FB9D /* AppDelegate.swift in Sources */,
 				99FA6E2D262DCA7E00E8FB9D /* SceneDelegate.swift in Sources */,
-				99E063DC262F254400BFF8D4 /* UIButton.swift in Sources */,
+				99E063DC262F254400BFF8D4 /* DefaultButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

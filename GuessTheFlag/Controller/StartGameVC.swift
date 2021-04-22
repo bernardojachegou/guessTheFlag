@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class StartGameVC: UIViewController {
   
   //MARK: Properties
   @IBOutlet weak var playButton: UIButton!
@@ -15,9 +15,6 @@ class ViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    let backgroundColor = UIColor.init(red: 60/255, green: 60/255, blue: 76/255, alpha: 1)
-    view.backgroundColor = backgroundColor
     
   }
   

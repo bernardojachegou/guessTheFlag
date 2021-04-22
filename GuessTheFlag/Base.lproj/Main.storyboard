@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qdn-rQ-8mm">
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <array key="Roboto-Bold.ttf">
             <string>Roboto-Bold</string>
         </array>
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Start GameVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GuessTheFlag" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="StartGameVC" customModule="GuessTheFlag" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,27 +27,47 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="zL8-J4-aBw">
                                 <rect key="frame" x="20" y="717" width="388" height="125"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zs1-HT-FGv" customClass="DefaultButton" customModule="GuessTheFlag" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zs1-HT-FGv">
                                         <rect key="frame" x="0.0" y="0.0" width="388" height="50"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="0.16470588235294117" green="0.16470588235294117" blue="0.3411764705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="50t-Fn-VYj"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="32"/>
+                                        <size key="titleShadowOffset" width="2" height="1"/>
                                         <state key="normal" title="Play">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" red="0.95686274510000002" green="0.82745098039999998" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.043137254901960784" green="0.035294117647058823" blue="0.015686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="d0o-wQ-FpR" kind="show" id="ktb-Ld-nWp"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ox-Mr-u7X" customClass="DefaultButton" customModule="GuessTheFlag" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ox-Mr-u7X">
                                         <rect key="frame" x="0.0" y="75" width="388" height="50"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="0.16470588235294117" green="0.16470588235294117" blue="0.3411764705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="g0a-ak-F2E"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="32"/>
+                                        <size key="titleShadowOffset" width="2" height="1"/>
                                         <state key="normal" title="Scoreboard">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" red="0.95686274510000002" green="0.82745098039999998" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.043137254899999998" green="0.035294117649999998" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="eeb-nH-Vv4" kind="presentation" id="Iaf-nN-hmb"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -68,17 +92,19 @@
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.29803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="zL8-J4-aBw" firstAttribute="top" relation="greaterThanOrEqual" secondItem="xU7-Kn-K0L" secondAttribute="bottom" constant="10" id="7Yc-mX-blS"/>
-                            <constraint firstItem="xU7-Kn-K0L" firstAttribute="top" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="PlN-Wu-ASX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zL8-J4-aBw" secondAttribute="trailing" constant="20" id="Kah-jG-Afa"/>
                             <constraint firstItem="xU7-Kn-K0L" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QVE-6F-sFI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zL8-J4-aBw" secondAttribute="bottom" constant="50" id="YrG-xU-c9t"/>
-                            <constraint firstItem="xU7-Kn-K0L" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="c4e-ZY-nPV"/>
+                            <constraint firstItem="xU7-Kn-K0L" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="c4e-ZY-nPV"/>
                             <constraint firstItem="zL8-J4-aBw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="w64-br-ARc"/>
-                            <constraint firstItem="zL8-J4-aBw" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-20" id="wis-gg-rna"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="D9A-4k-rdN"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="PlayButton" destination="Zs1-HT-FGv" id="drK-d3-miL"/>
                         <outlet property="ScoreboardButton" destination="0ox-Mr-u7X" id="nuI-LD-ft6"/>
@@ -88,10 +114,240 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="585.98130841121497" y="92.656587473002162"/>
+            <point key="canvasLocation" x="1076.6355140186915" y="92.656587473002162"/>
+        </scene>
+        <!--Score TableVC-->
+        <scene sceneID="iTC-Yp-zUv">
+            <objects>
+                <tableViewController id="eeb-nH-Vv4" customClass="ScoreTableVC" customModule="GuessTheFlag" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="4sR-K9-gGf">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="titlesLabelViewCell" rowHeight="90" id="mRA-iV-Qa5" customClass="ScoreTableViewCell" customModule="GuessTheFlag" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="428" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mRA-iV-Qa5" id="2HE-Yh-irY">
+                                    <rect key="frame" x="0.0" y="0.0" width="428" height="90"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wMt-ee-xYS">
+                                            <rect key="frame" x="20" y="11" width="388" height="68"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDc-K9-P1C">
+                                                    <rect key="frame" x="0.0" y="0.0" width="184" height="68"/>
+                                                    <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="24"/>
+                                                    <color key="textColor" red="0.95686274510000002" green="0.82745098039999998" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cso-Mf-cEv">
+                                                    <rect key="frame" x="204" y="0.0" width="184" height="68"/>
+                                                    <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="24"/>
+                                                    <color key="textColor" red="0.95686274510000002" green="0.82745098039999998" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="cso-Mf-cEv" firstAttribute="width" secondItem="lDc-K9-P1C" secondAttribute="width" id="xvN-5a-tc8"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="wMt-ee-xYS" secondAttribute="bottom" id="9Xd-vr-Ip0"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="wMt-ee-xYS" secondAttribute="trailing" id="Ai9-LU-mAF"/>
+                                        <constraint firstItem="wMt-ee-xYS" firstAttribute="leading" secondItem="2HE-Yh-irY" secondAttribute="leadingMargin" id="DNm-vm-4rZ"/>
+                                        <constraint firstItem="wMt-ee-xYS" firstAttribute="top" secondItem="2HE-Yh-irY" secondAttribute="topMargin" id="JgK-CE-lJy"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="wMt-ee-xYS" id="49A-cJ-UJs"/>
+                                    <outlet property="scoreLabel" destination="cso-Mf-cEv" id="Yxt-gB-3Ch"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="scoreValuesViewCell" rowHeight="50" id="ORA-P2-Alv" customClass="ScoreTableViewCell" customModule="GuessTheFlag" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="118" width="428" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ORA-P2-Alv" id="Iuw-WK-tCL">
+                                    <rect key="frame" x="0.0" y="0.0" width="428" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="xUB-vd-R3U">
+                                            <rect key="frame" x="20" y="11" width="388" height="28"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Michel Bernardo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23u-aj-xLV">
+                                                    <rect key="frame" x="0.0" y="0.0" width="184" height="28"/>
+                                                    <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="17"/>
+                                                    <color key="textColor" red="0.95686274510000002" green="0.82745098039999998" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ET8-3h-s4v">
+                                                    <rect key="frame" x="204" y="0.0" width="184" height="28"/>
+                                                    <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="17"/>
+                                                    <color key="textColor" red="0.95686274510000002" green="0.82745098039999998" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ET8-3h-s4v" firstAttribute="width" secondItem="23u-aj-xLV" secondAttribute="width" id="wJb-cl-f8t"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.1647058824" green="0.1647058824" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="xUB-vd-R3U" firstAttribute="top" secondItem="Iuw-WK-tCL" secondAttribute="topMargin" id="SWX-LJ-4wB"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="xUB-vd-R3U" secondAttribute="trailing" id="bfA-49-Dhl"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="xUB-vd-R3U" secondAttribute="bottom" id="lxQ-ci-yt5"/>
+                                        <constraint firstItem="xUB-vd-R3U" firstAttribute="leading" secondItem="Iuw-WK-tCL" secondAttribute="leadingMargin" id="xWy-Gd-x04"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="userNameLabel" destination="23u-aj-xLV" id="eHX-hG-3Jl"/>
+                                    <outlet property="userScoreLabel" destination="ET8-3h-s4v" id="7cu-9W-NNa"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="eeb-nH-Vv4" id="Rdb-eN-y7q"/>
+                            <outlet property="delegate" destination="eeb-nH-Vv4" id="5A1-wT-pSr"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="U5Q-ze-W5h">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="q7W-Gz-fGc"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mCe-7U-af9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1848" y="453"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="kxS-9T-pfM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qdn-rQ-8mm" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" id="Rxb-fE-fcx">
+                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="6TN-j2-fac"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zZZ-Of-daj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="193" y="93"/>
+        </scene>
+        <!--RoundVC-->
+        <scene sceneID="SZN-IC-O0m">
+            <objects>
+                <viewController id="d0o-wQ-FpR" customClass="RoundVC" customModule="GuessTheFlag" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ilf-Ng-JPF">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h3w-ie-zqb">
+                                <rect key="frame" x="271" y="64" width="137" height="37.666666666666657"/>
+                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="32"/>
+                                <color key="textColor" red="0.95686274510000002" green="0.82745098039999998" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="aXf-LB-vKv">
+                                <rect key="frame" x="20" y="124" width="388" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="QUa-Wa-627"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HbJ-SC-CNT" customClass="DefaultButton" customModule="GuessTheFlag" customModuleProvider="target">
+                                <rect key="frame" x="20" y="792" width="388" height="50"/>
+                                <color key="backgroundColor" red="0.1647058824" green="0.1647058824" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="exy-Jj-Zea"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="32"/>
+                                <size key="titleShadowOffset" width="2" height="1"/>
+                                <state key="normal" title="Go">
+                                    <color key="titleColor" red="0.95686274510000002" green="0.82745098039999998" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.043137254899999998" green="0.035294117649999998" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1ew-Rz-81w">
+                                <rect key="frame" x="20" y="414" width="388" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NIw-je-Brz" customClass="DefaultButton" customModule="GuessTheFlag" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="184" height="50"/>
+                                        <color key="backgroundColor" red="0.1647058824" green="0.1647058824" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="32"/>
+                                        <size key="titleShadowOffset" width="2" height="1"/>
+                                        <state key="normal" title="Brazil">
+                                            <color key="titleColor" red="0.95686274510000002" green="0.82745098039999998" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.043137254899999998" green="0.035294117649999998" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dp2-L3-p6O" customClass="DefaultButton" customModule="GuessTheFlag" customModuleProvider="target">
+                                        <rect key="frame" x="204" y="0.0" width="184" height="50"/>
+                                        <color key="backgroundColor" red="0.1647058824" green="0.1647058824" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="32"/>
+                                        <size key="titleShadowOffset" width="2" height="1"/>
+                                        <state key="normal" title="Argentina">
+                                            <color key="titleColor" red="0.95686274510000002" green="0.82745098039999998" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.043137254899999998" green="0.035294117649999998" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Dp2-L3-p6O" firstAttribute="width" secondItem="NIw-je-Brz" secondAttribute="width" id="kgY-YQ-446"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="uqg-mG-whE"/>
+                        <color key="backgroundColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="aXf-LB-vKv" firstAttribute="leading" secondItem="uqg-mG-whE" secondAttribute="leading" constant="20" id="Ax4-CB-Fkv"/>
+                            <constraint firstItem="1ew-Rz-81w" firstAttribute="leading" secondItem="uqg-mG-whE" secondAttribute="leading" constant="20" id="Db0-3r-pR5"/>
+                            <constraint firstItem="uqg-mG-whE" firstAttribute="trailing" secondItem="h3w-ie-zqb" secondAttribute="trailing" constant="20" id="Eap-MP-LfP"/>
+                            <constraint firstItem="aXf-LB-vKv" firstAttribute="top" secondItem="uqg-mG-whE" secondAttribute="top" constant="80" id="HM3-Ag-4dz"/>
+                            <constraint firstItem="1ew-Rz-81w" firstAttribute="top" secondItem="aXf-LB-vKv" secondAttribute="bottom" constant="40" id="N2s-xF-dQX"/>
+                            <constraint firstItem="HbJ-SC-CNT" firstAttribute="top" relation="greaterThanOrEqual" secondItem="1ew-Rz-81w" secondAttribute="bottom" constant="40" id="Q0W-Cn-eYE"/>
+                            <constraint firstItem="uqg-mG-whE" firstAttribute="trailing" secondItem="aXf-LB-vKv" secondAttribute="trailing" constant="20" id="UnP-YH-zmu"/>
+                            <constraint firstItem="uqg-mG-whE" firstAttribute="trailing" secondItem="1ew-Rz-81w" secondAttribute="trailing" constant="20" id="gM7-Gg-PZX"/>
+                            <constraint firstItem="uqg-mG-whE" firstAttribute="bottom" secondItem="HbJ-SC-CNT" secondAttribute="bottom" constant="50" id="m6o-b5-x0p"/>
+                            <constraint firstItem="uqg-mG-whE" firstAttribute="trailing" secondItem="HbJ-SC-CNT" secondAttribute="trailing" constant="20" id="nN9-aH-76p"/>
+                            <constraint firstItem="h3w-ie-zqb" firstAttribute="top" secondItem="uqg-mG-whE" secondAttribute="top" constant="20" id="rid-c4-bAe"/>
+                            <constraint firstItem="h3w-ie-zqb" firstAttribute="leading" secondItem="uqg-mG-whE" secondAttribute="leading" constant="271" id="sMW-7C-VBF"/>
+                            <constraint firstItem="HbJ-SC-CNT" firstAttribute="leading" secondItem="uqg-mG-whE" secondAttribute="leading" constant="20" id="wbh-bf-OOe"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="WLF-S0-4yZ"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dsa-Vk-RF7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1848" y="-199"/>
         </scene>
     </scenes>
     <resources>
+        <image name="defaultPhoto" width="1080" height="1080"/>
         <image name="logo" width="256" height="272"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

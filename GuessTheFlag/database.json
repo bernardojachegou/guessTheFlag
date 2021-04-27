@@ -1,12 +1,10 @@
 {
-  "round": [
+  "roundList": [
     {
       "flagImageName": "br.png",
       "flagAnswerOptions": [
         {
-          "flagFirstOption": "Brazil"
-        },
-        {
+          "flagFirstOption": "Brazil",
           "flagSecondOption": "Bahamas"
         }
       ],
@@ -16,9 +14,7 @@
       "flagImageName": "aw.png",
       "flagAnswerOptions": [
         {
-          "flagFirstOption": "Costa Rica"
-        },
-        {
+          "flagFirstOption": "Costa Rica",
           "flagSecondOption": "Aruba"
         }
       ],
@@ -28,9 +24,7 @@
       "flagImageName": "bs.png",
       "flagAnswerOptions": [
         {
-          "flagFirstOption": "Congo"
-        },
-        {
+          "flagFirstOption": "Congo",
           "flagSecondOption": "Bahamas"
         }
       ],
@@ -40,9 +34,7 @@
       "flagImageName": "cl.png",
       "flagAnswerOptions": [
         {
-          "flagFirstOption": "Chile"
-        },
-        {
+          "flagFirstOption": "Chile",
           "flagSecondOption": "Czech Republic"
         }
       ],
@@ -52,9 +44,7 @@
       "flagImageName": "ht.png",
       "flagAnswerOptions": [
         {
-          "flagFirstOption": "Indonesia"
-        },
-        {
+          "flagFirstOption": "Indonesia",
           "flagSecondOption": "Haiti"
         }
       ],
@@ -64,9 +54,7 @@
       "flagImageName": "in.png",
       "flagAnswerOptions": [
         {
-          "flagFirstOption": "India"
-        },
-        {
+          "flagFirstOption": "India",
           "flagSecondOption": "Iraq"
         }
       ],
@@ -76,9 +64,7 @@
       "flagImageName": "lu.png",
       "flagAnswerOptions": [
         {
-          "flagFirstOption": "Monaco"
-        },
-        {
+          "flagFirstOption": "Monaco",
           "flagSecondOption": "Luxembourg"
         }
       ],
@@ -88,9 +74,7 @@
       "flagImageName": "mg.png",
       "flagAnswerOptions": [
         {
-          "flagFirstOption": "Mandagascar"
-        },
-        {
+          "flagFirstOption": "Mandagascar",
           "flagSecondOption": "Jamaica"
         }
       ],
@@ -100,9 +84,7 @@
       "flagImageName": "mx.png",
       "flagAnswerOptions": [
         {
-          "flagFirstOption": "Mexico"
-        },
-        {
+          "flagFirstOption": "Mexico",
           "flagSecondOption": "Portugal"
         }
       ],
@@ -112,9 +94,7 @@
       "flagImageName": "si.png",
       "flagAnswerOptions": [
         {
-          "flagFirstOption": "Slovakia"
-        },
-        {
+          "flagFirstOption": "Slovakia",
           "flagSecondOption": "Slovenia"
         }
       ],
@@ -124,9 +104,7 @@
       "flagImageName": "zm.png",
       "flagAnswerOptions": [
         {
-          "flagFirstOption": "Samoa"
-        },
-        {
+          "flagFirstOption": "Samoa",
           "flagSecondOption": "Zambia"
         }
       ],
@@ -136,9 +114,7 @@
       "flagImageName": "tw.png",
       "flagAnswerOptions": [
         {
-          "flagFirstOption": "Taiwan"
-        },
-        {
+          "flagFirstOption": "Taiwan",
           "flagSecondOption": "Tuvalu"
         }
       ],
@@ -148,9 +124,7 @@
       "flagImageName": "kw.png",
       "flagAnswerOptions": [
         {
-          "flagFirstOption": "Kuwait"
-        },
-        {
+          "flagFirstOption": "Kuwait",
           "flagSecondOption": "Gibraltar"
         }
       ],
@@ -160,9 +134,7 @@
       "flagImageName": "es.png",
       "flagAnswerOptions": [
         {
-          "flagFirstOption": "Spain"
-        },
-        {
+          "flagFirstOption": "Spain",
           "flagSecondOption": "Georgia"
         }
       ],
@@ -172,9 +144,7 @@
       "flagImageName": "ao.png",
       "flagAnswerOptions": [
         {
-          "flagFirstOption": "Belize"
-        },
-        {
+          "flagFirstOption": "Belize",
           "flagSecondOption": "Angola"
         }
       ],

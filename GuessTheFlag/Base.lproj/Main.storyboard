@@ -295,7 +295,7 @@
                                         <color key="backgroundColor" red="0.1647058824" green="0.1647058824" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="32"/>
                                         <size key="titleShadowOffset" width="2" height="1"/>
-                                        <state key="normal" title="firstOption">
+                                        <state key="normal" title="first">
                                             <color key="titleColor" red="0.95686274510000002" green="0.82745098039999998" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="titleShadowColor" red="0.043137254899999998" green="0.035294117649999998" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -310,7 +310,7 @@
                                         <color key="backgroundColor" red="0.1647058824" green="0.1647058824" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="32"/>
                                         <size key="titleShadowOffset" width="2" height="1"/>
-                                        <state key="normal" title="Argentina">
+                                        <state key="normal" title="second">
                                             <color key="titleColor" red="0.95686274510000002" green="0.82745098039999998" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="titleShadowColor" red="0.043137254899999998" green="0.035294117649999998" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>

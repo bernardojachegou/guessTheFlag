@@ -8,6 +8,7 @@
 import UIKit
 
 class RoundVC: UIViewController {
+  
   //MARK: Properties
   @IBOutlet weak var scoreLabel: UILabel!
   @IBOutlet weak var flagImageView: UIImageView!
@@ -18,7 +19,10 @@ class RoundVC: UIViewController {
   var roundList: RoundList? {
     didSet {
       if let roundList = roundList {
-        firstOptionButton.setTitle(roundList.round[0].flagImageName, for: .normal)      }
+        flagImageView.image = UIImage(named: roundList.roundList[0].flagImageName)
+        firstOptionButton.setTitle(roundList.roundList[0].flagAnswerOptions[0].flagFirstOption, for: .normal)
+        secondOptionButton.setTitle(roundList.roundList[0].flagAnswerOptions[0].flagSecondOption, for: .normal)
+      }
     }
   }
   
@@ -27,31 +31,8 @@ class RoundVC: UIViewController {
     super.viewDidLoad()
     self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false;
     
-    roundList = readLocalJson(fileName: "database")
-    
-    loadJson(fileName: "database")
-    
-    
-//    if let localData = self.readLocalFile(forName: "database") {
-//      self.parse(jsonData: localData)
-//    }
+    roundList = loadJsonFile(fileName: "database")
     
   }
   
-//  func readLocalFile(forName name: String) -> Data? {
-//    do {
-//      if let bundlePath = Bundle.main.path(forResource: name,
-//                                           ofType: "json"),
-//         let jsonData = try String(contentsOfFile: bundlePath).data(using: .utf8) {
-//        return jsonData
-//      }
-//    } catch {
-//      print(error)
-//    }
-//
-//    return nil
-//  }
-//
-//
-
 }

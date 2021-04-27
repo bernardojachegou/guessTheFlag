@@ -20,3 +20,9 @@ class StartGameVC: UIViewController {
   
 }
 
+//func robotoBold(ofSize fontSize: CGFloat) -> UIFont {
+//
+//  return UIFont(name: "Roboto-Bold", size: fontSize) ?? .systemFont(ofSize: fontSize)
+//}
+//
+//label.font = UIFont.robotoBold(ofSize: 16)

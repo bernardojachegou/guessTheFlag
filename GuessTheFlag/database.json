@@ -1,0 +1,184 @@
+{
+  "round": [
+    {
+      "flagImageName": "br.png",
+      "flagAnswerOptions": [
+        {
+          "flagFirstOption": "Brazil"
+        },
+        {
+          "flagSecondOption": "Bahamas"
+        }
+      ],
+      "flagCorrectOption": "Brazil"
+    },
+    {
+      "flagImageName": "aw.png",
+      "flagAnswerOptions": [
+        {
+          "flagFirstOption": "Costa Rica"
+        },
+        {
+          "flagSecondOption": "Aruba"
+        }
+      ],
+      "flagCorrectOption": "Aruba"
+    },
+    {
+      "flagImageName": "bs.png",
+      "flagAnswerOptions": [
+        {
+          "flagFirstOption": "Congo"
+        },
+        {
+          "flagSecondOption": "Bahamas"
+        }
+      ],
+      "flagCorrectOption": "Bahamas"
+    },
+    {
+      "flagImageName": "cl.png",
+      "flagAnswerOptions": [
+        {
+          "flagFirstOption": "Chile"
+        },
+        {
+          "flagSecondOption": "Czech Republic"
+        }
+      ],
+      "flagCorrectOption": "Chile"
+    },
+    {
+      "flagImageName": "ht.png",
+      "flagAnswerOptions": [
+        {
+          "flagFirstOption": "Indonesia"
+        },
+        {
+          "flagSecondOption": "Haiti"
+        }
+      ],
+      "flagCorrectOption": "Haiti"
+    },
+    {
+      "flagImageName": "in.png",
+      "flagAnswerOptions": [
+        {
+          "flagFirstOption": "India"
+        },
+        {
+          "flagSecondOption": "Iraq"
+        }
+      ],
+      "flagCorrectOption": "India"
+    },
+    {
+      "flagImageName": "lu.png",
+      "flagAnswerOptions": [
+        {
+          "flagFirstOption": "Monaco"
+        },
+        {
+          "flagSecondOption": "Luxembourg"
+        }
+      ],
+      "flagCorrectOption": "Luxembourg"
+    },
+    {
+      "flagImageName": "mg.png",
+      "flagAnswerOptions": [
+        {
+          "flagFirstOption": "Mandagascar"
+        },
+        {
+          "flagSecondOption": "Jamaica"
+        }
+      ],
+      "flagCorrectOption": "Mandagascar"
+    },
+    {
+      "flagImageName": "mx.png",
+      "flagAnswerOptions": [
+        {
+          "flagFirstOption": "Mexico"
+        },
+        {
+          "flagSecondOption": "Portugal"
+        }
+      ],
+      "flagCorrectOption": "Mexico"
+    },
+    {
+      "flagImageName": "si.png",
+      "flagAnswerOptions": [
+        {
+          "flagFirstOption": "Slovakia"
+        },
+        {
+          "flagSecondOption": "Slovenia"
+        }
+      ],
+      "flagCorrectOption": "Slovenia"
+    },
+    {
+      "flagImageName": "zm.png",
+      "flagAnswerOptions": [
+        {
+          "flagFirstOption": "Samoa"
+        },
+        {
+          "flagSecondOption": "Zambia"
+        }
+      ],
+      "flagCorrectOption": "Zambia"
+    },
+    {
+      "flagImageName": "tw.png",
+      "flagAnswerOptions": [
+        {
+          "flagFirstOption": "Taiwan"
+        },
+        {
+          "flagSecondOption": "Tuvalu"
+        }
+      ],
+      "flagCorrectOption": "Taiwan"
+    },
+    {
+      "flagImageName": "kw.png",
+      "flagAnswerOptions": [
+        {
+          "flagFirstOption": "Kuwait"
+        },
+        {
+          "flagSecondOption": "Gibraltar"
+        }
+      ],
+      "flagCorrectOption": "Kuwait"
+    },
+    {
+      "flagImageName": "es.png",
+      "flagAnswerOptions": [
+        {
+          "flagFirstOption": "Spain"
+        },
+        {
+          "flagSecondOption": "Georgia"
+        }
+      ],
+      "flagCorrectOption": "Spain"
+    },
+    {
+      "flagImageName": "ao.png",
+      "flagAnswerOptions": [
+        {
+          "flagFirstOption": "Belize"
+        },
+        {
+          "flagSecondOption": "Angola"
+        }
+      ],
+      "flagCorrectOption": "Angola"
+    }
+  ]
+}

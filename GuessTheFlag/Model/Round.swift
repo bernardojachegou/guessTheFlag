@@ -36,26 +36,3 @@ func loadJsonFile(fileName: String) -> RoundList? {
   }
   return nil
 }
-
-//func parseJSON() {
-//  guard let bundlePath = Bundle.main.path(forResource: "database",
-//                                          ofType: "json") else {
-//    return
-//  }
-//  let url = URL(fileURLWithPath: bundlePath)
-//  var result: RoundList?
-//  do {
-//    let jsonData = try Data(contentsOf: url)
-//    result = try JSONDecoder().decode(RoundList.self, from: jsonData)
-//
-//    if let result = result {
-//      print(result)
-//    } else {
-//      print("Failed to parse")
-//    }
-//    return
-//  }
-//  catch {
-//    print("Error: \(error)")
-//  }
-//}

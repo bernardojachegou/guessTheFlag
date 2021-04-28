@@ -286,6 +286,9 @@
                                         <integer key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="goFoward:" destination="d0o-wQ-FpR" eventType="touchUpInside" id="z2S-MK-2a8"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1ew-Rz-81w">
                                 <rect key="frame" x="20" y="414" width="388" height="50"/>
@@ -304,6 +307,9 @@
                                                 <integer key="value" value="20"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="checkAnswerFirstOption:" destination="d0o-wQ-FpR" eventType="touchUpInside" id="J9H-wQ-9UR"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dp2-L3-p6O">
                                         <rect key="frame" x="204" y="0.0" width="184" height="50"/>
@@ -319,6 +325,9 @@
                                                 <integer key="value" value="20"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="checkAnswerSecondOption:" destination="d0o-wQ-FpR" eventType="touchUpInside" id="q2L-H7-XEQ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -392,6 +401,9 @@
                                         <integer key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="saveUserInfo:" destination="YLj-dI-uMG" eventType="touchUpInside" id="sDY-1i-vpj"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type your name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1ok-xq-0LA">
                                 <rect key="frame" x="20" y="752" width="388" height="50"/>
@@ -489,6 +501,12 @@
                             <constraint firstItem="UQg-qJ-7Ms" firstAttribute="trailing" secondItem="NLZ-7f-iwX" secondAttribute="trailing" constant="20" id="xjf-P5-017"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="correctAnswersLabel" destination="SG5-rJ-w52" id="t5z-wy-qIa"/>
+                        <outlet property="saveUserInfoButton" destination="ebp-ae-ACl" id="rd2-4R-Xsl"/>
+                        <outlet property="userNameTextField" destination="1ok-xq-0LA" id="9hk-8i-53w"/>
+                        <outlet property="wrongAnswersLabel" destination="1OR-8k-eeb" id="bcn-lh-QdS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5vN-vK-uPz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

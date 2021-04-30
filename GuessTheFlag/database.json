@@ -8,7 +8,7 @@
           "flagSecondOption": "Bahamas"
         }
       ],
-      "flagCorrectOption": "Brazil"
+      "flagCorrectOption": 80
     },
     {
       "flagImageName": "aw.png",
@@ -18,7 +18,7 @@
           "flagSecondOption": "Aruba"
         }
       ],
-      "flagCorrectOption": "Aruba"
+      "flagCorrectOption": 81
     },
     {
       "flagImageName": "bs.png",
@@ -28,7 +28,7 @@
           "flagSecondOption": "Bahamas"
         }
       ],
-      "flagCorrectOption": "Bahamas"
+      "flagCorrectOption": 81
     },
     {
       "flagImageName": "cl.png",
@@ -38,7 +38,7 @@
           "flagSecondOption": "Czech Republic"
         }
       ],
-      "flagCorrectOption": "Chile"
+      "flagCorrectOption": 80
     },
     {
       "flagImageName": "ht.png",
@@ -48,7 +48,7 @@
           "flagSecondOption": "Haiti"
         }
       ],
-      "flagCorrectOption": "Haiti"
+      "flagCorrectOption": 81
     },
     {
       "flagImageName": "in.png",
@@ -58,7 +58,7 @@
           "flagSecondOption": "Iraq"
         }
       ],
-      "flagCorrectOption": "India"
+      "flagCorrectOption": 80
     },
     {
       "flagImageName": "lu.png",
@@ -68,7 +68,7 @@
           "flagSecondOption": "Luxembourg"
         }
       ],
-      "flagCorrectOption": "Luxembourg"
+      "flagCorrectOption": 81
     },
     {
       "flagImageName": "mg.png",
@@ -78,7 +78,7 @@
           "flagSecondOption": "Jamaica"
         }
       ],
-      "flagCorrectOption": "Mandagascar"
+      "flagCorrectOption": 80
     },
     {
       "flagImageName": "mx.png",
@@ -88,7 +88,7 @@
           "flagSecondOption": "Portugal"
         }
       ],
-      "flagCorrectOption": "Mexico"
+      "flagCorrectOption": 80
     },
     {
       "flagImageName": "si.png",
@@ -98,7 +98,7 @@
           "flagSecondOption": "Slovenia"
         }
       ],
-      "flagCorrectOption": "Slovenia"
+      "flagCorrectOption": 81
     },
     {
       "flagImageName": "zm.png",
@@ -108,7 +108,7 @@
           "flagSecondOption": "Zambia"
         }
       ],
-      "flagCorrectOption": "Zambia"
+      "flagCorrectOption": 81
     },
     {
       "flagImageName": "tw.png",
@@ -118,7 +118,7 @@
           "flagSecondOption": "Tuvalu"
         }
       ],
-      "flagCorrectOption": "Taiwan"
+      "flagCorrectOption": 80
     },
     {
       "flagImageName": "kw.png",
@@ -128,7 +128,7 @@
           "flagSecondOption": "Gibraltar"
         }
       ],
-      "flagCorrectOption": "Kuwait"
+      "flagCorrectOption": 80
     },
     {
       "flagImageName": "es.png",
@@ -138,7 +138,7 @@
           "flagSecondOption": "Georgia"
         }
       ],
-      "flagCorrectOption": "Spain"
+      "flagCorrectOption": 80
     },
     {
       "flagImageName": "ao.png",
@@ -148,7 +148,7 @@
           "flagSecondOption": "Angola"
         }
       ],
-      "flagCorrectOption": "Angola"
+      "flagCorrectOption": 81
     }
   ]
 }

@@ -30,7 +30,7 @@ class ScoreTableVC: UITableViewController {
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     // #warning Incomplete implementation, return the number of rows
-    return 10
+    return 1
   }
   
   
@@ -42,8 +42,15 @@ class ScoreTableVC: UITableViewController {
     }
     else {
       let cell = tableView.dequeueReusableCell(withIdentifier: "userScoreValues", for: indexPath) as! ScoreTableViewCell
-      cell.userNameLabel.text = "Michel Bernardo"
-      cell.userScoreLabel.text = "25"
+      
+      let defaults = UserDefaults.standard
+      if let name = defaults.string(forKey: "userName") {
+        cell.userNameLabel.text = name
+      }
+      if let score = defaults.string(forKey: "userScore") {
+        cell.userScoreLabel.text = score
+      }
+      
       return cell
     }
     

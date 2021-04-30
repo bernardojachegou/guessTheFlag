@@ -12,7 +12,7 @@ class StartGameCodeVC: UIViewController {
   let logoImageView = UIImageView()
   let startButton = UIButton()
   let scoreButton = UIButton()
-
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -47,11 +47,14 @@ class StartGameCodeVC: UIViewController {
     startButton.titleLabel?.layer.shadowColor = UIColor.black.cgColor
     startButton.titleLabel?.layer.shadowOffset = CGSize(width: 2.0, height: 1.0)
     startButton.titleLabel?.layer.shadowOpacity = 1.0
-
+    
     // Constraints
     startButton.bottomAnchor.constraint(equalTo: scoreButton.topAnchor, constant: -20.0).isActive = true
     startButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20.0).isActive = true
     startButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20.0).isActive = true
+    
+    // Action
+    startButton.addTarget(self, action: #selector(StartGameCodeVC.sendToRoundView(sender:)), for: .touchUpInside)
     
     // scoreButton settings:
     // Frame
@@ -67,11 +70,49 @@ class StartGameCodeVC: UIViewController {
     scoreButton.titleLabel?.layer.shadowColor = UIColor.black.cgColor
     scoreButton.titleLabel?.layer.shadowOffset = CGSize(width: 2.0, height: 1.0)
     scoreButton.titleLabel?.layer.shadowOpacity = 1.0
-
+    
     // Constraints
     scoreButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20.0).isActive = true
     scoreButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20.0).isActive = true
     scoreButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20.0).isActive = true
     
+    // Action
+    scoreButton.addTarget(self, action: #selector(StartGameCodeVC.sendToScoreboardView(sender:)), for: .touchUpInside)
+    
+  }
+  
+  @objc func sendToRoundView(sender: UIButton) {
+    sender.pulsate()
+    print("\(String(describing: sender.titleLabel?.text)) was pressed!")
+  }
+  
+  @objc func sendToScoreboardView(sender: UIButton) {
+    sender.pulsate()
+    print("\(String(describing: sender.titleLabel?.text)) was pressed!")
+  }
+}
+
+extension UIButton {
+  func pulsate() {
+    let pulse = CASpringAnimation(keyPath: "transform.scale")
+    pulse.duration = 0.2
+    pulse.fromValue = 0.90
+    pulse.toValue = 1.0
+    pulse.autoreverses = true
+    //    pulse.repeatCount = .infinity
+    pulse.initialVelocity = 0.8
+    pulse.damping = 1.0
+    layer.add(pulse, forKey: nil)
+  }
+  
+  func flash() {
+    let flash = CABasicAnimation(keyPath: "opacity")
+    flash.duration = 0.1
+    flash.fromValue = 1
+    flash.toValue = 0.1
+    flash.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+    flash.autoreverses = true
+    flash.repeatCount = 2
+    layer.add(flash, forKey: nil)
   }
 }

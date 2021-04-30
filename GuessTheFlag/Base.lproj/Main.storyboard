@@ -22,7 +22,7 @@
         <!--Start GameVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="StartGameVC" customModule="GuessTheFlag" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="start" id="BYZ-38-t0r" customClass="StartGameVC" customModule="GuessTheFlag" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -263,7 +263,7 @@
                                 <color key="shadowColor" red="0.043137254899999998" green="0.035294117649999998" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <size key="shadowOffset" width="2" height="1"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="aXf-LB-vKv">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="aXf-LB-vKv">
                                 <rect key="frame" x="20" y="124" width="388" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="QUa-Wa-627"/>
@@ -277,7 +277,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="32"/>
                                 <size key="titleShadowOffset" width="2" height="1"/>
-                                <state key="normal" title="Go">
+                                <state key="normal" title="Next">
                                     <color key="titleColor" red="0.95686274510000002" green="0.82745098039999998" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" red="0.043137254899999998" green="0.035294117649999998" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -296,7 +296,10 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NIw-je-Brz">
                                         <rect key="frame" x="0.0" y="0.0" width="184" height="50"/>
                                         <color key="backgroundColor" red="0.1647058824" green="0.1647058824" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="IAl-Jp-NUj"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="24"/>
                                         <size key="titleShadowOffset" width="2" height="1"/>
                                         <state key="normal" title="first">
                                             <color key="titleColor" red="0.95686274510000002" green="0.82745098039999998" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -314,7 +317,10 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dp2-L3-p6O">
                                         <rect key="frame" x="204" y="0.0" width="184" height="50"/>
                                         <color key="backgroundColor" red="0.1647058824" green="0.1647058824" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="dBf-iX-S6q"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="24"/>
                                         <size key="titleShadowOffset" width="2" height="1"/>
                                         <state key="normal" title="second">
                                             <color key="titleColor" red="0.95686274510000002" green="0.82745098039999998" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -331,6 +337,7 @@
                                     </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="Dp2-L3-p6O" firstAttribute="height" secondItem="NIw-je-Brz" secondAttribute="height" id="WpY-R2-e96"/>
                                     <constraint firstItem="Dp2-L3-p6O" firstAttribute="width" secondItem="NIw-je-Brz" secondAttribute="width" id="kgY-YQ-446"/>
                                 </constraints>
                             </stackView>
@@ -371,7 +378,7 @@
         <!--Result GameVC-->
         <scene sceneID="frJ-Fs-0fK">
             <objects>
-                <viewController id="YLj-dI-uMG" customClass="ResultGameVC" customModule="GuessTheFlag" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="result" id="YLj-dI-uMG" customClass="ResultGameVC" customModule="GuessTheFlag" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QqR-H9-OwA">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -392,7 +399,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="32"/>
                                 <size key="titleShadowOffset" width="2" height="1"/>
-                                <state key="normal" title="Finish">
+                                <state key="normal" title="Save">
                                     <color key="titleColor" red="0.95686274510000002" green="0.82745098039999998" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" red="0.043137254899999998" green="0.035294117649999998" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>

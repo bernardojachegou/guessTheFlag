@@ -19,7 +19,7 @@ struct FlagAnswerOptions: Decodable {
 struct Round: Decodable {
   var flagImageName: String
   var flagAnswerOptions: [FlagAnswerOptions]
-  var flagCorrectOption: String
+  var flagCorrectOption: Int
 }
 
 func loadJsonFile(fileName: String) -> RoundList? {

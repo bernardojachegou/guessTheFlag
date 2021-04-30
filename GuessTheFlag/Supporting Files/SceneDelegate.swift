@@ -19,12 +19,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     guard let _ = (scene as? UIWindowScene) else { return }
     
-    //    // Costumized window code:
-    //    guard let windowScene = (scene as? UIWindowScene) else { return }
-    //    window = UIWindow(windowScene: windowScene)
-    //    window?.backgroundColor = .white
-    //    window?.rootViewController = StartGameCodeVC()
-    //    window?.makeKeyAndVisible()
+    //        // Costumized window code:
+    //        guard let windowScene = (scene as? UIWindowScene) else { return }
+    //        window = UIWindow(windowScene: windowScene)
+    //        window?.backgroundColor = .white
+    //        window?.rootViewController = StartGameCodeVC()
+    //        window?.makeKeyAndVisible()
   }
   
   func sceneDidDisconnect(_ scene: UIScene) {

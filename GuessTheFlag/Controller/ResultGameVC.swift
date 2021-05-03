@@ -17,7 +17,6 @@ class ResultGameVC: UIViewController {
   
   var finalScore = ""
   var calculateWrongAnswers = 0
-  //  var userNameAndScore: Scoreboard?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -31,20 +30,11 @@ class ResultGameVC: UIViewController {
   @IBAction func saveUserInfo(_ sender: UIButton) {
     if (userNameTextField.text?.count)! > 0 {
       
-      //      userNameAndScore?.userName = userNameTextField.text!
-      //      userNameAndScore?.userScore = correctAnswersLabel.text!
-      //
-      //      let encoder = JSONEncoder()
-      //      if let encoded = try? encoder.encode(userNameAndScore) {
-      //        let defaults = UserDefaults.standard
-      //        defaults.set(encoded, forKey: "SavedUser")
-      //      }
+      let scoreboard = Scoreboard(userName: userNameTextField.text, userScore: correctAnswersLabel.text)
       
-      UserDefaults.standard.set(correctAnswersLabel.text!, forKey: "userScore")
-      UserDefaults.standard.set(userNameTextField.text!, forKey: "userName")
-      
-      //      UserDefaults.standard.setCodableObject(userNameAndScore?.userName, forKey: "userName")
-      //      UserDefaults.standard.setCodableObject(userNameAndScore?.userScore, forKey: "userScore")
+      if let savedScore = try? JSONEncoder().encode(scoreboard) {
+        UserDefaults.standard.set(savedScore, forKey: "savedScore")
+      }
     }
     
     let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -64,22 +54,6 @@ class ResultGameVC: UIViewController {
     }
   }
   
-  //  func setCodableScore(_ data: Scoreboard, forKey defaultName: String) {
-  //    let encoder = JSONEncoder()
-  //    if let encoded = try? encoder.encode(userNameAndScore) {
-  //      let defaults = UserDefaults.standard
-  //      defaults.setValue(encoded, forKey: "SavedScore")
-  //    }
-  //  }
-  
 }
-
-//extension UserDefaults {
-//  func setCodableObject<T: Codable>(_ data: T?, forKey defaultName: String) {
-//    let encoded = try? JSONEncoder().encode(data)
-//    set(encoded, forKey: defaultName)
-//  }
-//}
-
 
 

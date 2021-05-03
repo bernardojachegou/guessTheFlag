@@ -8,6 +8,6 @@
 import Foundation
 
 struct Scoreboard: Codable {
-  var userName: String
-  var userScore: String
+  var userName: String?
+  var userScore: String?
 }

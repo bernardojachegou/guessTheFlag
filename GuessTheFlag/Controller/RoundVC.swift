@@ -22,6 +22,8 @@ class RoundVC: UIViewController {
   @IBOutlet weak var goFowardButton: UIButton!
   var flagCorrectOption = 0
   var selectedIndex = 0
+  var scoreText = ""
+  var numberOfRounds = 5
   
   var roundList: RoundList? {
     didSet {
@@ -38,7 +40,7 @@ class RoundVC: UIViewController {
   
   var scoreValue: Int = 0 {
     didSet {
-      scoreLabel.text = "Score: \(scoreValue)"
+      scoreLabel.text = String(scoreValue)
     }
   }
   
@@ -73,7 +75,7 @@ class RoundVC: UIViewController {
       }
     }
     
-    if (roundList?.roundList.count)! <= 10 {
+    if (roundList?.roundList.count)! <= numberOfRounds + 1{
       goFowardButton.setTitle("Finish", for: .normal)
     }
     
@@ -95,10 +97,9 @@ class RoundVC: UIViewController {
     sender.pulsate()
   }
   
-  
   @IBAction func goFoward(_ sender: UIButton) {
     
-    if (roundList?.roundList.count)! > 10 {
+    if (roundList?.roundList.count)! > numberOfRounds + 1 {
       roundList?.roundList.remove(at: selectedIndex)
       firstOptionButton.backgroundColor = UIColor.init(red: 42/255, green: 42/255, blue: 87/255, alpha: 1.0)
       secondOptionButton.backgroundColor = UIColor.init(red: 42/255, green: 42/255, blue: 87/255, alpha: 1.0)
@@ -107,11 +108,18 @@ class RoundVC: UIViewController {
       goFowardButton.isUserInteractionEnabled = false
       goFowardButton.alpha = 0.5
     } else {
-      let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-      let nextViewController: UIViewController = storyboard.instantiateViewController(withIdentifier: "result") as UIViewController
-      nextViewController.modalPresentationStyle = .fullScreen
-      self.present(nextViewController, animated: true, completion: nil)
+      scoreText = scoreLabel.text!
+      performSegue(withIdentifier: "finalResult", sender: self)
+      //      let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+      //      let nextViewController: UIViewController = storyboard.instantiateViewController(withIdentifier: "result") as UIViewController
+      //      nextViewController.modalPresentationStyle = .fullScreen
+      //      self.present(nextViewController, animated: true, completion: nil)
     }
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    let vc = segue.destination as! ResultGameVC
+    vc.finalScore = self.scoreText
   }
   
 }

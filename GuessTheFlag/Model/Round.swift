@@ -7,16 +7,16 @@
 
 import Foundation
 
-struct RoundList: Decodable {
+struct RoundList: Codable {
   var roundList: [Round]
 }
 
-struct FlagAnswerOptions: Decodable {
+struct FlagAnswerOptions: Codable {
   var flagFirstOption: String
   var flagSecondOption: String
 }
 
-struct Round: Decodable {
+struct Round: Codable {
   var flagImageName: String
   var flagAnswerOptions: [FlagAnswerOptions]
   var flagCorrectOption: Int

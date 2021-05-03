@@ -30,6 +30,7 @@
 		995F1DC426331ACC00E2BB98 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 995F1DB226331ACC00E2BB98 /* Roboto-Light.ttf */; };
 		995F1DC526331ACC00E2BB98 /* RobotoCondensed-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 995F1DB326331ACC00E2BB98 /* RobotoCondensed-Italic.ttf */; };
 		995F1DC626331ACC00E2BB98 /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 995F1DB426331ACC00E2BB98 /* Roboto-ThinItalic.ttf */; };
+		99AE1A2426404F3D0048BE00 /* Scoreboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AE1A2326404F3D0048BE00 /* Scoreboard.swift */; };
 		99B3D6E62631FA1B00D32384 /* ScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B3D6E52631FA1B00D32384 /* ScoreTableViewCell.swift */; };
 		99B3D6E72631FA1B00D32384 /* ScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B3D6E52631FA1B00D32384 /* ScoreTableViewCell.swift */; };
 		99B3D6E82631FA1B00D32384 /* ScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B3D6E52631FA1B00D32384 /* ScoreTableViewCell.swift */; };
@@ -85,6 +86,7 @@
 		995F1DB226331ACC00E2BB98 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
 		995F1DB326331ACC00E2BB98 /* RobotoCondensed-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Italic.ttf"; sourceTree = "<group>"; };
 		995F1DB426331ACC00E2BB98 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
+		99AE1A2326404F3D0048BE00 /* Scoreboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scoreboard.swift; sourceTree = "<group>"; };
 		99B3D6E52631FA1B00D32384 /* ScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTableViewCell.swift; sourceTree = "<group>"; };
 		99EF9428263C40FE002E1A71 /* StartGameCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameCodeVC.swift; sourceTree = "<group>"; };
 		99FA6E27262DCA7E00E8FB9D /* GuessTheFlag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuessTheFlag.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				9903720D263790B400B32A4C /* Round.swift */,
+				99AE1A2326404F3D0048BE00 /* Scoreboard.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -397,6 +400,7 @@
 				99FA6E2F262DCA7E00E8FB9D /* StartGameVC.swift in Sources */,
 				99EF9429263C40FE002E1A71 /* StartGameCodeVC.swift in Sources */,
 				995D11DF263203890040D78C /* ScoreTableVC.swift in Sources */,
+				99AE1A2426404F3D0048BE00 /* Scoreboard.swift in Sources */,
 				99FA6E2B262DCA7E00E8FB9D /* AppDelegate.swift in Sources */,
 				995D11EA263203E30040D78C /* RoundVC.swift in Sources */,
 				99B3D6E62631FA1B00D32384 /* ScoreTableViewCell.swift in Sources */,

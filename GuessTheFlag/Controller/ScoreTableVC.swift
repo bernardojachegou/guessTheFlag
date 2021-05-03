@@ -9,6 +9,8 @@ import UIKit
 
 class ScoreTableVC: UITableViewController {
   
+  //  var userNameAndScore: Scoreboard?
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -30,7 +32,7 @@ class ScoreTableVC: UITableViewController {
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     // #warning Incomplete implementation, return the number of rows
-    return 1
+    return 2
   }
   
   
@@ -43,12 +45,19 @@ class ScoreTableVC: UITableViewController {
     else {
       let cell = tableView.dequeueReusableCell(withIdentifier: "userScoreValues", for: indexPath) as! ScoreTableViewCell
       
-      let defaults = UserDefaults.standard
-      if let name = defaults.string(forKey: "userName") {
-        cell.userNameLabel.text = name
+      //      if UserDefaults.standard.codableObject(dataType: Scoreboard.self, key: "SavedUser") != nil {
+      //        cell.userNameLabel.text = userNameAndScore?.userName
+      //      }
+      //
+      //      if UserDefaults.standard.codableObject(dataType: Scoreboard.self, key: "userScore") != nil {
+      //        cell.userScoreLabel.text = userNameAndScore?.userScore
+      //      }
+      
+      if let userName = UserDefaults.standard.string(forKey: "userName") {
+        cell.userNameLabel.text = userName
       }
-      if let score = defaults.string(forKey: "userScore") {
-        cell.userScoreLabel.text = score
+      if let userScore = UserDefaults.standard.string(forKey: "userScore") {
+        cell.userScoreLabel.text = userScore
       }
       
       return cell
@@ -102,3 +111,12 @@ class ScoreTableVC: UITableViewController {
    */
   
 }
+
+//extension UserDefaults {
+//  func codableObject<T : Codable>(dataType: T.Type, key: String) -> T? {
+//    guard let userDefaultData = data(forKey: key) else {
+//      return nil
+//    }
+//    return try? JSONDecoder().decode(T.self, from: userDefaultData)
+//  }
+//}

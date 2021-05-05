@@ -108,12 +108,6 @@
                     <navigationItem key="navigationItem" id="D9A-4k-rdN"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="PlayButton" destination="Zs1-HT-FGv" id="drK-d3-miL"/>
-                        <outlet property="ScoreboardButton" destination="0ox-Mr-u7X" id="nuI-LD-ft6"/>
-                        <outlet property="playButton" destination="Zs1-HT-FGv" id="udf-SO-mFa"/>
-                        <outlet property="scoreboardButton" destination="0ox-Mr-u7X" id="1nM-30-I3H"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -380,7 +374,7 @@
                         <outlet property="goFowardButton" destination="HbJ-SC-CNT" id="1T5-2L-qd8"/>
                         <outlet property="scoreLabel" destination="h3w-ie-zqb" id="fyC-j3-q5F"/>
                         <outlet property="secondOptionButton" destination="Dp2-L3-p6O" id="g4H-gj-EwO"/>
-                        <segue destination="YLj-dI-uMG" kind="presentation" identifier="finalResult" modalPresentationStyle="fullScreen" id="pdq-pB-pHv"/>
+                        <segue destination="YLj-dI-uMG" kind="show" identifier="finalResult" id="pdq-pB-pHv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dsa-Vk-RF7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -520,6 +514,7 @@
                             <constraint firstItem="UQg-qJ-7Ms" firstAttribute="trailing" secondItem="NLZ-7f-iwX" secondAttribute="trailing" constant="20" id="xjf-P5-017"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Keb-Or-xK8"/>
                     <connections>
                         <outlet property="correctAnswersLabel" destination="SG5-rJ-w52" id="t5z-wy-qIa"/>
                         <outlet property="finalMessage" destination="NLZ-7f-iwX" id="Nei-L3-NLE"/>

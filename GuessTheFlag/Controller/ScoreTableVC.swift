@@ -9,8 +9,12 @@ import UIKit
 
 class ScoreTableVC: UITableViewController {
   
+  var scores: [Scoreboard] = []
+  
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    
     
     self.tableView.backgroundColor = UIColor.init(red: 60/255, green: 60/255, blue: 76/255, alpha: 1)
     
@@ -21,7 +25,20 @@ class ScoreTableVC: UITableViewController {
     // self.navigationItem.rightBarButtonItem = self.editButtonItem
   }
   
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    
+    if let data = UserDefaults.standard.data(forKey: "savedScore") {
+      if let decodedScores = try? JSONDecoder().decode([Scoreboard].self, from: data) {
+        scores = decodedScores
+      }
+    }
+    tableView.reloadData()
+  }
+  
   // MARK: - Table view data source
+  
+  
   
   override func numberOfSections(in tableView: UITableView) -> Int {
     // #warning Incomplete implementation, return the number of sections
@@ -30,7 +47,7 @@ class ScoreTableVC: UITableViewController {
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     // #warning Incomplete implementation, return the number of rows
-    return 4
+    return scores.count + 1
   }
   
   
@@ -43,12 +60,9 @@ class ScoreTableVC: UITableViewController {
     else {
       let cell = tableView.dequeueReusableCell(withIdentifier: "userScoreValues", for: indexPath) as! ScoreTableViewCell
       
-      if
-        let savedScore = UserDefaults.standard.value(forKey: "savedScore") as? Data,
-        let scoreboard = try? JSONDecoder().decode(Scoreboard.self, from: savedScore) {
-        cell.userNameLabel.text = scoreboard.userName
-        cell.userScoreLabel.text = scoreboard.userScore
-      }
+      let score = scores[indexPath.row - 1]
+        cell.userNameLabel.text = score.userName
+        cell.userScoreLabel.text = score.userScore
       
       return cell
     }

@@ -20,27 +20,22 @@ class RoundVC: UIViewController {
   @IBOutlet weak var firstOptionButton: UIButton!
   @IBOutlet weak var secondOptionButton: UIButton!
   @IBOutlet weak var goFowardButton: UIButton!
+  
+  // Check these vars
   var flagCorrectOption = 0
   var selectedIndex = 0
   var scoreText = ""
-  var numberOfRounds = 5
+  var numberOfRounds = 5 // Change this names
   
   var roundList: RoundList? {
     didSet {
-      if let round = roundList {
-        let randomIndex = Int.random(in: 0..<round.roundList.count)
-        selectedIndex = randomIndex
-        flagImageView.image = UIImage(named: round.roundList[randomIndex].flagImageName)
-        firstOptionButton.setTitle(round.roundList[randomIndex].flagAnswerOptions[0].flagFirstOption, for: .normal)
-        secondOptionButton.setTitle(round.roundList[randomIndex].flagAnswerOptions[0].flagSecondOption, for: .normal)
-        flagCorrectOption = round.roundList[randomIndex].flagCorrectOption
-      }
+      updateViewForNewRound()
     }
   }
   
   var scoreValue: Int = 0 {
     didSet {
-      scoreLabel.text = String(scoreValue)
+      scoreLabel.text = String(scoreValue) // Must be improved?
     }
   }
   
@@ -49,8 +44,8 @@ class RoundVC: UIViewController {
     super.viewDidLoad()
     navigationController?.interactivePopGestureRecognizer?.isEnabled = false
     
-    prepareButtons()
     roundList = loadJsonFile(fileName: "database")
+    prepareButtons()
     scoreValue = 0
   }
   
@@ -66,11 +61,13 @@ class RoundVC: UIViewController {
     if button == flagCorrectOption {
       scoreValue += 1
       if let correctButton = view.viewWithTag(button) {
+        //create a color extension?
         correctButton.backgroundColor = UIColor.init(red: 20/255, green: 128/255, blue: 1/255, alpha: 1)
       }
     }
     else {
       if let wrongButton = view.viewWithTag(button) {
+        //create a color extension?
         wrongButton.backgroundColor = UIColor.init(red: 179/255, green: 0/255, blue: 33/255, alpha: 1)
       }
     }
@@ -85,36 +82,58 @@ class RoundVC: UIViewController {
     goFowardButton.alpha = 1.0
   }
   
+  func updateViewForNewRound() {
+    if let round = roundList {
+      let randomIndex = Int.random(in: 0..<round.roundList.count)
+      selectedIndex = randomIndex
+      flagImageView.image = UIImage(named: round.roundList[randomIndex].flagImageName)
+      firstOptionButton.setTitle(round.roundList[randomIndex].flagAnswerOptions[0].flagFirstOption, for: .normal)
+      secondOptionButton.setTitle(round.roundList[randomIndex].flagAnswerOptions[0].flagSecondOption, for: .normal)
+      flagCorrectOption = round.roundList[randomIndex].flagCorrectOption
+    }
+    
+  }
+  
+  // MARK: Actions
   @IBAction func checkAnswerFirstOption(_ sender: UIButton) {
+    
     let viewTag = sender.tag
     checkAnswer(button: viewTag)
     sender.pulsate()
+    
   }
   
   @IBAction func checkAnswerSecondOption(_ sender: UIButton) {
+    
     let viewTag = sender.tag
     checkAnswer(button: viewTag)
     sender.pulsate()
+    
   }
   
   @IBAction func goFoward(_ sender: UIButton) {
     
     if (roundList?.roundList.count)! > numberOfRounds + 1 {
+      
+      // First Task
       roundList?.roundList.remove(at: selectedIndex)
-      firstOptionButton.backgroundColor = UIColor.init(red: 42/255, green: 42/255, blue: 87/255, alpha: 1.0)
-      secondOptionButton.backgroundColor = UIColor.init(red: 42/255, green: 42/255, blue: 87/255, alpha: 1.0)
+      
+      // Second Task
+      firstOptionButton.backgroundColor = UIColor(red: 42/255, green: 42/255, blue: 87/255, alpha: 1.0)
+      secondOptionButton.backgroundColor = UIColor(red: 42/255, green: 42/255, blue: 87/255, alpha: 1.0)
+      
+      // Third Task
       firstOptionButton.isUserInteractionEnabled = true
       secondOptionButton.isUserInteractionEnabled = true
       goFowardButton.isUserInteractionEnabled = false
       goFowardButton.alpha = 0.5
     } else {
+      
+      // Fourth Task
       scoreText = scoreLabel.text!
       performSegue(withIdentifier: "finalResult", sender: self)
-      //      let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-      //      let nextViewController: UIViewController = storyboard.instantiateViewController(withIdentifier: "result") as UIViewController
-      //      nextViewController.modalPresentationStyle = .fullScreen
-      //      self.present(nextViewController, animated: true, completion: nil)
     }
+    
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

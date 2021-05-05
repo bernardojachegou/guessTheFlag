@@ -9,10 +9,6 @@ import UIKit
 
 class StartGameVC: UIViewController {
   
-  //MARK: Properties
-  @IBOutlet weak var playButton: UIButton!
-  @IBOutlet weak var scoreboardButton: UIButton!
-  
   override func viewDidLoad() {
     super.viewDidLoad()
   }

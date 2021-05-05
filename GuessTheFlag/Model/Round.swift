@@ -20,13 +20,17 @@ struct Round: Codable {
   var flagImageName: String
   var flagAnswerOptions: [FlagAnswerOptions]
   var flagCorrectOption: Int
+  // currentRound to count the number of elements
 }
 
+// Use a generic function
 func loadJsonFile(fileName: String) -> RoundList? {
   
   if let url = Bundle.main.url(forResource: fileName, withExtension: "json") {
     do {
+      // First task
       let data = try Data(contentsOf: url)
+      // Second task
       let decoder = JSONDecoder()
       let jsonData = try decoder.decode(RoundList.self, from: data)
       return jsonData
@@ -35,4 +39,5 @@ func loadJsonFile(fileName: String) -> RoundList? {
     }
   }
   return nil
+  
 }

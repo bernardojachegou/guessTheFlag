@@ -22,6 +22,7 @@ class ResultGameVC: UIViewController {
     super.viewDidLoad()
     
     correctAnswersLabel.text = finalScore
+    // Improve it, make it simple
     calculateWrongAnswers = 10 - Int(finalScore)!
     wrongAnswersLabel.text = String(calculateWrongAnswers)
     conditionalMessage()
@@ -30,18 +31,33 @@ class ResultGameVC: UIViewController {
   @IBAction func saveUserInfo(_ sender: UIButton) {
     if (userNameTextField.text?.count)! > 0 {
       
-      let scoreboard = Scoreboard(userName: userNameTextField.text, userScore: correctAnswersLabel.text)
+      var scores: [Scoreboard] = []
       
-      if let savedScore = try? JSONEncoder().encode(scoreboard) {
-        UserDefaults.standard.set(savedScore, forKey: "savedScore")
+      if let data = UserDefaults.standard.data(forKey: "savedScore") {
+        if let decodedScores = try? JSONDecoder().decode([Scoreboard].self, from: data) {
+          scores = decodedScores
+        }
       }
+      
+      let scoreboard = Scoreboard(userName: userNameTextField.text!, userScore: correctAnswersLabel.text!)
+      scores.append(scoreboard)
+      
+      if let savedScore = try? JSONEncoder().encode(scores) {
+        UserDefaults.standard.set(savedScore, forKey: "savedScore")
+        UserDefaults.standard.synchronize()
+      }
+      
     }
+
+    dismissViewControllers()
     
-    let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-    let nextViewController: UIViewController = storyboard.instantiateViewController(withIdentifier: "start") as UIViewController
-    self.present(nextViewController, animated: true, completion: nil)
   }
   
+  func dismissViewControllers() {
+    self.navigationController?.popToRootViewController(animated: true)
+  }
+  
+  // Use enum?? Switch?
   func conditionalMessage() {
     if Int(finalScore)! <= 4 {
       finalMessage.text = "You are not so good! :("

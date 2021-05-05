@@ -152,11 +152,11 @@
 		99B3D67F2631EA5000D32384 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				99EF9428263C40FE002E1A71 /* StartGameCodeVC.swift */,
 				99FA6E2E262DCA7E00E8FB9D /* StartGameVC.swift */,
 				995D11DE263203890040D78C /* ScoreTableVC.swift */,
 				995D11E9263203E30040D78C /* RoundVC.swift */,
 				995D11EE26321F400040D78C /* ResultGameVC.swift */,
-				99EF9428263C40FE002E1A71 /* StartGameCodeVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -193,12 +193,12 @@
 			isa = PBXGroup;
 			children = (
 				9903720C2637908800B32A4C /* Model */,
-				99B3D67E2631E9E300D32384 /* Supporting Files */,
-				99B3D67F2631EA5000D32384 /* Controller */,
 				99B3D6E42631F9E900D32384 /* View */,
+				99B3D67F2631EA5000D32384 /* Controller */,
 				99FA6E61262E3C6500E8FB9D /* Fonts */,
-				99FA6E30262DCA7E00E8FB9D /* Main.storyboard */,
+				99B3D67E2631E9E300D32384 /* Supporting Files */,
 				99FA6E33262DCA7F00E8FB9D /* Assets.xcassets */,
+				99FA6E30262DCA7E00E8FB9D /* Main.storyboard */,
 				99037204263789DF00B32A4C /* database.json */,
 				99FA6E38262DCA7F00E8FB9D /* Info.plist */,
 			);

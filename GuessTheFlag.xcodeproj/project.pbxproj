@@ -34,6 +34,8 @@
 		99B3D6E62631FA1B00D32384 /* ScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B3D6E52631FA1B00D32384 /* ScoreTableViewCell.swift */; };
 		99B3D6E72631FA1B00D32384 /* ScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B3D6E52631FA1B00D32384 /* ScoreTableViewCell.swift */; };
 		99B3D6E82631FA1B00D32384 /* ScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B3D6E52631FA1B00D32384 /* ScoreTableViewCell.swift */; };
+		99D8E09D2649990D0021C987 /* UICustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D8E09C2649990D0021C987 /* UICustomColors.swift */; };
+		99D8E0A226499D270021C987 /* UICustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D8E0A126499D270021C987 /* UICustomButton.swift */; };
 		99EF9429263C40FE002E1A71 /* StartGameCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EF9428263C40FE002E1A71 /* StartGameCodeVC.swift */; };
 		99FA6E2B262DCA7E00E8FB9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FA6E2A262DCA7E00E8FB9D /* AppDelegate.swift */; };
 		99FA6E2D262DCA7E00E8FB9D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FA6E2C262DCA7E00E8FB9D /* SceneDelegate.swift */; };
@@ -88,6 +90,8 @@
 		995F1DB426331ACC00E2BB98 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
 		99AE1A2326404F3D0048BE00 /* Scoreboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scoreboard.swift; sourceTree = "<group>"; };
 		99B3D6E52631FA1B00D32384 /* ScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTableViewCell.swift; sourceTree = "<group>"; };
+		99D8E09C2649990D0021C987 /* UICustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustomColors.swift; sourceTree = "<group>"; };
+		99D8E0A126499D270021C987 /* UICustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustomButton.swift; sourceTree = "<group>"; };
 		99EF9428263C40FE002E1A71 /* StartGameCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameCodeVC.swift; sourceTree = "<group>"; };
 		99FA6E27262DCA7E00E8FB9D /* GuessTheFlag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuessTheFlag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99FA6E2A262DCA7E00E8FB9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -169,6 +173,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		99D8E0AF26499EAA0021C987 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				99D8E09C2649990D0021C987 /* UICustomColors.swift */,
+				99D8E0A126499D270021C987 /* UICustomButton.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		99FA6E1E262DCA7E00E8FB9D = {
 			isa = PBXGroup;
 			children = (
@@ -195,8 +208,9 @@
 				9903720C2637908800B32A4C /* Model */,
 				99B3D6E42631F9E900D32384 /* View */,
 				99B3D67F2631EA5000D32384 /* Controller */,
-				99FA6E61262E3C6500E8FB9D /* Fonts */,
 				99B3D67E2631E9E300D32384 /* Supporting Files */,
+				99FA6E61262E3C6500E8FB9D /* Fonts */,
+				99D8E0AF26499EAA0021C987 /* Extensions */,
 				99FA6E33262DCA7F00E8FB9D /* Assets.xcassets */,
 				99FA6E30262DCA7E00E8FB9D /* Main.storyboard */,
 				99037204263789DF00B32A4C /* database.json */,
@@ -397,6 +411,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99D8E0A226499D270021C987 /* UICustomButton.swift in Sources */,
 				99FA6E2F262DCA7E00E8FB9D /* StartGameVC.swift in Sources */,
 				99EF9429263C40FE002E1A71 /* StartGameCodeVC.swift in Sources */,
 				995D11DF263203890040D78C /* ScoreTableVC.swift in Sources */,
@@ -407,6 +422,7 @@
 				99FA6E2D262DCA7E00E8FB9D /* SceneDelegate.swift in Sources */,
 				9903720E263790B400B32A4C /* Round.swift in Sources */,
 				995D11EF26321F400040D78C /* ResultGameVC.swift in Sources */,
+				99D8E09D2649990D0021C987 /* UICustomColors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

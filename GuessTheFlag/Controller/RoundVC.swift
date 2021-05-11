@@ -9,9 +9,10 @@ import UIKit
 
 class RoundVC: UIViewController {
     
-    class Constants {
+    class CustomTags {
         static let firstOptionButtonTag = 80
         static let secondOptionButtonTag = 81
+        static var flagCorrectOption = 0
     }
     
     //MARK: Properties
@@ -20,12 +21,8 @@ class RoundVC: UIViewController {
     @IBOutlet weak var firstOptionButton: UIButton!
     @IBOutlet weak var secondOptionButton: UIButton!
     @IBOutlet weak var goFowardButton: UIButton!
-    
-    // Check these vars
-    var flagCorrectOption = 0
     var selectedIndex = 0
-    var scoreText = ""
-    var numberOfRounds = 5 // Change this names
+    var roundsLeft = 10
     
     var roundList: RoundList? {
         didSet {
@@ -35,7 +32,7 @@ class RoundVC: UIViewController {
     
     var scoreValue: Int = 0 {
         didSet {
-            scoreLabel.text = String(scoreValue) // Must be improved?
+            scoreLabel.text = "Score: \(scoreValue)"
         }
     }
     
@@ -43,7 +40,6 @@ class RoundVC: UIViewController {
         
         super.viewDidLoad()
         navigationController?.interactivePopGestureRecognizer?.isEnabled = false
-        
         roundList = loadJsonFile(fileName: "database")
         prepareButtons()
         scoreValue = 0
@@ -53,12 +49,12 @@ class RoundVC: UIViewController {
     func prepareButtons() {
         goFowardButton.isUserInteractionEnabled = false
         goFowardButton.alpha = 0.5
-        firstOptionButton.tag = Constants.firstOptionButtonTag
-        secondOptionButton.tag = Constants.secondOptionButtonTag
+        firstOptionButton.tag = CustomTags.firstOptionButtonTag
+        secondOptionButton.tag = CustomTags.secondOptionButtonTag
     }
     
     func checkAnswer(button: Int) {
-        if button == flagCorrectOption {
+        if button == CustomTags.flagCorrectOption {
             scoreValue += 1
             if let correctButton = view.viewWithTag(button) {
                 correctButton.backgroundColor = UIColor.correctAnswerColor
@@ -70,7 +66,7 @@ class RoundVC: UIViewController {
             }
         }
         
-        if (roundList?.roundList.count)! <= numberOfRounds + 1{
+        if roundsLeft == 1 {
             goFowardButton.setTitle("Finish", for: .normal)
         }
         
@@ -87,7 +83,7 @@ class RoundVC: UIViewController {
             flagImageView.image = UIImage(named: round.roundList[randomIndex].flagImageName)
             firstOptionButton.setTitle(round.roundList[randomIndex].flagAnswerOptions[0].flagFirstOption, for: .normal)
             secondOptionButton.setTitle(round.roundList[randomIndex].flagAnswerOptions[0].flagSecondOption, for: .normal)
-            flagCorrectOption = round.roundList[randomIndex].flagCorrectOption
+            CustomTags.flagCorrectOption = round.roundList[randomIndex].flagCorrectOption
         }
         
     }
@@ -106,27 +102,26 @@ class RoundVC: UIViewController {
     }
     
     @IBAction func goFoward(_ sender: UIButton) {
-        if (roundList?.roundList.count)! > numberOfRounds + 1 {
-            // First Task
+        if roundsLeft == 1 {
+            performSegue(withIdentifier: "finalResult", sender: self)
+        } else {
             roundList?.roundList.remove(at: selectedIndex)
-            // Second Task
+            
             firstOptionButton.backgroundColor = UIColor.primaryColor
             secondOptionButton.backgroundColor = UIColor.primaryColor
-            // Third Task
+            
             firstOptionButton.isUserInteractionEnabled = true
             secondOptionButton.isUserInteractionEnabled = true
+            
             goFowardButton.isUserInteractionEnabled = false
             goFowardButton.alpha = 0.5
-        } else {
-            // Fourth Task
-            scoreText = scoreLabel.text!
-            performSegue(withIdentifier: "finalResult", sender: self)
+            roundsLeft -= 1
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! ResultGameVC
-        vc.finalScore = self.scoreText
+        vc.finalScore = scoreValue
     }
     
 }

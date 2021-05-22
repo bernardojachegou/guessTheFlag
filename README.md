@@ -3,7 +3,7 @@
 </h1>
 
 <h2 align="center">
-  <img alt="" src="https://im3.ezgif.com/tmp/ezgif-3-32bd6ef58a70.gif"/>
+  <img alt="App" width="700px" src="https://imgur.com/7SKKnBG.png"/>
 </h2>
 
 ## 📱 About the project

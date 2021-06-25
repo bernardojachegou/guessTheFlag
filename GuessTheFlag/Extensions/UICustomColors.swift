@@ -17,4 +17,10 @@ extension UIColor {
     static var shadowColor: UIColor {
         return UIColor(named: "ShadowColor")!
     }
+    static var successColor: UIColor {
+        return UIColor(named: "SuccessColor")!
+    }
+    static var errorColor: UIColor {
+        return UIColor(named: "ErrorColor")!
+    }
 }

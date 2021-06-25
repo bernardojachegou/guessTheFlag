@@ -57,12 +57,12 @@ class RoundVC: UIViewController {
         if button == CustomTags.flagCorrectOption {
             scoreValue += 1
             if let correctButton = view.viewWithTag(button) {
-                correctButton.backgroundColor = UIColor.correctAnswerColor
+                correctButton.backgroundColor = UIColor.primaryColor
             }
         }
         else {
             if let wrongButton = view.viewWithTag(button) {
-                wrongButton.backgroundColor = UIColor.wrongAnswerColor
+                wrongButton.backgroundColor = UIColor.secondaryColor
             }
         }
         

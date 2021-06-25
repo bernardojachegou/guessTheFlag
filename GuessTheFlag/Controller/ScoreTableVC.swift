@@ -13,7 +13,7 @@ class ScoreTableVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.backgroundColor = UIColor.bgColor
+        self.tableView.backgroundColor = UIColor.shadowColor
     }
     
     override func viewDidAppear(_ animated: Bool) {

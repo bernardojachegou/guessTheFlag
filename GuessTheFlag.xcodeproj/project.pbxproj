@@ -36,7 +36,7 @@
 		99B3D6E82631FA1B00D32384 /* ScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B3D6E52631FA1B00D32384 /* ScoreTableViewCell.swift */; };
 		99D8E09D2649990D0021C987 /* UICustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D8E09C2649990D0021C987 /* UICustomColors.swift */; };
 		99D8E0A226499D270021C987 /* UICustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D8E0A126499D270021C987 /* UICustomButton.swift */; };
-		99EF9429263C40FE002E1A71 /* StartGameCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EF9428263C40FE002E1A71 /* StartGameCodeVC.swift */; };
+		99EF9429263C40FE002E1A71 /* StartGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EF9428263C40FE002E1A71 /* StartGameViewController.swift */; };
 		99FA6E2B262DCA7E00E8FB9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FA6E2A262DCA7E00E8FB9D /* AppDelegate.swift */; };
 		99FA6E2D262DCA7E00E8FB9D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FA6E2C262DCA7E00E8FB9D /* SceneDelegate.swift */; };
 		99FA6E2F262DCA7E00E8FB9D /* StartGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FA6E2E262DCA7E00E8FB9D /* StartGameVC.swift */; };
@@ -92,7 +92,7 @@
 		99B3D6E52631FA1B00D32384 /* ScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTableViewCell.swift; sourceTree = "<group>"; };
 		99D8E09C2649990D0021C987 /* UICustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustomColors.swift; sourceTree = "<group>"; };
 		99D8E0A126499D270021C987 /* UICustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustomButton.swift; sourceTree = "<group>"; };
-		99EF9428263C40FE002E1A71 /* StartGameCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameCodeVC.swift; sourceTree = "<group>"; };
+		99EF9428263C40FE002E1A71 /* StartGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameViewController.swift; sourceTree = "<group>"; };
 		99FA6E27262DCA7E00E8FB9D /* GuessTheFlag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuessTheFlag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99FA6E2A262DCA7E00E8FB9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99FA6E2C262DCA7E00E8FB9D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -156,7 +156,7 @@
 		99B3D67F2631EA5000D32384 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				99EF9428263C40FE002E1A71 /* StartGameCodeVC.swift */,
+				99EF9428263C40FE002E1A71 /* StartGameViewController.swift */,
 				99FA6E2E262DCA7E00E8FB9D /* StartGameVC.swift */,
 				995D11DE263203890040D78C /* ScoreTableVC.swift */,
 				995D11E9263203E30040D78C /* RoundVC.swift */,
@@ -413,7 +413,7 @@
 			files = (
 				99D8E0A226499D270021C987 /* UICustomButton.swift in Sources */,
 				99FA6E2F262DCA7E00E8FB9D /* StartGameVC.swift in Sources */,
-				99EF9429263C40FE002E1A71 /* StartGameCodeVC.swift in Sources */,
+				99EF9429263C40FE002E1A71 /* StartGameViewController.swift in Sources */,
 				995D11DF263203890040D78C /* ScoreTableVC.swift in Sources */,
 				99AE1A2426404F3D0048BE00 /* Scoreboard.swift in Sources */,
 				99FA6E2B262DCA7E00E8FB9D /* AppDelegate.swift in Sources */,

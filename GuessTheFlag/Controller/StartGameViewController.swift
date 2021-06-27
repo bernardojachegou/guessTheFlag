@@ -53,19 +53,19 @@ class StartGameViewController: UIViewController {
 
 private extension StartGameViewController {
     private func buildTitleImageView() -> UIImageView {
-        let logo = UIImage(named: "flagHunter.png")
         let imageView = UIImageView()
-        imageView.image = logo
-        imageView.frame = CGRect(x: 0, y: 0, width: logo?.size.width ?? 250, height: logo?.size.height ?? 100)
+        let flagHunter = UIImage(named: "flagHunter.png")
+        imageView.image = flagHunter
+        imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }
     
     private func buildKidsImageView() -> UIImageView {
-        let logo = UIImage(named: "kidsLogo.png")
         let imageView = UIImageView()
-        imageView.image = logo
-        imageView.frame = CGRect(x: 0, y: 0, width: logo?.size.width ?? 250, height: logo?.size.height ?? 250)
+        let kidsLogo = UIImage(named: "kidsLogo.png")
+        imageView.image = kidsLogo
+        imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }
@@ -80,7 +80,7 @@ private extension StartGameViewController {
         button.layer.cornerRadius = 25
         button.layer.shadowColor = UIColor.shadowColor.cgColor
         button.layer.shadowOpacity = 1
-        button.layer.shadowOffset = .init(width: 5, height: 5)
+        button.layer.shadowOffset = .init(width: 0, height: 5)
         button.layer.shadowRadius = 0
         return button
     }
@@ -93,10 +93,10 @@ private extension StartGameViewController {
         button.backgroundColor = UIColor.secondaryColor
         button.addTarget(self, action: #selector(onScoreButtonTap), for: .touchUpInside)
         button.layer.cornerRadius = 25
-//        button.layer.shadowColor = UIColor.shadowColor.cgColor
-//        button.layer.shadowOpacity = 1
-//        button.layer.shadowOffset = .zero
-//        button.layer.shadowRadius = 10
+        button.layer.shadowColor = UIColor.shadowColor.cgColor
+        button.layer.shadowOpacity = 1
+        button.layer.shadowOffset = .init(width: 0, height: 5)
+        button.layer.shadowRadius = 0
         return button
     }
     

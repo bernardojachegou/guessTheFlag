@@ -9,13 +9,7 @@ import UIKit
 
 class RoundViewController: UIViewController {
     
-    class CustomTags {
-        static let firstOptionButtonTag = 80
-        static let secondOptionButtonTag = 81
-        static var flagCorrectOption = 0
-    }
-    
-//    private lazy var countRoundsLabel = buildCountRoundsLabel()
+    private lazy var countRoundsLabel = buildCountRoundsLabel()
     private lazy var navigationTitleView = buildCountRoundsView()
     private lazy var backgroundFlagView = buildBackgroundflagView()
     private lazy var flagImageView = buildFlagImageView()
@@ -26,10 +20,9 @@ class RoundViewController: UIViewController {
     
     override func viewDidLoad() {
         view.backgroundColor = UIColor.primaryColor
-        addView()
         configureNavigationBar()
+        addView()
         super.viewDidLoad()
-        
     }
     
     private func addView() {
@@ -39,6 +32,9 @@ class RoundViewController: UIViewController {
         view.addSubview(goFowardButton)
         
         NSLayoutConstraint.activate([
+            navigationTitleView.widthAnchor.constraint(equalToConstant: 70),
+            navigationTitleView.heightAnchor.constraint(equalToConstant: 44),
+            
             backgroundFlagView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40),
             backgroundFlagView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
             backgroundFlagView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
@@ -58,10 +54,10 @@ class RoundViewController: UIViewController {
             goFowardButton.trailingAnchor.constraint(equalTo: backgroundFlagView.trailingAnchor),
             goFowardButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -40),
             
-//            countRoundsLabel.topAnchor.constraint(equalTo: navigationTitleView.topAnchor),
-//            countRoundsLabel.leadingAnchor.constraint(equalTo: navigationTitleView.leadingAnchor),
-//            countRoundsLabel.trailingAnchor.constraint(equalTo: navigationTitleView.trailingAnchor),
-//            countRoundsLabel.bottomAnchor.constraint(equalTo: navigationTitleView.bottomAnchor)
+            countRoundsLabel.topAnchor.constraint(equalTo: navigationTitleView.topAnchor),
+            countRoundsLabel.leadingAnchor.constraint(equalTo: navigationTitleView.leadingAnchor),
+            countRoundsLabel.trailingAnchor.constraint(equalTo: navigationTitleView.trailingAnchor),
+            countRoundsLabel.bottomAnchor.constraint(equalTo: navigationTitleView.bottomAnchor)
         ])
     }
     
@@ -69,7 +65,7 @@ class RoundViewController: UIViewController {
         let appearance = UINavigationBarAppearance()
         navigationItem.standardAppearance = appearance
         navigationItem.standardAppearance?.backgroundColor = UIColor.primaryColor
-        navigationItem.standardAppearance?.shadowColor = UIColor.secondaryColor
+        navigationItem.standardAppearance?.shadowColor = UIColor.primaryColor
         navigationController?.navigationBar.isTranslucent = false
         navigationItem.titleView = navigationTitleView
     }
@@ -89,17 +85,20 @@ class RoundViewController: UIViewController {
 private extension RoundViewController {
     private func buildCountRoundsLabel() -> UILabel {
         let label = UILabel()
-        label.text = "4/13\nRounds"
+        label.text = "Rounds 4/13"
+        label.numberOfLines = 2
         label.textColor = UIColor.primaryColor
         label.font = UIFont.robotoBold(ofSize: 14)
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }
     
     private func buildCountRoundsView() -> UIView {
         let view = UIView()
-        view.frame = CGRect(x: 0, y: 0, width: 80, height: 100)
         view.backgroundColor = UIColor.secondaryColor
         view.layer.cornerRadius = 10
+        view.addSubview(countRoundsLabel)
         return view
     }
     

@@ -71,7 +71,7 @@ private extension StartGameViewController {
         button.backgroundColor = UIColor.secondaryColor
         button.addTarget(self, action: selector, for: .touchUpInside)
         button.layer.cornerRadius = 25
-        button.layer.shadowColor = UIColor.shadowColor.cgColor
+        button.layer.shadowColor = UIColor.secondaryShadowColor.cgColor
         button.layer.shadowOpacity = 1
         button.layer.shadowOffset = .init(width: 0, height: 5)
         button.layer.shadowRadius = 0

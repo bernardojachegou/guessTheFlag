@@ -11,6 +11,7 @@ class RoundViewController: UIViewController {
     
     private lazy var countRoundsLabel = buildCountRoundsLabel()
     private lazy var navigationTitleView = buildCountRoundsView()
+    private lazy var progressBar = buildProgressBar()
     private lazy var backgroundFlagView = buildBackgroundflagView()
     private lazy var flagImageView = buildFlagImageView()
     private lazy var firstOptionButton = buildAnswerOptionButton(with: "Brazil")
@@ -18,22 +19,36 @@ class RoundViewController: UIViewController {
     private lazy var stackView = buildButtonStackView()
     private lazy var goFowardButton = buildGoFowardButton()
     
+    private var timer = Timer()
+    private var counter = 10
+    
     override func viewDidLoad() {
         view.backgroundColor = UIColor.primaryColor
         configureNavigationBar()
         addView()
+        onTimerTick()
         super.viewDidLoad()
     }
     
     private func addView() {
+        view.addSubview(progressBar)
         view.addSubview(backgroundFlagView)
-        backgroundFlagView.addSubview(flagImageView)
         view.addSubview(stackView)
         view.addSubview(goFowardButton)
         
         NSLayoutConstraint.activate([
             navigationTitleView.widthAnchor.constraint(equalToConstant: 70),
             navigationTitleView.heightAnchor.constraint(equalToConstant: 44),
+            
+            countRoundsLabel.topAnchor.constraint(equalTo: navigationTitleView.topAnchor),
+            countRoundsLabel.leadingAnchor.constraint(equalTo: navigationTitleView.leadingAnchor),
+            countRoundsLabel.trailingAnchor.constraint(equalTo: navigationTitleView.trailingAnchor),
+            countRoundsLabel.bottomAnchor.constraint(equalTo: navigationTitleView.bottomAnchor),
+            
+            progressBar.heightAnchor.constraint(equalToConstant: 5),
+            progressBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 2),
+            progressBar.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: -2),
+            progressBar.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 2),
             
             backgroundFlagView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40),
             backgroundFlagView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
@@ -52,12 +67,7 @@ class RoundViewController: UIViewController {
             goFowardButton.heightAnchor.constraint(equalToConstant: 50),
             goFowardButton.leadingAnchor.constraint(equalTo: backgroundFlagView.leadingAnchor),
             goFowardButton.trailingAnchor.constraint(equalTo: backgroundFlagView.trailingAnchor),
-            goFowardButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -40),
-            
-            countRoundsLabel.topAnchor.constraint(equalTo: navigationTitleView.topAnchor),
-            countRoundsLabel.leadingAnchor.constraint(equalTo: navigationTitleView.leadingAnchor),
-            countRoundsLabel.trailingAnchor.constraint(equalTo: navigationTitleView.trailingAnchor),
-            countRoundsLabel.bottomAnchor.constraint(equalTo: navigationTitleView.bottomAnchor)
+            goFowardButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -40)
         ])
     }
     
@@ -70,6 +80,19 @@ class RoundViewController: UIViewController {
         navigationItem.titleView = navigationTitleView
     }
     
+    private func startTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 1.0,
+                                     target: self,
+                                     selector: #selector(onTimerTick),
+                                     userInfo: nil,
+                                     repeats: true)
+    }
+    
+    @objc private func onTimerTick() {
+        counter != 0 ? counter -= 1 : timer.invalidate()
+        progressBar.setProgress(Float(counter), animated: true)
+    }
+    
     @objc private func checkAnswer(_ sender: UIButton) {
         sender.flash()
         print("\(String(describing: sender.titleLabel?.text)) was pressed!")
@@ -78,8 +101,8 @@ class RoundViewController: UIViewController {
     @objc private func goFoward(_ sender: UIButton) {
         sender.pulsate()
         print("\(String(describing: sender.titleLabel?.text)) was pressed!")
+        navigationController?.pushViewController(ResultBoardViewController(), animated: true)
     }
-    
 }
 
 private extension RoundViewController {
@@ -102,9 +125,15 @@ private extension RoundViewController {
         return view
     }
     
-    private func progressBar() -> UIProgressView {
-        let progressView = UIProgressView()
-        
+    private func buildProgressBar() -> UIProgressView {
+        let progressView = UIProgressView(progressViewStyle: .bar)
+        progressView.trackTintColor = UIColor.secondaryColor
+        progressView.tintColor = UIColor.secondaryShadowColor
+        progressView.layer.shadowColor = UIColor.black.cgColor
+        progressView.layer.shadowOffset = .init(width: 0, height: 3)
+        progressView.layer.shadowOpacity = 0.3
+        progressView.layer.shadowRadius = 3
+        progressView.translatesAutoresizingMaskIntoConstraints = false
         return progressView
     }
     
@@ -112,10 +141,11 @@ private extension RoundViewController {
         let view = UIView()
         view.backgroundColor = UIColor.secondaryColor
         view.layer.cornerRadius = 10
-        view.layer.shadowColor = UIColor.shadowColor.cgColor
+        view.layer.shadowColor = UIColor.secondaryShadowColor.cgColor
         view.layer.shadowOpacity = 1
         view.layer.shadowOffset = .init(width: 0, height: 5)
         view.layer.shadowRadius = 0
+        view.addSubview(flagImageView)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }
@@ -139,7 +169,7 @@ private extension RoundViewController {
         button.setTitleColor(UIColor.primaryColor, for: .normal)
         button.titleLabel?.font = UIFont.robotoBold(ofSize: 24)
         button.layer.cornerRadius = 10
-        button.layer.shadowColor = UIColor.shadowColor.cgColor
+        button.layer.shadowColor = UIColor.secondaryShadowColor.cgColor
         button.layer.shadowOpacity = 1
         button.layer.shadowOffset = .init(width: 0, height: 5)
         button.layer.shadowRadius = 0
@@ -166,7 +196,7 @@ private extension RoundViewController {
         button.setTitleColor(UIColor.primaryColor, for: .normal)
         button.titleLabel?.font = UIFont.robotoBold(ofSize: 32)
         button.layer.cornerRadius = 10
-        button.layer.shadowColor = UIColor.shadowColor.cgColor
+        button.layer.shadowColor = UIColor.secondaryShadowColor.cgColor
         button.layer.shadowOpacity = 1
         button.layer.shadowOffset = .init(width: 0, height: 5)
         button.layer.shadowRadius = 0

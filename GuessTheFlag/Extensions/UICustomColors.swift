@@ -11,11 +11,17 @@ extension UIColor {
     static var primaryColor: UIColor {
         return UIColor(named: "PrimaryColor")!
     }
+    static var primaryShadowColor: UIColor {
+        return UIColor(named: "PrimaryShadowColor")!
+    }
+    static var primaryDetailColor: UIColor {
+        return UIColor(named: "primaryDetailColor")!
+    }
     static var secondaryColor: UIColor {
         return UIColor(named: "SecondaryColor")!
     }
-    static var shadowColor: UIColor {
-        return UIColor(named: "ShadowColor")!
+    static var secondaryShadowColor: UIColor {
+        return UIColor(named: "SecondaryShadowColor")!
     }
     static var successColor: UIColor {
         return UIColor(named: "SuccessColor")!

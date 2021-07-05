@@ -9,7 +9,7 @@ import UIKit
 
 class RoundViewController: UIViewController {
     
-    private lazy var countRoundsLabel = buildCountRoundsLabel()
+    private lazy var countRoundsLabel = buildCountRoundsLabel(with: "4/13\nRounds")
     private lazy var navigationTitleView = buildCountRoundsView()
     private lazy var progressBar = buildProgressBar()
     private lazy var backgroundFlagView = buildBackgroundflagView()
@@ -67,7 +67,7 @@ class RoundViewController: UIViewController {
             goFowardButton.heightAnchor.constraint(equalToConstant: 50),
             goFowardButton.leadingAnchor.constraint(equalTo: backgroundFlagView.leadingAnchor),
             goFowardButton.trailingAnchor.constraint(equalTo: backgroundFlagView.trailingAnchor),
-            goFowardButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -40)
+            goFowardButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20)
         ])
     }
     
@@ -106,9 +106,9 @@ class RoundViewController: UIViewController {
 }
 
 private extension RoundViewController {
-    private func buildCountRoundsLabel() -> UILabel {
+    private func buildCountRoundsLabel(with text: String) -> UILabel {
         let label = UILabel()
-        label.text = "Rounds 4/13"
+        label.text = text
         label.numberOfLines = 2
         label.textColor = UIColor.primaryColor
         label.font = UIFont.robotoBold(ofSize: 14)

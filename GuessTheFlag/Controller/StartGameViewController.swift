@@ -33,10 +33,10 @@ class StartGameViewController: UIViewController {
             heroImageView.topAnchor.constraint(equalTo: titleImageView.bottomAnchor, constant: 40),
             heroImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
+            stackView.heightAnchor.constraint(equalToConstant: 50),
             stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 40),
             stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -40),
             stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -40)
-            
         ])
     }
     
@@ -70,7 +70,7 @@ private extension StartGameViewController {
         button.setTitleColor(UIColor.primaryColor, for: .normal)
         button.backgroundColor = UIColor.secondaryColor
         button.addTarget(self, action: selector, for: .touchUpInside)
-        button.layer.cornerRadius = 25
+        button.layer.cornerRadius = 10
         button.layer.shadowColor = UIColor.secondaryShadowColor.cgColor
         button.layer.shadowOpacity = 1
         button.layer.shadowOffset = .init(width: 0, height: 5)

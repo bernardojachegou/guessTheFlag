@@ -9,14 +9,22 @@ import UIKit
 
 class ResultBoardViewController: UIViewController {
     
-    private lazy var countRoundsLabel = buildCountRoundsLabel()
+    private lazy var countRoundsLabel = buildCountRoundsLabel(with: "Done!")
     private lazy var navigationTitleView = buildCountRoundsView()
     private lazy var progressBar = buildProgressBar()
+    
     private lazy var trophyImageView = buildTrophyImageView()
-    private lazy var conditionalLabel = buildConditionalLabel()
-    private lazy var conditionalBgView = buildConditionalBgView()
+    
+    private lazy var conditionalLabel = buildConditionalLabel(with: "You are the best player!", and: UIColor.primaryColor)
+    private lazy var conditionalBgView = buildConditionalBgView(with: UIColor.secondaryColor, and: UIColor.secondaryShadowColor.cgColor)
+    
     private lazy var resultBgView = buildResultBackgroundView()
-    private lazy var finishGameButton = buildFinishButton()
+    
+    private lazy var correctAnswersView = buildConditionalBgView(with: UIColor.primaryColor, and: UIColor.primaryShadowColor.cgColor)
+    private lazy var correctAnswersLabel = buildConditionalLabel(with: "Correct Answers:", and: UIColor.secondaryColor)
+    private lazy var correctAnswerValue = buildResultValueView(with: "10")
+    
+    private lazy var saveGameButton = buildSaveButton()
 
     override func viewDidLoad() {
         view.backgroundColor = UIColor.primaryColor
@@ -28,9 +36,16 @@ class ResultBoardViewController: UIViewController {
     private func addSubview() {
         view.addSubview(progressBar)
         view.addSubview(trophyImageView)
+        
         view.addSubview(conditionalBgView)
+        conditionalBgView.addSubview(conditionalLabel)
+        
         view.addSubview(resultBgView)
-        resultBgView.addSubview(finishGameButton)
+        
+        resultBgView.addSubview(correctAnswersView)
+        correctAnswersView.addSubview(correctAnswersLabel)
+        correctAnswersView.addSubview(correctAnswerValue)
+        resultBgView.addSubview(saveGameButton)
         
         NSLayoutConstraint.activate([
             navigationTitleView.widthAnchor.constraint(equalToConstant: 70),
@@ -46,7 +61,7 @@ class ResultBoardViewController: UIViewController {
             progressBar.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: -2),
             progressBar.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 2),
             
-            trophyImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
+            trophyImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             trophyImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
             conditionalLabel.topAnchor.constraint(equalTo: conditionalBgView.topAnchor),
@@ -54,8 +69,8 @@ class ResultBoardViewController: UIViewController {
             conditionalLabel.trailingAnchor.constraint(equalTo: conditionalBgView.trailingAnchor),
             conditionalLabel.bottomAnchor.constraint(equalTo: conditionalBgView.bottomAnchor),
             
-            conditionalBgView.heightAnchor.constraint(equalToConstant: 60),
-            conditionalBgView.topAnchor.constraint(equalTo: trophyImageView.bottomAnchor, constant: 30),
+            conditionalBgView.heightAnchor.constraint(equalToConstant: 50),
+            conditionalBgView.topAnchor.constraint(equalTo: trophyImageView.bottomAnchor, constant: 20),
             conditionalBgView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
             conditionalBgView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
             
@@ -64,10 +79,22 @@ class ResultBoardViewController: UIViewController {
             resultBgView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             resultBgView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             
-            finishGameButton.heightAnchor.constraint(equalToConstant: 50),
-            finishGameButton.leadingAnchor.constraint(equalTo: conditionalBgView.leadingAnchor),
-            finishGameButton.trailingAnchor.constraint(equalTo: conditionalBgView.trailingAnchor),
-            finishGameButton.bottomAnchor.constraint(equalTo: resultBgView.bottomAnchor, constant: -40)
+            correctAnswersView.topAnchor.constraint(equalTo: resultBgView.topAnchor, constant: 10),
+            correctAnswersView.leadingAnchor.constraint(equalTo: conditionalBgView.leadingAnchor),
+            correctAnswersView.trailingAnchor.constraint(equalTo: conditionalBgView.trailingAnchor),
+            
+            correctAnswersLabel.centerYAnchor.constraint(equalTo: correctAnswersView.centerYAnchor),
+            correctAnswersLabel.leadingAnchor.constraint(equalTo: correctAnswersView.leadingAnchor, constant: 10),
+            correctAnswersLabel.trailingAnchor.constraint(equalTo: correctAnswerValue.leadingAnchor, constant: -10),
+            
+            correctAnswerValue.centerYAnchor.constraint(equalTo: correctAnswersView.centerYAnchor),
+            correctAnswerValue.leadingAnchor.constraint(equalTo: correctAnswersLabel.trailingAnchor),
+            correctAnswerValue.trailingAnchor.constraint(equalTo: correctAnswersView.trailingAnchor, constant: -10),
+            
+            saveGameButton.heightAnchor.constraint(equalToConstant: 50),
+            saveGameButton.leadingAnchor.constraint(equalTo: conditionalBgView.leadingAnchor),
+            saveGameButton.trailingAnchor.constraint(equalTo: conditionalBgView.trailingAnchor),
+            saveGameButton.bottomAnchor.constraint(equalTo: resultBgView.bottomAnchor, constant: -20)
             
         ])
     }
@@ -81,14 +108,19 @@ class ResultBoardViewController: UIViewController {
         navigationItem.titleView = navigationTitleView
         navigationItem.setHidesBackButton(true, animated: false)
     }
+    
+    @objc private func saveGame(_ sender: UIButton) {
+        sender.pulsate()
+        print("\(String(describing: sender.titleLabel?.text)) was pressed!")
+    }
 
 }
 
 extension ResultBoardViewController {
-    private func buildCountRoundsLabel() -> UILabel {
+    private func buildCountRoundsLabel(with text: String) -> UILabel {
         let label = UILabel()
-        label.text = "Done!"
-        label.numberOfLines = 1
+        label.text = text
+        label.numberOfLines = 2
         label.textColor = UIColor.primaryColor
         label.font = UIFont.robotoBold(ofSize: 16)
         label.textAlignment = .center
@@ -125,30 +157,6 @@ extension ResultBoardViewController {
         return imageView
     }
     
-    private func buildConditionalLabel() -> UILabel {
-        let label = UILabel()
-        label.text = "You are the best player!"
-        label.textColor = UIColor.primaryColor
-        label.font = UIFont.robotoBold(ofSize: 24)
-        label.numberOfLines = 1
-        label.textAlignment = .center
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }
-    
-    private func buildConditionalBgView() -> UIView {
-        let view = UIView()
-        view.backgroundColor = .secondaryColor
-        view.layer.cornerRadius = 10
-        view.layer.shadowColor = UIColor.secondaryShadowColor.cgColor
-        view.layer.shadowOpacity = 1
-        view.layer.shadowOffset = .init(width: 0, height: 5)
-        view.layer.shadowRadius = 0
-        view.addSubview(conditionalLabel)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }
-    
     private func buildResultBackgroundView() -> UIView {
         let view = UIView()
         view.backgroundColor = UIColor.secondaryColor
@@ -156,13 +164,62 @@ extension ResultBoardViewController {
         return view
     }
     
-    private func buildFinishButton() -> UIView {
+    private func buildConditionalBgView(with bgColor: UIColor, and shwColor: CGColor) -> UIView {
+        let view = UIView()
+        view.backgroundColor = bgColor
+        view.layer.cornerRadius = 10
+        view.layer.shadowColor = shwColor
+        view.layer.shadowOpacity = 1
+        view.layer.shadowOffset = .init(width: 0, height: 5)
+        view.layer.shadowRadius = 0
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }
+    
+    private func buildConditionalLabel(with text: String, and color: UIColor) -> UILabel {
+        let label = UILabel()
+        label.text = text
+        label.textColor = color
+        label.font = UIFont.robotoBold(ofSize: 24)
+        label.numberOfLines = 1
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }
+    
+    private func buildResultValueView(with resultValue: String) -> UIView {
+        let label = UILabel()
+        label.text = resultValue
+        label.textAlignment = .center
+        label.textColor = UIColor.primaryColor
+        label.font = UIFont.robotoBold(ofSize: 32)
+        label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        label.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        label.translatesAutoresizingMaskIntoConstraints = false
+        let view = UIView()
+        view.backgroundColor = UIColor.secondaryColor
+        view.layer.cornerRadius = 10
+        view.layer.shadowColor = UIColor.secondaryShadowColor.cgColor
+        view.layer.shadowOpacity = 1
+        view.layer.shadowOffset = .init(width: 0, height: 5)
+        view.layer.shadowRadius = 0
+        view.addSubview(label)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }
+    
+    private func buildStackView() -> UIStackView {
+        let stackview = UIStackView()
+        return stackview
+    }
+    
+    private func buildSaveButton() -> UIView {
         let button = UIButton()
         button.setTitle("Save", for: .normal)
         button.titleLabel?.font = UIFont.robotoBold(ofSize: 32)
         button.setTitleColor(UIColor.secondaryColor, for: .normal)
         button.backgroundColor = UIColor.primaryColor
-//        button.addTarget(self, action: selector, for: .touchUpInside)
+        button.addTarget(self, action: #selector(saveGame), for: .touchUpInside)
         button.layer.cornerRadius = 10
         button.layer.shadowColor = UIColor.primaryShadowColor.cgColor
         button.layer.shadowOpacity = 1

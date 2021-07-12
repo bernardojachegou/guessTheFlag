@@ -21,6 +21,7 @@
 		995F1DC026331ACC00E2BB98 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 995F1DAE26331ACC00E2BB98 /* Roboto-Bold.ttf */; };
 		995F1DC426331ACC00E2BB98 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 995F1DB226331ACC00E2BB98 /* Roboto-Light.ttf */; };
 		996523EE268BA21B008B76E1 /* UIScaledFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996523ED268BA21B008B76E1 /* UIScaledFonts.swift */; };
+		9975135D269CD7690039C344 /* ScoreboardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975135C269CD7690039C344 /* ScoreboardTableViewController.swift */; };
 		997BF5D0268805F7008F5E44 /* RoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997BF5CF268805F7008F5E44 /* RoundViewController.swift */; };
 		997BF5D2268830BE008F5E44 /* UICustomFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997BF5D1268830BE008F5E44 /* UICustomFonts.swift */; };
 		99AE1A2426404F3D0048BE00 /* Scoreboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AE1A2326404F3D0048BE00 /* Scoreboard.swift */; };
@@ -77,6 +78,7 @@
 		995F1DAE26331ACC00E2BB98 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		995F1DB226331ACC00E2BB98 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
 		996523ED268BA21B008B76E1 /* UIScaledFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScaledFonts.swift; sourceTree = "<group>"; };
+		9975135C269CD7690039C344 /* ScoreboardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardTableViewController.swift; sourceTree = "<group>"; };
 		997BF5CF268805F7008F5E44 /* RoundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundViewController.swift; sourceTree = "<group>"; };
 		997BF5D1268830BE008F5E44 /* UICustomFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustomFonts.swift; sourceTree = "<group>"; };
 		99AE1A2326404F3D0048BE00 /* Scoreboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scoreboard.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				99EF9428263C40FE002E1A71 /* StartGameViewController.swift */,
 				997BF5CF268805F7008F5E44 /* RoundViewController.swift */,
 				991C96D62688DA46007ABF3A /* ResultBoardViewController.swift */,
+				9975135C269CD7690039C344 /* ScoreboardTableViewController.swift */,
 				99B4508C269BCBD200D24B4F /* YellowBackgroundView.swift */,
 				994D316E26937DD7003F65AF /* BlueBackgroundView.swift */,
 			);
@@ -418,6 +421,7 @@
 				99FA6E2F262DCA7E00E8FB9D /* StartGameVC.swift in Sources */,
 				996523EE268BA21B008B76E1 /* UIScaledFonts.swift in Sources */,
 				99B4508D269BCBD200D24B4F /* YellowBackgroundView.swift in Sources */,
+				9975135D269CD7690039C344 /* ScoreboardTableViewController.swift in Sources */,
 				99EF9429263C40FE002E1A71 /* StartGameViewController.swift in Sources */,
 				995D11DF263203890040D78C /* ScoreTableVC.swift in Sources */,
 				99AE1A2426404F3D0048BE00 /* Scoreboard.swift in Sources */,

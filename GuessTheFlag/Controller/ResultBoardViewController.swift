@@ -100,6 +100,7 @@ class ResultBoardViewController: UIViewController {
     @objc private func saveGame(_ sender: UIButton) {
         sender.pulsate()
         print("\(String(describing: sender.titleLabel?.text)) was pressed!")
+        navigationController?.popToRootViewController(animated: true)
     }
 }
 

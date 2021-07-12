@@ -50,6 +50,9 @@ class StartGameViewController: UIViewController {
     @objc private func onScoreButtonTap(sender: UIButton) {
         sender.pulsate()
         print("\(String(describing: sender.titleLabel?.text)) was pressed!")
+        let scoreboard = ScoreboardTableViewController()
+        scoreboard.modalPresentationStyle = .popover
+        present(scoreboard, animated: true, completion: nil)
     }
 }
 

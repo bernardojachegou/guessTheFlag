@@ -32,7 +32,6 @@ class YellowBackgroundView: UIView {
             scoreTopicLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
             scoreTopicLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
             scoreTopicLabel.trailingAnchor.constraint(greaterThanOrEqualTo: scorePointsView.leadingAnchor, constant: -10),
-//            scoreTopicLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
             
             scorePointsView.widthAnchor.constraint(equalToConstant: 100),
             scorePointsView.topAnchor.constraint(equalTo: topAnchor, constant: 5),

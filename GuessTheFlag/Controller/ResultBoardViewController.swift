@@ -15,7 +15,10 @@ class ResultBoardViewController: UIViewController {
     private lazy var trophyImageView = buildTrophyImageView()
     private lazy var conditionalMessage = buildConditionalMessage()
     private lazy var scoreBackgroundView = buildScoreBackgroundView()
-    private lazy var correctAnswersView = buildScoreView()
+    private lazy var correctAnswersView = buildCorrectAnswersView()
+    private lazy var wrongAnswersView = buildWrongAnswersView()
+    private lazy var finalScoreView = buildFinalScoreView()
+    private lazy var userNameTextField = buildInputTextField()
     private lazy var saveGameButton = buildSaveButton()
     
     override func viewDidLoad() {
@@ -31,6 +34,9 @@ class ResultBoardViewController: UIViewController {
         view.addSubview(conditionalMessage)
         view.addSubview(scoreBackgroundView)
         scoreBackgroundView.addSubview(correctAnswersView)
+        scoreBackgroundView.addSubview(wrongAnswersView)
+        scoreBackgroundView.addSubview(finalScoreView)
+        scoreBackgroundView.addSubview(userNameTextField)
         scoreBackgroundView.addSubview(saveGameButton)
         
         NSLayoutConstraint.activate([
@@ -62,6 +68,18 @@ class ResultBoardViewController: UIViewController {
             correctAnswersView.topAnchor.constraint(equalTo: scoreBackgroundView.topAnchor, constant: 20),
             correctAnswersView.leadingAnchor.constraint(equalTo: conditionalMessage.leadingAnchor),
             correctAnswersView.trailingAnchor.constraint(equalTo: conditionalMessage.trailingAnchor),
+            
+            wrongAnswersView.topAnchor.constraint(equalTo: correctAnswersView.bottomAnchor, constant: 20),
+            wrongAnswersView.leadingAnchor.constraint(equalTo: conditionalMessage.leadingAnchor),
+            wrongAnswersView.trailingAnchor.constraint(equalTo: conditionalMessage.trailingAnchor),
+            
+            finalScoreView.topAnchor.constraint(equalTo: wrongAnswersView.bottomAnchor, constant: 20),
+            finalScoreView.leadingAnchor.constraint(equalTo: conditionalMessage.leadingAnchor),
+            finalScoreView.trailingAnchor.constraint(equalTo: conditionalMessage.trailingAnchor),
+            
+            userNameTextField.topAnchor.constraint(equalTo: finalScoreView.bottomAnchor, constant: 20),
+            userNameTextField.leadingAnchor.constraint(equalTo: conditionalMessage.leadingAnchor),
+            userNameTextField.trailingAnchor.constraint(equalTo: conditionalMessage.trailingAnchor),
             
             saveGameButton.leadingAnchor.constraint(equalTo: conditionalMessage.leadingAnchor),
             saveGameButton.trailingAnchor.constraint(equalTo: conditionalMessage.trailingAnchor),
@@ -141,11 +159,43 @@ extension ResultBoardViewController {
         return view
     }
     
-    private func buildScoreView() -> YellowBackgroundView {
+    private func buildCorrectAnswersView() -> YellowBackgroundView {
         let view = YellowBackgroundView()
+        view.scoreTopicLabel.text = "Correct answers: "
+        view.scorePointLabel.text = "60"
         view.heightAnchor.constraint(equalToConstant: 60).isActive = true
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
+    }
+    
+    private func buildWrongAnswersView() -> YellowBackgroundView {
+        let view = YellowBackgroundView()
+        view.scoreTopicLabel.text = "Wrong answers: "
+        view.scorePointLabel.text = "40"
+        view.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }
+    
+    private func buildFinalScoreView() -> YellowBackgroundView {
+        let view = YellowBackgroundView()
+        view.scoreTopicLabel.text = "Final score: "
+        view.scorePointLabel.text = "100"
+        view.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }
+    
+    private func buildInputTextField() -> UITextField {
+        let textField = UITextField()
+        textField.placeholder = "Type your name"
+        textField.backgroundColor = .white
+        textField.textColor = .black
+        textField.clipsToBounds = true
+        textField.layer.cornerRadius = 10
+        textField.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
     }
     
     private func buildSaveButton() -> UIView {

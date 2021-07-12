@@ -66,7 +66,7 @@ private extension StartGameViewController {
     private func buildSmallButton(with title: String, action selector: Selector) -> UIButton {
         let button = UIButton()
         button.setTitle(title, for: .normal)
-        button.titleLabel?.font = UIFont.robotoBold(ofSize: 32)
+        button.titleLabel?.font = ScaledFont.SFrobotoBold.font(forTextStyle: .title1)
         button.setTitleColor(UIColor.primaryColor, for: .normal)
         button.backgroundColor = UIColor.secondaryColor
         button.addTarget(self, action: selector, for: .touchUpInside)
@@ -75,6 +75,7 @@ private extension StartGameViewController {
         button.layer.shadowOpacity = 1
         button.layer.shadowOffset = .init(width: 0, height: 5)
         button.layer.shadowRadius = 0
+        button.titleLabel?.adjustsFontForContentSizeCategory = true
         return button
     }
     

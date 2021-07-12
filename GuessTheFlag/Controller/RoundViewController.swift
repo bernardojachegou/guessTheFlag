@@ -20,13 +20,13 @@ class RoundViewController: UIViewController {
     private lazy var goFowardButton = buildGoFowardButton()
     
     private var timer = Timer()
-    private var counter = 10
+    private var counter = 30
     
     override func viewDidLoad() {
         view.backgroundColor = UIColor.primaryColor
         configureNavigationBar()
         addView()
-        onTimerTick()
+        startTimer()
         super.viewDidLoad()
     }
     
@@ -81,7 +81,8 @@ class RoundViewController: UIViewController {
     }
     
     private func startTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 1.0,
+        counter = 30
+        timer = Timer.scheduledTimer(timeInterval: 1,
                                      target: self,
                                      selector: #selector(onTimerTick),
                                      userInfo: nil,
@@ -90,7 +91,7 @@ class RoundViewController: UIViewController {
     
     @objc private func onTimerTick() {
         counter != 0 ? counter -= 1 : timer.invalidate()
-        progressBar.setProgress(Float(counter), animated: true)
+        progressBar.setProgress(Float(counter)/30.0, animated: true)
     }
     
     @objc private func checkAnswer(_ sender: UIButton) {
@@ -111,7 +112,7 @@ private extension RoundViewController {
         label.text = text
         label.numberOfLines = 2
         label.textColor = UIColor.primaryColor
-        label.font = UIFont.robotoBold(ofSize: 14)
+        label.font = ScaledFont.SFrobotoBold.font(forTextStyle: .subheadline)
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -129,6 +130,7 @@ private extension RoundViewController {
         let progressView = UIProgressView(progressViewStyle: .bar)
         progressView.trackTintColor = UIColor.secondaryColor
         progressView.tintColor = UIColor.secondaryShadowColor
+        progressView.setProgress(1, animated: false)
         progressView.layer.shadowColor = UIColor.black.cgColor
         progressView.layer.shadowOffset = .init(width: 0, height: 3)
         progressView.layer.shadowOpacity = 0.3
@@ -167,13 +169,14 @@ private extension RoundViewController {
         button.backgroundColor = UIColor.secondaryColor
         button.setTitle(title, for: .normal)
         button.setTitleColor(UIColor.primaryColor, for: .normal)
-        button.titleLabel?.font = UIFont.robotoBold(ofSize: 24)
+        button.titleLabel?.font = ScaledFont.SFrobotoBold.font(forTextStyle: .title2)
         button.layer.cornerRadius = 10
         button.layer.shadowColor = UIColor.secondaryShadowColor.cgColor
         button.layer.shadowOpacity = 1
         button.layer.shadowOffset = .init(width: 0, height: 5)
         button.layer.shadowRadius = 0
         button.addTarget(self, action: #selector(checkAnswer), for: .touchUpInside)
+        button.titleLabel?.adjustsFontForContentSizeCategory = true
         return button
     }
     
@@ -194,13 +197,14 @@ private extension RoundViewController {
         button.backgroundColor = UIColor.secondaryColor
         button.setTitle("GO", for: .normal)
         button.setTitleColor(UIColor.primaryColor, for: .normal)
-        button.titleLabel?.font = UIFont.robotoBold(ofSize: 32)
+        button.titleLabel?.font = ScaledFont.SFrobotoBold.font(forTextStyle: .title1)
         button.layer.cornerRadius = 10
         button.layer.shadowColor = UIColor.secondaryShadowColor.cgColor
         button.layer.shadowOpacity = 1
         button.layer.shadowOffset = .init(width: 0, height: 5)
         button.layer.shadowRadius = 0
         button.addTarget(self, action: #selector(goFoward), for: .touchUpInside)
+        button.titleLabel?.adjustsFontForContentSizeCategory = true
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }

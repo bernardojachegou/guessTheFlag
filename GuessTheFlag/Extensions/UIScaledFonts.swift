@@ -20,7 +20,7 @@ public final class ScaledFont {
     public static let SFrobotoRegular = ScaledFont(fontName: "Roboto-Regular")
     public static let SFrobotoMedium = ScaledFont(fontName: "Roboto-Medium")
     public static let SFrobotoBold = ScaledFont(fontName: "Roboto-Bold")
-    public static let SFrobotoItalic = ScaledFont(fontName: "Roboto-Italic")
+    public static let SFrobotoThin = ScaledFont(fontName: "Roboto-Thin")
     
     public init(fontName: String) {
         if let url = Bundle.main.url(forResource: fontName, withExtension: "plist"),

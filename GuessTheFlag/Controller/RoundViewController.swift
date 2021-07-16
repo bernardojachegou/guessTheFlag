@@ -13,17 +13,17 @@ class RoundViewController: UIViewController {
     private lazy var navigationTitleView = buildCountRoundsView()
     private lazy var progressBar = buildProgressBar()
     private lazy var backgroundFlagView = buildBackgroundflagView()
-    private lazy var flagImageView = buildFlagImageView()
-    private lazy var firstOptionButton = buildAnswerOptionButton(with: "Brazil")
-    private lazy var secondOptionButton = buildAnswerOptionButton(with: "Argentina")
-    private lazy var stackView = buildButtonStackView()
+    private lazy var flagImageView = buildFlagImageView(with: "br")
+    private lazy var firstOptionButton = buildAnswerButton(with: "Brazil")
+    private lazy var secondOptionButton = buildAnswerButton(with: "Argentina")
+    private lazy var stackView = buildButtonsStackView()
     private lazy var goFowardButton = buildGoFowardButton()
     
     private var timer = Timer()
     private var counter = 30
     
     override func viewDidLoad() {
-        view.backgroundColor = UIColor.primaryColor
+        view.backgroundColor = .primaryColor
         configureNavigationBar()
         addView()
         startTimer()
@@ -46,7 +46,7 @@ class RoundViewController: UIViewController {
             countRoundsLabel.bottomAnchor.constraint(equalTo: navigationTitleView.bottomAnchor),
             
             progressBar.heightAnchor.constraint(equalToConstant: 5),
-            progressBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 2),
+            progressBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
             progressBar.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: -2),
             progressBar.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 2),
             
@@ -74,8 +74,8 @@ class RoundViewController: UIViewController {
     private func configureNavigationBar() {
         let appearance = UINavigationBarAppearance()
         navigationItem.standardAppearance = appearance
-        navigationItem.standardAppearance?.backgroundColor = UIColor.primaryColor
-        navigationItem.standardAppearance?.shadowColor = UIColor.primaryColor
+        navigationItem.standardAppearance?.backgroundColor = .primaryColor
+        navigationItem.standardAppearance?.shadowColor = .primaryColor
         navigationController?.navigationBar.isTranslucent = false
         navigationItem.titleView = navigationTitleView
     }
@@ -94,12 +94,12 @@ class RoundViewController: UIViewController {
         progressBar.setProgress(Float(counter)/30.0, animated: true)
     }
     
-    @objc private func checkAnswer(_ sender: UIButton) {
+    @objc private func onAnswerButtonTap(_ sender: UIButton) {
         sender.flash()
         print("\(String(describing: sender.titleLabel?.text)) was pressed!")
     }
     
-    @objc private func goFoward(_ sender: UIButton) {
+    @objc private func onGoFowardButtonTap(_ sender: UIButton) {
         sender.pulsate()
         print("\(String(describing: sender.titleLabel?.text)) was pressed!")
         navigationController?.pushViewController(ResultBoardViewController(), animated: true)
@@ -111,8 +111,8 @@ private extension RoundViewController {
         let label = UILabel()
         label.text = text
         label.numberOfLines = 2
-        label.textColor = UIColor.primaryColor
-        label.font = ScaledFont.SFrobotoBold.font(forTextStyle: .subheadline)
+        label.textColor = .primaryColor
+        label.font = ScaledFont.SFrobotoBold.font(forTextStyle: .callout)
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -120,28 +120,25 @@ private extension RoundViewController {
     
     private func buildCountRoundsView() -> UIView {
         let view = UIView()
-        view.backgroundColor = UIColor.secondaryColor
-        view.layer.cornerRadius = 10
+        view.backgroundColor = .secondaryColor
+        view.layer.cornerRadius = 5
         view.addSubview(countRoundsLabel)
         return view
     }
     
     private func buildProgressBar() -> UIProgressView {
         let progressView = UIProgressView(progressViewStyle: .bar)
-        progressView.trackTintColor = UIColor.secondaryColor
-        progressView.tintColor = UIColor.secondaryShadowColor
+        progressView.trackTintColor = .secondaryColor
+        progressView.tintColor = .secondaryShadowColor
         progressView.setProgress(1, animated: false)
-        progressView.layer.shadowColor = UIColor.black.cgColor
-        progressView.layer.shadowOffset = .init(width: 0, height: 3)
-        progressView.layer.shadowOpacity = 0.3
-        progressView.layer.shadowRadius = 3
+        progressView.layer.progressShadow()
         progressView.translatesAutoresizingMaskIntoConstraints = false
         return progressView
     }
     
     private func buildBackgroundflagView() -> UIView {
         let view = UIView()
-        view.backgroundColor = UIColor.secondaryColor
+        view.backgroundColor = .secondaryColor
         view.layer.cornerRadius = 10
         view.layer.shadowColor = UIColor.secondaryShadowColor.cgColor
         view.layer.shadowOpacity = 1
@@ -152,9 +149,9 @@ private extension RoundViewController {
         return view
     }
     
-    private func buildFlagImageView() -> UIImageView {
+    private func buildFlagImageView(with imageName: String) -> UIImageView {
         let imageView = UIImageView()
-        let image = UIImage(named: "br")
+        let image = UIImage(named: imageName)
         imageView.image = image
         imageView.layer.cornerRadius = 10
         imageView.layer.masksToBounds = true
@@ -164,23 +161,20 @@ private extension RoundViewController {
         return imageView
     }
     
-    private func buildAnswerOptionButton(with title: String) -> UIButton {
+    private func buildAnswerButton(with title: String) -> UIButton {
         let button = UIButton()
-        button.backgroundColor = UIColor.secondaryColor
+        button.backgroundColor = .secondaryColor
         button.setTitle(title, for: .normal)
-        button.setTitleColor(UIColor.primaryColor, for: .normal)
+        button.setTitleColor(.primaryColor, for: .normal)
         button.titleLabel?.font = ScaledFont.SFrobotoBold.font(forTextStyle: .title2)
         button.layer.cornerRadius = 10
-        button.layer.shadowColor = UIColor.secondaryShadowColor.cgColor
-        button.layer.shadowOpacity = 1
-        button.layer.shadowOffset = .init(width: 0, height: 5)
-        button.layer.shadowRadius = 0
-        button.addTarget(self, action: #selector(checkAnswer), for: .touchUpInside)
+        button.layer.customEffectShadow(with: UIColor.secondaryShadowColor.cgColor)
+        button.addTarget(self, action: #selector(onAnswerButtonTap), for: .touchUpInside)
         button.titleLabel?.adjustsFontForContentSizeCategory = true
         return button
     }
     
-    private func buildButtonStackView() -> UIStackView {
+    private func buildButtonsStackView() -> UIStackView {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.alignment = .fill
@@ -194,16 +188,16 @@ private extension RoundViewController {
     
     private func buildGoFowardButton() -> UIButton {
         let button = UIButton()
-        button.backgroundColor = UIColor.secondaryColor
-        button.setTitle("GO", for: .normal)
-        button.setTitleColor(UIColor.primaryColor, for: .normal)
+        button.backgroundColor = .secondaryColor
+        button.setTitle("Go".uppercased(), for: .normal)
+        button.setTitleColor(.primaryColor, for: .normal)
         button.titleLabel?.font = ScaledFont.SFrobotoBold.font(forTextStyle: .title1)
         button.layer.cornerRadius = 10
         button.layer.shadowColor = UIColor.secondaryShadowColor.cgColor
         button.layer.shadowOpacity = 1
         button.layer.shadowOffset = .init(width: 0, height: 5)
         button.layer.shadowRadius = 0
-        button.addTarget(self, action: #selector(goFoward), for: .touchUpInside)
+        button.addTarget(self, action: #selector(onGoFowardButtonTap), for: .touchUpInside)
         button.titleLabel?.adjustsFontForContentSizeCategory = true
         button.translatesAutoresizingMaskIntoConstraints = false
         return button

@@ -9,8 +9,8 @@ import UIKit
 
 class YellowBackgroundView: UIView {
     
-    lazy var scoreTopicLabel = buildlScoreTopicLabel(with: "Correct Answers: ")
-    lazy var scorePointLabel = buildScorePointLabel(with: "10")
+    lazy var scoreTopicLabel = buildlScoreTopicLabel(with: "Default Value:")
+    lazy var scorePointLabel = buildScorePointLabel(with: "0")
     lazy var scorePointsView = buildScorePointsView()
     
     override init(frame: CGRect) {
@@ -30,7 +30,7 @@ class YellowBackgroundView: UIView {
         
         NSLayoutConstraint.activate([
             scoreTopicLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-            scoreTopicLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
+            scoreTopicLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
             scoreTopicLabel.trailingAnchor.constraint(greaterThanOrEqualTo: scorePointsView.leadingAnchor, constant: -10),
             
             scorePointsView.widthAnchor.constraint(equalToConstant: 100),
@@ -56,9 +56,9 @@ class YellowBackgroundView: UIView {
     private func buildlScoreTopicLabel(with text: String) -> UILabel {
         let label = UILabel()
         label.text = text
-        label.textAlignment = .center
-        label.font = ScaledFont.SFrobotoBold.font(forTextStyle: .title1)
-        label.textColor = UIColor.secondaryColor
+        label.textAlignment = .left
+        label.font = ScaledFont.SFrobotoBold.font(forTextStyle: .title2)
+        label.textColor = .secondaryColor
         label.adjustsFontForContentSizeCategory = true
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -68,7 +68,7 @@ class YellowBackgroundView: UIView {
         let label = UILabel()
         label.text = score
         label.textAlignment = .center
-        label.textColor = UIColor.primaryColor
+        label.textColor = .primaryColor
         label.font = ScaledFont.SFrobotoBold.font(forTextStyle: .title1)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -76,7 +76,7 @@ class YellowBackgroundView: UIView {
     
     private func buildScorePointsView() -> UIView {
         let view = UIView()
-        view.backgroundColor = UIColor.secondaryColor
+        view.backgroundColor = .secondaryColor
         view.layer.cornerRadius = 25
         view.layer.shadowColor = UIColor.secondaryShadowColor.cgColor
         view.layer.shadowOpacity = 1

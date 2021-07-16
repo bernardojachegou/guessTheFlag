@@ -9,11 +9,10 @@ import UIKit
 
 class ResultBoardViewController: UIViewController {
     
-    private lazy var countRoundsLabel = buildCountRoundsLabel(with: "Done!")
-    private lazy var navigationTitleView = buildCountRoundsView()
+    private lazy var navigationTitleView = buildCountRoundsView(with: "Done!")
     private lazy var progressBar = buildProgressBar()
     private lazy var trophyImageView = buildTrophyImageView()
-    private lazy var conditionalMessage = buildConditionalMessage()
+    private lazy var conditionalMessage = buildConditionalMessage(with: "You are the Best Player!")
     private lazy var scoreBackgroundView = buildScoreBackgroundView()
     private lazy var correctAnswersView = buildCorrectAnswersView()
     private lazy var wrongAnswersView = buildWrongAnswersView()
@@ -22,13 +21,13 @@ class ResultBoardViewController: UIViewController {
     private lazy var saveGameButton = buildSaveButton()
     
     override func viewDidLoad() {
-        view.backgroundColor = UIColor.primaryColor
+        view.backgroundColor = .primaryColor
         super.viewDidLoad()
-        addSubview()
+        addView()
         configureNavigationBar()
     }
     
-    private func addSubview() {
+    private func addView() {
         view.addSubview(progressBar)
         view.addSubview(trophyImageView)
         view.addSubview(conditionalMessage)
@@ -43,13 +42,8 @@ class ResultBoardViewController: UIViewController {
             navigationTitleView.widthAnchor.constraint(equalToConstant: 70),
             navigationTitleView.heightAnchor.constraint(equalToConstant: 44),
             
-            countRoundsLabel.topAnchor.constraint(equalTo: navigationTitleView.topAnchor),
-            countRoundsLabel.leadingAnchor.constraint(equalTo: navigationTitleView.leadingAnchor),
-            countRoundsLabel.trailingAnchor.constraint(equalTo: navigationTitleView.trailingAnchor),
-            countRoundsLabel.bottomAnchor.constraint(equalTo: navigationTitleView.bottomAnchor),
-            
             progressBar.heightAnchor.constraint(equalToConstant: 5),
-            progressBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 2),
+            progressBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
             progressBar.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: -2),
             progressBar.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 2),
             
@@ -63,7 +57,7 @@ class ResultBoardViewController: UIViewController {
             scoreBackgroundView.topAnchor.constraint(equalTo: conditionalMessage.bottomAnchor, constant: 20),
             scoreBackgroundView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             scoreBackgroundView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            scoreBackgroundView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            scoreBackgroundView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             
             correctAnswersView.topAnchor.constraint(equalTo: scoreBackgroundView.topAnchor, constant: 20),
             correctAnswersView.leadingAnchor.constraint(equalTo: conditionalMessage.leadingAnchor),
@@ -77,13 +71,14 @@ class ResultBoardViewController: UIViewController {
             finalScoreView.leadingAnchor.constraint(equalTo: conditionalMessage.leadingAnchor),
             finalScoreView.trailingAnchor.constraint(equalTo: conditionalMessage.trailingAnchor),
             
-            userNameTextField.topAnchor.constraint(equalTo: finalScoreView.bottomAnchor, constant: 20),
+            userNameTextField.topAnchor.constraint(greaterThanOrEqualTo: finalScoreView.bottomAnchor, constant: 20),
             userNameTextField.leadingAnchor.constraint(equalTo: conditionalMessage.leadingAnchor),
             userNameTextField.trailingAnchor.constraint(equalTo: conditionalMessage.trailingAnchor),
+            userNameTextField.bottomAnchor.constraint(equalTo: saveGameButton.topAnchor, constant: -20),
             
             saveGameButton.leadingAnchor.constraint(equalTo: conditionalMessage.leadingAnchor),
             saveGameButton.trailingAnchor.constraint(equalTo: conditionalMessage.trailingAnchor),
-            saveGameButton.bottomAnchor.constraint(equalTo: scoreBackgroundView.bottomAnchor, constant: -20)
+            saveGameButton.bottomAnchor.constraint(equalTo: scoreBackgroundView.bottomAnchor, constant: -40)
         ])
     }
     
@@ -97,7 +92,7 @@ class ResultBoardViewController: UIViewController {
         navigationItem.setHidesBackButton(true, animated: false)
     }
     
-    @objc private func saveGame(_ sender: UIButton) {
+    @objc private func onSaveGameButtonTap(_ sender: UIButton) {
         sender.pulsate()
         print("\(String(describing: sender.titleLabel?.text)) was pressed!")
         dismiss(animated: true, completion: nil)
@@ -105,33 +100,34 @@ class ResultBoardViewController: UIViewController {
 }
 
 extension ResultBoardViewController {
-    private func buildCountRoundsLabel(with text: String) -> UILabel {
+    private func buildCountRoundsView(with text: String) -> UIView {
         let label = UILabel()
         label.text = text
-        label.numberOfLines = 2
-        label.textColor = UIColor.primaryColor
-        label.font = ScaledFont.SFrobotoBold.font(forTextStyle: .subheadline)
+        label.numberOfLines = 1
+        label.textColor = .primaryColor
+        label.font = ScaledFont.SFrobotoBold.font(forTextStyle: .headline)
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }
-    
-    private func buildCountRoundsView() -> UIView {
+        label.adjustsFontForContentSizeCategory = true
         let view = UIView()
-        view.backgroundColor = UIColor.secondaryColor
-        view.layer.cornerRadius = 10
-        view.addSubview(countRoundsLabel)
+        view.backgroundColor = .secondaryColor
+        view.layer.cornerRadius = 5
+        view.addSubview(label)
+        
+        NSLayoutConstraint.activate([
+            label.topAnchor.constraint(equalTo: view.topAnchor),
+            label.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            label.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            label.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+        ])
         return view
     }
     
     private func buildProgressBar() -> UIProgressView {
         let progressView = UIProgressView(progressViewStyle: .bar)
-        progressView.trackTintColor = UIColor.secondaryColor
-        progressView.tintColor = UIColor.secondaryShadowColor
-        progressView.layer.shadowColor = UIColor.black.cgColor
-        progressView.layer.shadowOffset = .init(width: 0, height: 3)
-        progressView.layer.shadowOpacity = 0.3
-        progressView.layer.shadowRadius = 3
+        progressView.trackTintColor = .secondaryColor
+        progressView.tintColor = .secondaryShadowColor
+        progressView.layer.progressShadow()
         progressView.setProgress(0, animated: false)
         progressView.translatesAutoresizingMaskIntoConstraints = false
         return progressView
@@ -145,17 +141,17 @@ extension ResultBoardViewController {
         return imageView
     }
     
-    private func buildConditionalMessage() -> BlueBackgroundView {
-        let view = BlueBackgroundView()
-        view.messageLabel.text = "You are the Best Player!"
-        view.heightAnchor.constraint(equalToConstant: 60).isActive = true
+    private func buildScoreBackgroundView() -> UIView {
+        let view = UIView()
+        view.backgroundColor = .secondaryColor
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }
     
-    private func buildScoreBackgroundView() -> UIView {
-        let view = UIView()
-        view.backgroundColor = UIColor.secondaryColor
+    private func buildConditionalMessage(with message: String) -> BlueBackgroundView {
+        let view = BlueBackgroundView()
+        view.messageLabel.text = message
+        view.heightAnchor.constraint(equalToConstant: 60).isActive = true
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }
@@ -189,12 +185,12 @@ extension ResultBoardViewController {
     
     private func buildInputTextField() -> UITextField {
         let textField = UITextField()
-        textField.placeholder = "Type your name"
+        textField.placeholder = "Type your hunter's name here."
         textField.backgroundColor = .white
         textField.textColor = .black
         textField.clipsToBounds = true
         textField.layer.cornerRadius = 10
-        textField.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        textField.heightAnchor.constraint(equalToConstant: 50).isActive = true
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }
@@ -203,14 +199,11 @@ extension ResultBoardViewController {
         let button = UIButton()
         button.setTitle("Save", for: .normal)
         button.titleLabel?.font = ScaledFont.SFrobotoBold.font(forTextStyle: .title1)
-        button.setTitleColor(UIColor.secondaryColor, for: .normal)
-        button.backgroundColor = UIColor.primaryColor
-        button.addTarget(self, action: #selector(saveGame), for: .touchUpInside)
+        button.setTitleColor(.secondaryColor, for: .normal)
+        button.backgroundColor = .primaryColor
         button.layer.cornerRadius = 10
-        button.layer.shadowColor = UIColor.primaryShadowColor.cgColor
-        button.layer.shadowOpacity = 1
-        button.layer.shadowOffset = .init(width: 0, height: 5)
-        button.layer.shadowRadius = 0
+        button.layer.customEffectShadow(with: UIColor.primaryShadowColor.cgColor)
+        button.addTarget(self, action: #selector(onSaveGameButtonTap), for: .touchUpInside)
         button.heightAnchor.constraint(equalToConstant: 50).isActive = true
         button.translatesAutoresizingMaskIntoConstraints = false
         return button

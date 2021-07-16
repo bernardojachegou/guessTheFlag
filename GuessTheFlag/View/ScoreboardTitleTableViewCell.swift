@@ -9,16 +9,14 @@ import UIKit
 
 class ScoreboardTitleTableViewCell: UITableViewCell {
     
-    static var identifier = "userTitleScoreInfos"
-    
     private lazy var titleNameLabel = buildTitleLabel(with: "Name")
     private lazy var titleScoreLabel = buildTitleLabel(with: "Score")
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        contentView.backgroundColor = UIColor.primaryColor
-        contentView.layer.customShadow(with: UIColor.primaryShadowColor.cgColor)
+        contentView.backgroundColor = .primaryColor
+        contentView.layer.customEffectShadow(with: UIColor.primaryShadowColor.cgColor)
         contentView.addSubview(titleNameLabel)
         contentView.addSubview(titleScoreLabel)
         
@@ -44,10 +42,11 @@ extension ScoreboardTitleTableViewCell {
     private func buildTitleLabel(with title: String) -> UILabel {
         let label = UILabel()
         label.text = title
-        label.textColor = UIColor.secondaryColor
+        label.textColor = .secondaryColor
         label.font = ScaledFont.SFrobotoBold.font(forTextStyle: .title1)
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.adjustsFontForContentSizeCategory = true
         return label
     }
 }

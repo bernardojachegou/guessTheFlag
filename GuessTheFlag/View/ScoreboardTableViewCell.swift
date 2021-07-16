@@ -17,13 +17,12 @@ class ScoreboardTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        contentView.backgroundColor = UIColor.primaryColor
-        contentView.layer.customShadow(with: UIColor.primaryShadowColor.cgColor)
+        contentView.backgroundColor = .primaryColor
+        contentView.layer.customEffectShadow(with: UIColor.primaryShadowColor.cgColor)
         contentView.addSubview(userNameInfoBg)
         contentView.addSubview(userScoreInfoBg)
         
         NSLayoutConstraint.activate([
-            
             userNameInfoBg.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15),
             userNameInfoBg.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: -10),
             userNameInfoBg.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.5),
@@ -47,16 +46,18 @@ extension ScoreboardTableViewCell {
     private func buildUserInfoView(with userInfo: String) -> UIView {
         let label = UILabel()
         label.text = userInfo
-        label.textColor = UIColor.primaryColor
+        label.textColor = .primaryColor
         label.textAlignment = .center
         label.font = ScaledFont.SFrobotoBold.font(forTextStyle: .body)
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.adjustsFontForContentSizeCategory = true
         let view = UIView()
-        view.backgroundColor = UIColor.secondaryColor
+        view.backgroundColor = .secondaryColor
         view.layer.cornerRadius = 10
-        view.layer.customShadow(with: UIColor.secondaryShadowColor.cgColor)
+        view.layer.customEffectShadow(with: UIColor.secondaryShadowColor.cgColor)
         view.addSubview(label)
         view.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
             label.topAnchor.constraint(equalTo: view.topAnchor, constant: 10),
             label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
@@ -65,5 +66,4 @@ extension ScoreboardTableViewCell {
         ])
         return view
     }
-    
 }

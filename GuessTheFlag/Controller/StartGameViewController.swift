@@ -11,12 +11,12 @@ class StartGameViewController: UIViewController {
     
     private lazy var titleImageView = buildImageView(using: "flagHunter")
     private lazy var heroImageView = buildImageView(using: "kidsLogo")
-    private lazy var playButton = buildSmallButton(with: "PLAY", action: #selector (onPlayButtonTap))
-    private lazy var scoreButton = buildSmallButton(with: "SCORE", action: #selector(onScoreButtonTap))
+    private lazy var playButton = buildSmallButton(with: "Play", action: #selector (onPlayButtonTap))
+    private lazy var scoreButton = buildSmallButton(with: "Score", action: #selector(onScoreButtonTap))
     private lazy var stackView = buildStackView()
     
     override func viewDidLoad() {
-        view.backgroundColor = UIColor.primaryColor
+        view.backgroundColor = .primaryColor
         addView()
         super.viewDidLoad()
     }
@@ -67,16 +67,13 @@ private extension StartGameViewController {
     
     private func buildSmallButton(with title: String, action selector: Selector) -> UIButton {
         let button = UIButton()
-        button.setTitle(title, for: .normal)
+        button.setTitle(title.uppercased(), for: .normal)
         button.titleLabel?.font = ScaledFont.SFrobotoBold.font(forTextStyle: .title1)
-        button.setTitleColor(UIColor.primaryColor, for: .normal)
-        button.backgroundColor = UIColor.secondaryColor
+        button.setTitleColor(.primaryColor, for: .normal)
+        button.backgroundColor = .secondaryColor
         button.addTarget(self, action: selector, for: .touchUpInside)
         button.layer.cornerRadius = 10
-        button.layer.shadowColor = UIColor.secondaryShadowColor.cgColor
-        button.layer.shadowOpacity = 1
-        button.layer.shadowOffset = .init(width: 0, height: 5)
-        button.layer.shadowRadius = 0
+        button.layer.customEffectShadow(with: UIColor.secondaryShadowColor.cgColor)
         button.titleLabel?.adjustsFontForContentSizeCategory = true
         return button
     }

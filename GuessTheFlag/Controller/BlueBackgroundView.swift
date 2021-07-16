@@ -35,10 +35,7 @@ class BlueBackgroundView: UIView {
     private func configureBackgroundView() {
         layer.cornerRadius = 10
         backgroundColor = .secondaryColor
-        layer.shadowColor = UIColor.secondaryShadowColor.cgColor
-        layer.shadowOpacity = 1
-        layer.shadowOffset = .init(width: 0, height: 5)
-        layer.shadowRadius = 0
+        layer.customEffectShadow(with: UIColor.secondaryShadowColor.cgColor)
     }
     
     private func buildConditionalLabel(with text: String) -> UILabel {
@@ -46,7 +43,7 @@ class BlueBackgroundView: UIView {
         label.text = text
         label.textAlignment = .center
         label.font = ScaledFont.SFrobotoBold.font(forTextStyle: .title2)
-        label.textColor = UIColor.primaryColor
+        label.textColor = .primaryColor
         label.adjustsFontForContentSizeCategory = true
         label.translatesAutoresizingMaskIntoConstraints = false
         return label

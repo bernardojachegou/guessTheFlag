@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		99037205263789DF00B32A4C /* database.json in Resources */ = {isa = PBXBuildFile; fileRef = 99037204263789DF00B32A4C /* database.json */; };
 		9903720E263790B400B32A4C /* Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9903720D263790B400B32A4C /* Round.swift */; };
+		9905C384269F1B3A008F82EE /* ScoreboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9905C383269F1B3A008F82EE /* ScoreboardTableViewCell.swift */; };
+		9905C386269F5B8D008F82EE /* UICustomShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9905C385269F5B8D008F82EE /* UICustomShadow.swift */; };
+		9905C388269F7E3A008F82EE /* ScoreboardTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9905C387269F7E39008F82EE /* ScoreboardTitleTableViewCell.swift */; };
 		991C96D72688DA46007ABF3A /* ResultBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991C96D62688DA46007ABF3A /* ResultBoardViewController.swift */; };
 		994D316F26937DD7003F65AF /* BlueBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994D316E26937DD7003F65AF /* BlueBackgroundView.swift */; };
 		994D31712693852F003F65AF /* Roboto-Bold.plist in Resources */ = {isa = PBXBuildFile; fileRef = 994D31702693852F003F65AF /* Roboto-Bold.plist */; };
@@ -66,6 +69,9 @@
 /* Begin PBXFileReference section */
 		99037204263789DF00B32A4C /* database.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = database.json; sourceTree = "<group>"; };
 		9903720D263790B400B32A4C /* Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Round.swift; sourceTree = "<group>"; };
+		9905C383269F1B3A008F82EE /* ScoreboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardTableViewCell.swift; sourceTree = "<group>"; };
+		9905C385269F5B8D008F82EE /* UICustomShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustomShadow.swift; sourceTree = "<group>"; };
+		9905C387269F7E39008F82EE /* ScoreboardTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardTitleTableViewCell.swift; sourceTree = "<group>"; };
 		991C96D62688DA46007ABF3A /* ResultBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultBoardViewController.swift; sourceTree = "<group>"; };
 		994D316E26937DD7003F65AF /* BlueBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueBackgroundView.swift; sourceTree = "<group>"; };
 		994D31702693852F003F65AF /* Roboto-Bold.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Roboto-Bold.plist"; sourceTree = "<group>"; };
@@ -180,6 +186,8 @@
 			isa = PBXGroup;
 			children = (
 				99B3D6E52631FA1B00D32384 /* ScoreTableViewCell.swift */,
+				9905C383269F1B3A008F82EE /* ScoreboardTableViewCell.swift */,
+				9905C387269F7E39008F82EE /* ScoreboardTitleTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -203,6 +211,7 @@
 				99D8E0A126499D270021C987 /* UICustomButton.swift */,
 				997BF5D1268830BE008F5E44 /* UICustomFonts.swift */,
 				996523ED268BA21B008B76E1 /* UIScaledFonts.swift */,
+				9905C385269F5B8D008F82EE /* UICustomShadow.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -422,15 +431,18 @@
 				996523EE268BA21B008B76E1 /* UIScaledFonts.swift in Sources */,
 				99B4508D269BCBD200D24B4F /* YellowBackgroundView.swift in Sources */,
 				9975135D269CD7690039C344 /* ScoreboardTableViewController.swift in Sources */,
+				9905C388269F7E3A008F82EE /* ScoreboardTitleTableViewCell.swift in Sources */,
 				99EF9429263C40FE002E1A71 /* StartGameViewController.swift in Sources */,
 				995D11DF263203890040D78C /* ScoreTableVC.swift in Sources */,
 				99AE1A2426404F3D0048BE00 /* Scoreboard.swift in Sources */,
+				9905C386269F5B8D008F82EE /* UICustomShadow.swift in Sources */,
 				991C96D72688DA46007ABF3A /* ResultBoardViewController.swift in Sources */,
 				99FA6E2B262DCA7E00E8FB9D /* AppDelegate.swift in Sources */,
 				995D11EA263203E30040D78C /* RoundVC.swift in Sources */,
 				99B3D6E62631FA1B00D32384 /* ScoreTableViewCell.swift in Sources */,
 				99FA6E2D262DCA7E00E8FB9D /* SceneDelegate.swift in Sources */,
 				9903720E263790B400B32A4C /* Round.swift in Sources */,
+				9905C384269F1B3A008F82EE /* ScoreboardTableViewCell.swift in Sources */,
 				997BF5D0268805F7008F5E44 /* RoundViewController.swift in Sources */,
 				997BF5D2268830BE008F5E44 /* UICustomFonts.swift in Sources */,
 				995D11EF26321F400040D78C /* ResultGameVC.swift in Sources */,

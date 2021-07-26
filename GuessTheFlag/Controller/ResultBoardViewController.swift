@@ -12,13 +12,16 @@ class ResultBoardViewController: UIViewController {
     private lazy var navigationTitleView = buildCountRoundsView(with: "Done!")
     private lazy var progressBar = buildProgressBar()
     private lazy var trophyImageView = buildTrophyImageView()
-    private lazy var conditionalMessage = buildConditionalMessage(with: "You are the Best Player!")
+    private lazy var conditionalMessage = buildConditionalMessage(with: handleConditionalMessage())
     private lazy var scoreBackgroundView = buildScoreBackgroundView()
     private lazy var correctAnswersView = buildCorrectAnswersView()
     private lazy var wrongAnswersView = buildWrongAnswersView()
     private lazy var finalScoreView = buildFinalScoreView()
     private lazy var userNameTextField = buildInputTextField()
     private lazy var saveGameButton = buildSaveButton()
+    var finalscore = 0
+    var totalCorrectAnswers = 0
+    var totalWrongAnswers = 0
     
     override func viewDidLoad() {
         view.backgroundColor = .primaryColor
@@ -47,10 +50,10 @@ class ResultBoardViewController: UIViewController {
             progressBar.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: -2),
             progressBar.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 2),
             
-            trophyImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            trophyImageView.topAnchor.constraint(equalTo: progressBar.bottomAnchor, constant: 10),
             trophyImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
-            conditionalMessage.topAnchor.constraint(equalTo: trophyImageView.bottomAnchor, constant: 20),
+            conditionalMessage.topAnchor.constraint(equalTo: trophyImageView.bottomAnchor, constant: 10),
             conditionalMessage.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
             conditionalMessage.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
             
@@ -78,8 +81,28 @@ class ResultBoardViewController: UIViewController {
             
             saveGameButton.leadingAnchor.constraint(equalTo: conditionalMessage.leadingAnchor),
             saveGameButton.trailingAnchor.constraint(equalTo: conditionalMessage.trailingAnchor),
-            saveGameButton.bottomAnchor.constraint(equalTo: scoreBackgroundView.bottomAnchor, constant: -40)
+            saveGameButton.bottomAnchor.constraint(equalTo: scoreBackgroundView.bottomAnchor, constant: -20)
         ])
+    }
+    
+    private func handleConditionalMessage() -> String {
+        var message = ""
+        if totalCorrectAnswers >= 8 {
+            message = "You are the best player!"
+        } else if totalCorrectAnswers > 5 && totalCorrectAnswers < 8 {
+            message = "You are a good player!"
+        } else {
+            message = "You must improve your skills :("
+        }
+        return message
+    }
+    
+    private func handleFinalScoreValue() -> Int {
+        if finalscore <= 0 {
+            return 0
+        } else {
+            return finalscore
+        }
     }
     
     private func configureNavigationBar() {
@@ -93,10 +116,27 @@ class ResultBoardViewController: UIViewController {
     }
     
     @objc private func onSaveGameButtonTap(_ sender: UIButton) {
-        sender.pulsate()
-        print("\(String(describing: sender.titleLabel?.text)) was pressed!")
+        if (userNameTextField.text?.count)! > 0 {
+            var scores: [Scoreboard] = []
+            
+            if let data = UserDefaults.standard.data(forKey: "savedScore") {
+                if let decodedScores = try? JSONDecoder().decode([Scoreboard].self, from: data) {
+                    scores = decodedScores
+                }
+            }
+
+            let scoreboard = Scoreboard(userName: userNameTextField.text!, userScore: String(finalscore))
+            scores.append(scoreboard)
+
+            if let savedScore = try? JSONEncoder().encode(scores) {
+                UserDefaults.standard.set(savedScore, forKey: "savedScore")
+                UserDefaults.standard.synchronize()
+            }
+            
+        }
         dismiss(animated: true, completion: nil)
     }
+
 }
 
 extension ResultBoardViewController {
@@ -159,7 +199,7 @@ extension ResultBoardViewController {
     private func buildCorrectAnswersView() -> YellowBackgroundView {
         let view = YellowBackgroundView()
         view.scoreTopicLabel.text = "Correct answers: "
-        view.scorePointLabel.text = "60"
+        view.scorePointLabel.text = String(totalCorrectAnswers)
         view.heightAnchor.constraint(equalToConstant: 60).isActive = true
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -168,7 +208,7 @@ extension ResultBoardViewController {
     private func buildWrongAnswersView() -> YellowBackgroundView {
         let view = YellowBackgroundView()
         view.scoreTopicLabel.text = "Wrong answers: "
-        view.scorePointLabel.text = "40"
+        view.scorePointLabel.text = String(totalWrongAnswers)
         view.heightAnchor.constraint(equalToConstant: 60).isActive = true
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -177,7 +217,7 @@ extension ResultBoardViewController {
     private func buildFinalScoreView() -> YellowBackgroundView {
         let view = YellowBackgroundView()
         view.scoreTopicLabel.text = "Final score: "
-        view.scorePointLabel.text = "100"
+        view.scorePointLabel.text = String(handleFinalScoreValue())
         view.heightAnchor.constraint(equalToConstant: 60).isActive = true
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -206,6 +246,7 @@ extension ResultBoardViewController {
         button.addTarget(self, action: #selector(onSaveGameButtonTap), for: .touchUpInside)
         button.heightAnchor.constraint(equalToConstant: 50).isActive = true
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.titleLabel?.adjustsFontForContentSizeCategory = true
         return button
     }
 }

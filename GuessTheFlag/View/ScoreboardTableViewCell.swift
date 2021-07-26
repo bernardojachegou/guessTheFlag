@@ -11,8 +11,10 @@ class ScoreboardTableViewCell: UITableViewCell {
     
     static var identifier = "userScoreInfos"
     
-    private lazy var userNameInfoBg = buildUserInfoView(with: "Michel Bernardo")
-    private lazy var userScoreInfoBg = buildUserInfoView(with: "100")
+    private lazy var userNameInfoBg = buildUserInfoView()
+    private lazy var userScoreInfoBg = buildUserInfoView()
+    public lazy var userNameLabel = buildUserInfoLabel(with: "Michel Bernardo")
+    public lazy var userScoreLabel = buildUserInfoLabel(with: "100")
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -20,7 +22,9 @@ class ScoreboardTableViewCell: UITableViewCell {
         contentView.backgroundColor = .primaryColor
         contentView.layer.customEffectShadow(with: UIColor.primaryShadowColor.cgColor)
         contentView.addSubview(userNameInfoBg)
+        userNameInfoBg.addSubview(userNameLabel)
         contentView.addSubview(userScoreInfoBg)
+        userScoreInfoBg.addSubview(userScoreLabel)
         
         NSLayoutConstraint.activate([
             userNameInfoBg.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15),
@@ -33,6 +37,16 @@ class ScoreboardTableViewCell: UITableViewCell {
             userScoreInfoBg.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 10),
             userScoreInfoBg.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15),
             
+            userNameLabel.topAnchor.constraint(equalTo: userNameInfoBg.topAnchor, constant: 10),
+            userNameLabel.leadingAnchor.constraint(equalTo: userNameInfoBg.leadingAnchor, constant: 10),
+            userNameLabel.trailingAnchor.constraint(equalTo: userNameInfoBg.trailingAnchor, constant: -10),
+            userNameLabel.bottomAnchor.constraint(equalTo: userNameInfoBg.bottomAnchor, constant: -10),
+            
+            userScoreLabel.topAnchor.constraint(equalTo: userScoreInfoBg.topAnchor, constant: 10),
+            userScoreLabel.leadingAnchor.constraint(equalTo: userScoreInfoBg.leadingAnchor, constant: 10),
+            userScoreLabel.trailingAnchor.constraint(equalTo: userScoreInfoBg.trailingAnchor, constant: -10),
+            userScoreLabel.bottomAnchor.constraint(equalTo: userScoreInfoBg.bottomAnchor, constant: -10),
+            
         ])
     }
     
@@ -43,7 +57,16 @@ class ScoreboardTableViewCell: UITableViewCell {
 }
 
 extension ScoreboardTableViewCell {
-    private func buildUserInfoView(with userInfo: String) -> UIView {
+    private func buildUserInfoView() -> UIView {
+        let view = UIView()
+        view.backgroundColor = .secondaryColor
+        view.layer.cornerRadius = 10
+        view.layer.customEffectShadow(with: UIColor.secondaryShadowColor.cgColor)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }
+    
+    private func buildUserInfoLabel(with userInfo: String) -> UILabel {
         let label = UILabel()
         label.text = userInfo
         label.textColor = .primaryColor
@@ -51,19 +74,12 @@ extension ScoreboardTableViewCell {
         label.font = ScaledFont.SFrobotoBold.font(forTextStyle: .body)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.adjustsFontForContentSizeCategory = true
-        let view = UIView()
-        view.backgroundColor = .secondaryColor
-        view.layer.cornerRadius = 10
-        view.layer.customEffectShadow(with: UIColor.secondaryShadowColor.cgColor)
-        view.addSubview(label)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            label.topAnchor.constraint(equalTo: view.topAnchor, constant: 10),
-            label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-            label.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
-            label.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10)
-        ])
-        return view
+//        NSLayoutConstraint.activate([
+//            label.topAnchor.constraint(equalTo: topAnchor, constant: 10),
+//            label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+//            label.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+//            label.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10)
+//        ])
+        return label
     }
 }

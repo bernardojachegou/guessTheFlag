@@ -23,10 +23,10 @@ extension UIColor {
     static var secondaryShadowColor: UIColor {
         return UIColor(named: "SecondaryShadowColor")!
     }
-    static var successColor: UIColor {
-        return UIColor(named: "SuccessColor")!
+    static var correctAnswerColor: UIColor {
+        return UIColor(named: "correctAnswerColor")!
     }
-    static var errorColor: UIColor {
-        return UIColor(named: "ErrorColor")!
+    static var wrongAnswerColor: UIColor {
+        return UIColor(named: "wrongAnswerColor")!
     }
 }

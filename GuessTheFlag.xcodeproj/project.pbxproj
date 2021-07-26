@@ -26,7 +26,6 @@
 		996523EE268BA21B008B76E1 /* UIScaledFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996523ED268BA21B008B76E1 /* UIScaledFonts.swift */; };
 		9975135D269CD7690039C344 /* ScoreboardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975135C269CD7690039C344 /* ScoreboardTableViewController.swift */; };
 		997BF5D0268805F7008F5E44 /* RoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997BF5CF268805F7008F5E44 /* RoundViewController.swift */; };
-		997BF5D2268830BE008F5E44 /* UICustomFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997BF5D1268830BE008F5E44 /* UICustomFonts.swift */; };
 		99AE1A2426404F3D0048BE00 /* Scoreboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AE1A2326404F3D0048BE00 /* Scoreboard.swift */; };
 		99B3D6E62631FA1B00D32384 /* ScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B3D6E52631FA1B00D32384 /* ScoreTableViewCell.swift */; };
 		99B3D6E72631FA1B00D32384 /* ScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B3D6E52631FA1B00D32384 /* ScoreTableViewCell.swift */; };
@@ -86,7 +85,6 @@
 		996523ED268BA21B008B76E1 /* UIScaledFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScaledFonts.swift; sourceTree = "<group>"; };
 		9975135C269CD7690039C344 /* ScoreboardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardTableViewController.swift; sourceTree = "<group>"; };
 		997BF5CF268805F7008F5E44 /* RoundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundViewController.swift; sourceTree = "<group>"; };
-		997BF5D1268830BE008F5E44 /* UICustomFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustomFonts.swift; sourceTree = "<group>"; };
 		99AE1A2326404F3D0048BE00 /* Scoreboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scoreboard.swift; sourceTree = "<group>"; };
 		99B3D6E52631FA1B00D32384 /* ScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTableViewCell.swift; sourceTree = "<group>"; };
 		99B45083269BB7F500D24B4F /* Roboto-Light.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Roboto-Light.plist"; sourceTree = "<group>"; };
@@ -209,7 +207,6 @@
 			children = (
 				99D8E09C2649990D0021C987 /* UICustomColors.swift */,
 				99D8E0A126499D270021C987 /* UICustomButton.swift */,
-				997BF5D1268830BE008F5E44 /* UICustomFonts.swift */,
 				996523ED268BA21B008B76E1 /* UIScaledFonts.swift */,
 				9905C385269F5B8D008F82EE /* UICustomShadow.swift */,
 			);
@@ -444,7 +441,6 @@
 				9903720E263790B400B32A4C /* Round.swift in Sources */,
 				9905C384269F1B3A008F82EE /* ScoreboardTableViewCell.swift in Sources */,
 				997BF5D0268805F7008F5E44 /* RoundViewController.swift in Sources */,
-				997BF5D2268830BE008F5E44 /* UICustomFonts.swift in Sources */,
 				995D11EF26321F400040D78C /* ResultGameVC.swift in Sources */,
 				99D8E09D2649990D0021C987 /* UICustomColors.swift in Sources */,
 			);

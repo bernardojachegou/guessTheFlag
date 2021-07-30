@@ -19,6 +19,8 @@ class ResultBoardViewController: UIViewController {
     private lazy var finalScoreView = buildFinalScoreView()
     private lazy var userNameTextField = buildInputTextField()
     private lazy var saveGameButton = buildSaveButton()
+//    private lazy var buttonBottomAnchorConstraint = saveGameButton.bottomAnchor.constraint(equalTo: scoreBackgroundView.bottomAnchor, constant: -24)
+    
     var finalscore = 0
     var totalCorrectAnswers = 0
     var totalWrongAnswers = 0
@@ -28,6 +30,11 @@ class ResultBoardViewController: UIViewController {
         super.viewDidLoad()
         addView()
         configureNavigationBar()
+        subscribeKeyboardNotifications()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        unsubscribeKeyboardNotifications()
     }
     
     private func addView() {
@@ -85,6 +92,44 @@ class ResultBoardViewController: UIViewController {
         ])
     }
     
+    private func configureNavigationBar() {
+        let appearance = UINavigationBarAppearance()
+        navigationItem.standardAppearance = appearance
+        navigationItem.standardAppearance?.backgroundColor = UIColor.primaryColor
+        navigationItem.standardAppearance?.shadowColor = UIColor.primaryColor
+        navigationController?.navigationBar.isTranslucent = false
+        navigationItem.titleView = navigationTitleView
+        navigationItem.setHidesBackButton(true, animated: false)
+    }
+    
+    @objc private func onSaveGameButtonTap(_ sender: UIButton) {
+        if (userNameTextField.text?.count ?? 0) > 0 {
+            
+            // It's not working.....
+            saveGameButton.isUserInteractionEnabled = true
+            saveGameButton.alpha = 1.0
+            
+            var scores: [Scoreboard] = []
+            
+            if let data = UserDefaults.standard.data(forKey: "savedScore") {
+                if let decodedScores = try? JSONDecoder().decode([Scoreboard].self, from: data) {
+                    scores = decodedScores
+                }
+            }
+
+            // Must be unwrapped
+            let scoreboard = Scoreboard(userName: userNameTextField.text!, userScore: String(finalscore))
+            scores.append(scoreboard)
+
+            if let savedScore = try? JSONEncoder().encode(scores) {
+                UserDefaults.standard.set(savedScore, forKey: "savedScore")
+                UserDefaults.standard.synchronize()
+            }
+            
+        }
+        dismiss(animated: true, completion: nil)
+    }
+    
     private func handleConditionalMessage() -> String {
         var message = ""
         if totalCorrectAnswers >= 8 {
@@ -104,39 +149,47 @@ class ResultBoardViewController: UIViewController {
             return finalscore
         }
     }
-    
-    private func configureNavigationBar() {
-        let appearance = UINavigationBarAppearance()
-        navigationItem.standardAppearance = appearance
-        navigationItem.standardAppearance?.backgroundColor = UIColor.primaryColor
-        navigationItem.standardAppearance?.shadowColor = UIColor.primaryColor
-        navigationController?.navigationBar.isTranslucent = false
-        navigationItem.titleView = navigationTitleView
-        navigationItem.setHidesBackButton(true, animated: false)
+
+}
+
+extension ResultBoardViewController {
+
+    private func subscribeKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillShow),
+                                               name: UIResponder.keyboardWillShowNotification,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillHide),
+                                               name: UIResponder.keyboardWillHideNotification,
+                                               object: nil)
     }
-    
-    @objc private func onSaveGameButtonTap(_ sender: UIButton) {
-        if (userNameTextField.text?.count)! > 0 {
-            var scores: [Scoreboard] = []
-            
-            if let data = UserDefaults.standard.data(forKey: "savedScore") {
-                if let decodedScores = try? JSONDecoder().decode([Scoreboard].self, from: data) {
-                    scores = decodedScores
-                }
-            }
 
-            let scoreboard = Scoreboard(userName: userNameTextField.text!, userScore: String(finalscore))
-            scores.append(scoreboard)
+    private func unsubscribeKeyboardNotifications() {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
 
-            if let savedScore = try? JSONEncoder().encode(scores) {
-                UserDefaults.standard.set(savedScore, forKey: "savedScore")
-                UserDefaults.standard.synchronize()
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
             }
-            
         }
-        dismiss(animated: true, completion: nil)
     }
 
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
+    }
+
+//    func updateButtonBottomAnchorConstraint(with constant: CGFloat) {
+//        UIView.animate(withDuration: 0.5, delay: 0, options: [], animations: {
+//            self.buttonBottomAnchorConstraint.constant = constant
+//            self.view.layoutIfNeeded()
+//        })
+//    }
 }
 
 extension ResultBoardViewController {
@@ -247,6 +300,8 @@ extension ResultBoardViewController {
         button.heightAnchor.constraint(equalToConstant: 50).isActive = true
         button.translatesAutoresizingMaskIntoConstraints = false
         button.titleLabel?.adjustsFontForContentSizeCategory = true
+        button.isUserInteractionEnabled = false
+        button.alpha = 0.5
         return button
     }
 }

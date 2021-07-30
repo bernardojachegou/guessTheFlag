@@ -13,6 +13,7 @@
 		9905C386269F5B8D008F82EE /* UICustomShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9905C385269F5B8D008F82EE /* UICustomShadow.swift */; };
 		9905C388269F7E3A008F82EE /* ScoreboardTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9905C387269F7E39008F82EE /* ScoreboardTitleTableViewCell.swift */; };
 		991C96D72688DA46007ABF3A /* ResultBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991C96D62688DA46007ABF3A /* ResultBoardViewController.swift */; };
+		99313B3226B429DE00F082A2 /* UserDefaultsPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99313B3126B429DE00F082A2 /* UserDefaultsPersistence.swift */; };
 		994D316F26937DD7003F65AF /* BlueBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994D316E26937DD7003F65AF /* BlueBackgroundView.swift */; };
 		994D31712693852F003F65AF /* Roboto-Bold.plist in Resources */ = {isa = PBXBuildFile; fileRef = 994D31702693852F003F65AF /* Roboto-Bold.plist */; };
 		995D11DF263203890040D78C /* ScoreTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995D11DE263203890040D78C /* ScoreTableVC.swift */; };
@@ -72,6 +73,7 @@
 		9905C385269F5B8D008F82EE /* UICustomShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustomShadow.swift; sourceTree = "<group>"; };
 		9905C387269F7E39008F82EE /* ScoreboardTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardTitleTableViewCell.swift; sourceTree = "<group>"; };
 		991C96D62688DA46007ABF3A /* ResultBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultBoardViewController.swift; sourceTree = "<group>"; };
+		99313B3126B429DE00F082A2 /* UserDefaultsPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsPersistence.swift; sourceTree = "<group>"; };
 		994D316E26937DD7003F65AF /* BlueBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueBackgroundView.swift; sourceTree = "<group>"; };
 		994D31702693852F003F65AF /* Roboto-Bold.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Roboto-Bold.plist"; sourceTree = "<group>"; };
 		995D11DE263203890040D78C /* ScoreTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTableVC.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				99FA6E2A262DCA7E00E8FB9D /* AppDelegate.swift */,
 				99FA6E2C262DCA7E00E8FB9D /* SceneDelegate.swift */,
 				99FA6E35262DCA7F00E8FB9D /* LaunchScreen.storyboard */,
+				99313B3126B429DE00F082A2 /* UserDefaultsPersistence.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 				996523EE268BA21B008B76E1 /* UIScaledFonts.swift in Sources */,
 				99B4508D269BCBD200D24B4F /* YellowBackgroundView.swift in Sources */,
 				9975135D269CD7690039C344 /* ScoreboardTableViewController.swift in Sources */,
+				99313B3226B429DE00F082A2 /* UserDefaultsPersistence.swift in Sources */,
 				9905C388269F7E3A008F82EE /* ScoreboardTitleTableViewCell.swift in Sources */,
 				99EF9429263C40FE002E1A71 /* StartGameViewController.swift in Sources */,
 				995D11DF263203890040D78C /* ScoreTableVC.swift in Sources */,

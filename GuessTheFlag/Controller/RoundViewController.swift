@@ -151,10 +151,13 @@ class RoundViewController: UIViewController {
     
     func updateViewForNewRound() {
         if let round = roundList {
+            
             countRounds += 1
             countRoundsLabel.text = "\(countRounds)/\(totalRounds)\nRounds"
+            
             let randomIndex = Int.random(in: 0..<round.roundList.count)
             selectedIndex = randomIndex
+            
             flagImageView.image = UIImage(named: round.roundList[randomIndex].flagImageName)
             firstOptionButton.setTitle(round.roundList[randomIndex].flagAnswerOptions[0].flagFirstOption, for: .normal)
             secondOptionButton.setTitle(round.roundList[randomIndex].flagAnswerOptions[0].flagSecondOption, for: .normal)
@@ -187,14 +190,12 @@ class RoundViewController: UIViewController {
             if self.roundsLeft != 1 {
                 self.prepareForTheNextRound()
             } else {
-                self.navigationController?.pushViewController(ResultBoardViewController(), animated: true)
-                if let vc = self.navigationController?.topViewController as? ResultBoardViewController {
-                    vc.finalscore = self.scoreValue
-                    vc.totalCorrectAnswers = self.correctAnswers
-                    vc.totalWrongAnswers = self.wrongAnswers
-                }
+                let vc = ResultBoardViewController()
+                vc.finalscore = self.scoreValue
+                vc.totalCorrectAnswers = self.correctAnswers
+                vc.totalWrongAnswers = self.wrongAnswers
+                self.navigationController?.pushViewController(vc, animated: true)
             }
-            
         }
     }
     

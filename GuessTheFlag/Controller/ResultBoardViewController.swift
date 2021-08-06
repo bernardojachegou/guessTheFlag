@@ -19,7 +19,7 @@ class ResultBoardViewController: UIViewController {
     private lazy var finalScoreView = buildFinalScoreView()
     private lazy var userNameTextField = buildInputTextField()
     private lazy var saveGameButton = buildSaveButton()
-//    private lazy var buttonBottomAnchorConstraint = saveGameButton.bottomAnchor.constraint(equalTo: scoreBackgroundView.bottomAnchor, constant: -24)
+    //    private lazy var buttonBottomAnchorConstraint = saveGameButton.bottomAnchor.constraint(equalTo: scoreBackgroundView.bottomAnchor, constant: -24)
     
     var finalscore = 0
     var totalCorrectAnswers = 0
@@ -116,11 +116,11 @@ class ResultBoardViewController: UIViewController {
                     scores = decodedScores
                 }
             }
-
+            
             // Must be unwrapped
             let scoreboard = Scoreboard(userName: userNameTextField.text!, userScore: String(finalscore))
             scores.append(scoreboard)
-
+            
             if let savedScore = try? JSONEncoder().encode(scores) {
                 UserDefaults.standard.set(savedScore, forKey: "savedScore")
                 UserDefaults.standard.synchronize()
@@ -149,11 +149,11 @@ class ResultBoardViewController: UIViewController {
             return finalscore
         }
     }
-
+    
 }
 
 extension ResultBoardViewController {
-
+    
     private func subscribeKeyboardNotifications() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(keyboardWillShow),
@@ -164,12 +164,12 @@ extension ResultBoardViewController {
                                                name: UIResponder.keyboardWillHideNotification,
                                                object: nil)
     }
-
+    
     private func unsubscribeKeyboardNotifications() {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-
+    
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0 {
@@ -177,19 +177,19 @@ extension ResultBoardViewController {
             }
         }
     }
-
+    
     @objc func keyboardWillHide(notification: NSNotification) {
         if self.view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0
         }
     }
-
-//    func updateButtonBottomAnchorConstraint(with constant: CGFloat) {
-//        UIView.animate(withDuration: 0.5, delay: 0, options: [], animations: {
-//            self.buttonBottomAnchorConstraint.constant = constant
-//            self.view.layoutIfNeeded()
-//        })
-//    }
+    
+    //    func updateButtonBottomAnchorConstraint(with constant: CGFloat) {
+    //        UIView.animate(withDuration: 0.5, delay: 0, options: [], animations: {
+    //            self.buttonBottomAnchorConstraint.constant = constant
+    //            self.view.layoutIfNeeded()
+    //        })
+    //    }
 }
 
 extension ResultBoardViewController {
@@ -300,8 +300,8 @@ extension ResultBoardViewController {
         button.heightAnchor.constraint(equalToConstant: 50).isActive = true
         button.translatesAutoresizingMaskIntoConstraints = false
         button.titleLabel?.adjustsFontForContentSizeCategory = true
-        button.isUserInteractionEnabled = false
-        button.alpha = 0.5
+        //        button.isUserInteractionEnabled = false
+        //        button.alpha = 0.5
         return button
     }
 }

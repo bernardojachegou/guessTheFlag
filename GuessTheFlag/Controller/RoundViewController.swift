@@ -105,6 +105,8 @@ class RoundViewController: UIViewController {
     
     private func startTimer() {
         counter = 10
+        progressBar.setProgress(1, animated: false)
+        timer.invalidate()
         timer = Timer.scheduledTimer(timeInterval: 1.0,
                                      target: self,
                                      selector: #selector(onTimerTick),
@@ -185,6 +187,7 @@ class RoundViewController: UIViewController {
     @objc private func onGoFowardButtonTap(_ sender: UIButton) {
         print("Updated Score: \(scoreValue)\nCorrect Answers: \(correctAnswers)\nWrong Answers: \(wrongAnswers)")
         sender.pulsate()
+        goFowardButton.isUserInteractionEnabled = false
         let seconds = 0.5
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
             if self.roundsLeft != 1 {

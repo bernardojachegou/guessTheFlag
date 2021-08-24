@@ -29,8 +29,8 @@ class RoundViewController: UIViewController {
     private var counter = 100
     
     private var selectedIndex = 0
-    private var roundsLeft = 10
-    private var totalRounds = 10
+    private var roundsLeft = 2
+    private var totalRounds = 2
     
     private var countRounds = 0
     var scoreValue = 0

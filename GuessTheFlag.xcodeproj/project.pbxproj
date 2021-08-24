@@ -47,6 +47,7 @@
 		99FA6E37262DCA7F00E8FB9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99FA6E35262DCA7F00E8FB9D /* LaunchScreen.storyboard */; };
 		99FA6E42262DCA7F00E8FB9D /* GuessTheFlagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FA6E41262DCA7F00E8FB9D /* GuessTheFlagTests.swift */; };
 		99FA6E4D262DCA7F00E8FB9D /* GuessTheFlagUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FA6E4C262DCA7F00E8FB9D /* GuessTheFlagUITests.swift */; };
+		99FE557226D3EF4400B399F5 /* ScoreResultBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FE557126D3EF4400B399F5 /* ScoreResultBackgroundView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,7 @@
 		99FA6E48262DCA7F00E8FB9D /* GuessTheFlagUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuessTheFlagUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		99FA6E4C262DCA7F00E8FB9D /* GuessTheFlagUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessTheFlagUITests.swift; sourceTree = "<group>"; };
 		99FA6E4E262DCA7F00E8FB9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99FE557126D3EF4400B399F5 /* ScoreResultBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreResultBackgroundView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +181,7 @@
 				9975135C269CD7690039C344 /* ScoreboardTableViewController.swift */,
 				99B4508C269BCBD200D24B4F /* YellowBackgroundView.swift */,
 				994D316E26937DD7003F65AF /* BlueBackgroundView.swift */,
+				99FE557126D3EF4400B399F5 /* ScoreResultBackgroundView.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -442,6 +445,7 @@
 				995D11EA263203E30040D78C /* RoundVC.swift in Sources */,
 				99B3D6E62631FA1B00D32384 /* ScoreTableViewCell.swift in Sources */,
 				99FA6E2D262DCA7E00E8FB9D /* SceneDelegate.swift in Sources */,
+				99FE557226D3EF4400B399F5 /* ScoreResultBackgroundView.swift in Sources */,
 				9903720E263790B400B32A4C /* Round.swift in Sources */,
 				9905C384269F1B3A008F82EE /* ScoreboardTableViewCell.swift in Sources */,
 				997BF5D0268805F7008F5E44 /* RoundViewController.swift in Sources */,

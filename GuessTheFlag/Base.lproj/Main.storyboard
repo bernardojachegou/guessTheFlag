@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qdn-rQ-8mm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qdn-rQ-8mm">
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,10 +19,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Start GameVC-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="start" id="BYZ-38-t0r" customClass="StartGameVC" customModule="GuessTheFlag" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="start" id="BYZ-38-t0r" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -113,17 +113,17 @@
             </objects>
             <point key="canvasLocation" x="1076.6355140186915" y="92.656587473002162"/>
         </scene>
-        <!--Score TableVC-->
+        <!--Table View Controller-->
         <scene sceneID="iTC-Yp-zUv">
             <objects>
-                <tableViewController id="eeb-nH-Vv4" customClass="ScoreTableVC" customModule="GuessTheFlag" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="eeb-nH-Vv4" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="4sR-K9-gGf">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="scoreTableTitlesCell" rowHeight="100" id="mDD-eE-f05">
-                                <rect key="frame" x="0.0" y="28" width="428" height="100"/>
+                                <rect key="frame" x="0.0" y="24.333333969116211" width="428" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mDD-eE-f05" id="fHv-IU-MVR">
                                     <rect key="frame" x="0.0" y="0.0" width="428" height="100"/>
@@ -164,7 +164,7 @@
                                 <color key="backgroundColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="userScoreValues" rowHeight="50" id="z6n-b7-DFV" customClass="ScoreTableViewCell" customModule="GuessTheFlag" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="128" width="428" height="50"/>
+                                <rect key="frame" x="0.0" y="124.33333396911621" width="428" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="z6n-b7-DFV" id="LXt-Ta-qIi">
                                     <rect key="frame" x="0.0" y="0.0" width="428" height="50"/>
@@ -241,10 +241,10 @@
             </objects>
             <point key="canvasLocation" x="193" y="93"/>
         </scene>
-        <!--RoundVC-->
+        <!--View Controller-->
         <scene sceneID="SZN-IC-O0m">
             <objects>
-                <viewController id="d0o-wQ-FpR" customClass="RoundVC" customModule="GuessTheFlag" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="d0o-wQ-FpR" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ilf-Ng-JPF">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -370,10 +370,10 @@
             </objects>
             <point key="canvasLocation" x="1847.663551401869" y="-199.56803455723542"/>
         </scene>
-        <!--Result GameVC-->
+        <!--View Controller-->
         <scene sceneID="frJ-Fs-0fK">
             <objects>
-                <viewController storyboardIdentifier="result" id="YLj-dI-uMG" customClass="ResultGameVC" customModule="GuessTheFlag" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="result" id="YLj-dI-uMG" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QqR-H9-OwA">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

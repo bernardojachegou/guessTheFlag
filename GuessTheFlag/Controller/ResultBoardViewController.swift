@@ -11,13 +11,14 @@ class ResultBoardViewController: UIViewController {
     
     private lazy var containerView = makeContainerView()
     private lazy var scrollView = makeScrollView()
-    private lazy var navigationTitleView = buildCountRoundsView(with: "Done!")
+    private lazy var navigationTitleView = buildCountRoundsView()
     private lazy var progressBar = buildProgressBar()
     private lazy var trophyImageView = buildTrophyImageView()
     private lazy var conditionalMessage = buildConditionalMessage(with: handleConditionalMessage())
     private lazy var scoreBackgroundView = buildScoreResultBackgroundView()
     private lazy var bgBottomAnchorConstraint = scoreBackgroundView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-
+    private lazy var userInputValue = ""
+    
     let maxLength = 15
     var finalscore = 0
     var totalCorrectAnswers = 0
@@ -28,11 +29,11 @@ class ResultBoardViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        view.backgroundColor = .primaryColor
-        super.viewDidLoad()
-        addView()
+        prepareViewBackground()
+        addSubviews()
         configureNavigationBar()
         subscribeKeyboardNotifications()
+        super.viewDidLoad()
         
         let endEditingGesture = UITapGestureRecognizer (target: self, action: #selector(endEditingTapped(_:)))
         view.addGestureRecognizer(endEditingGesture)
@@ -42,9 +43,13 @@ class ResultBoardViewController: UIViewController {
         unsubscribeKeyboardNotifications()
     }
     
-    private func addView() {
+    private func prepareViewBackground()  {
+        view.backgroundColor = .primaryColor
+    }
+    
+    private func addSubviews() {
         view.addSubview(scrollView)
-        containerView.addSubview(progressBar)
+        view.addSubview(progressBar)
         containerView.addSubview(trophyImageView)
         containerView.addSubview(conditionalMessage)
         containerView.addSubview(scoreBackgroundView)
@@ -60,13 +65,13 @@ class ResultBoardViewController: UIViewController {
             scrollView.frameLayoutGuide.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             scrollView.frameLayoutGuide.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             scrollView.frameLayoutGuide.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-
+            
             // Pinning the content container view to the scroll view
             scrollView.contentLayoutGuide.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
             scrollView.contentLayoutGuide.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
             scrollView.contentLayoutGuide.topAnchor.constraint(equalTo: containerView.topAnchor),
             scrollView.contentLayoutGuide.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
-
+            
             // Fixes the width and height of the content area
             scrollView.frameLayoutGuide.widthAnchor.constraint(equalTo: scrollView.contentLayoutGuide.widthAnchor),
             containerViewHeight
@@ -77,13 +82,12 @@ class ResultBoardViewController: UIViewController {
             navigationTitleView.heightAnchor.constraint(equalToConstant: 44),
             
             progressBar.heightAnchor.constraint(equalToConstant: 5),
-            progressBar.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 10),
-            progressBar.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: -2),
-            progressBar.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: 2),
-
-            trophyImageView.topAnchor.constraint(equalTo: progressBar.bottomAnchor, constant: 10),
+            progressBar.topAnchor.constraint(equalTo: view.topAnchor, constant: 10),
+            progressBar.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: -2),
+            progressBar.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 2),
+            
             trophyImageView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
-
+            
             conditionalMessage.topAnchor.constraint(equalTo: trophyImageView.bottomAnchor, constant: 10),
             conditionalMessage.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 20),
             conditionalMessage.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -20),
@@ -109,28 +113,35 @@ class ResultBoardViewController: UIViewController {
         view.endEditing(true)
     }
     
+    func handleInputValue(userName: String) {
+        userInputValue = userName
+    }
+    
+    func saveGameButton(_ sender: UIButton) {
+        onSaveGameButtonTap(sender)
+    }
+    
     @objc private func onSaveGameButtonTap(_ sender: UIButton) {
-//        if (userNameTextField.text?.count ?? 0) > 0 {
-//
-//
-//            var scores: [Scoreboard] = []
-//
-//            if let data = UserDefaults.standard.data(forKey: "savedScore") {
-//                if let decodedScores = try? JSONDecoder().decode([Scoreboard].self, from: data) {
-//                    scores = decodedScores
-//                }
-//            }
-//
-//            // Must be unwrapped
-//            let scoreboard = Scoreboard(userName: userNameTextField.text!, userScore: String(finalscore))
-//            scores.append(scoreboard)
-//
-//            if let savedScore = try? JSONEncoder().encode(scores) {
-//                UserDefaults.standard.set(savedScore, forKey: "savedScore")
-//                UserDefaults.standard.synchronize()
-//            }
-//
-//        }
+        if !userInputValue.isEmpty {
+            
+            var scores: [Scoreboard] = []
+            
+            if let data = UserDefaults.standard.data(forKey: "savedScore") {
+                if let decodedScores = try? JSONDecoder().decode([Scoreboard].self, from: data) {
+                    scores = decodedScores
+                }
+            }
+            
+            // Must be unwrapped
+            let scoreboard = Scoreboard(userName: userInputValue, userScore: String(finalscore))
+            scores.append(scoreboard)
+            
+            if let savedScore = try? JSONEncoder().encode(scores) {
+                UserDefaults.standard.set(savedScore, forKey: "savedScore")
+                UserDefaults.standard.synchronize()
+            }
+            
+        }
         dismiss(animated: true, completion: nil)
     }
     
@@ -144,14 +155,6 @@ class ResultBoardViewController: UIViewController {
             message = "You must improve your skills :("
         }
         return message
-    }
-    
-    private func handleFinalScoreValue() -> Int {
-        if finalscore <= 0 {
-            return 0
-        } else {
-            return finalscore
-        }
     }
     
 }
@@ -175,13 +178,17 @@ extension ResultBoardViewController {
     }
     
     @objc private func keyboardWillShow(_ notification: Notification) {
-        guard let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
-        let keyboardHeight = keyboardFrame.cgRectValue.height
-        updateButtonBottomAnchorConstraint(with: (keyboardHeight + (UIScreen.main.bounds.width == 320 ? 4 : 20)) * -1)
+        guard let userInfo = notification.userInfo else { return }
+        var keyboardFrame = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+        keyboardFrame = view.convert(keyboardFrame, from: nil)
+        
+        var contentInset = scrollView.contentInset
+        contentInset.bottom = keyboardFrame.size.height + 80
+        scrollView.contentInset = contentInset
     }
     
     @objc private func keyboardWillHide(_ notification: Notification) {
-        updateButtonBottomAnchorConstraint(with: -20)
+        scrollView.contentInset = UIEdgeInsets.zero
     }
     
     func updateButtonBottomAnchorConstraint(with constant: CGFloat) {
@@ -189,6 +196,17 @@ extension ResultBoardViewController {
             self.bgBottomAnchorConstraint.constant = constant
             self.view.layoutIfNeeded()
         })
+    }
+}
+
+extension ResultBoardViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if let value = textField.text {
+            scoreBackgroundView.toggleSaveButton()
+            handleInputValue(userName: "\(value)\(string)")
+            return value.count <= maxLength
+        }
+        return true
     }
 }
 
@@ -206,9 +224,9 @@ extension ResultBoardViewController {
         return scrollView
     }
     
-    private func buildCountRoundsView(with text: String) -> UIView {
+    private func buildCountRoundsView() -> UIView {
         let label = UILabel()
-        label.text = text
+        label.text = "Done!"
         label.numberOfLines = 1
         label.textColor = .primaryColor
         label.font = ScaledFont.SFrobotoBold.font(forTextStyle: .headline)
@@ -247,7 +265,6 @@ extension ResultBoardViewController {
         return imageView
     }
     
-    
     private func buildConditionalMessage(with message: String) -> BlueBackgroundView {
         let view = BlueBackgroundView()
         view.messageLabel.text = message
@@ -258,9 +275,10 @@ extension ResultBoardViewController {
     
     private func buildScoreResultBackgroundView() -> ScoreResultBackgroundView {
         let view = ScoreResultBackgroundView()
+        view.userNameTextField.delegate = self
+        view.delegate = self
+        view.setupViewValues(scoreValues: FinalScoreValues(wrongAnswers: String(totalWrongAnswers), correctAnswers: String(totalCorrectAnswers), finalScore: (String(finalscore))))
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }
-    
-    
 }

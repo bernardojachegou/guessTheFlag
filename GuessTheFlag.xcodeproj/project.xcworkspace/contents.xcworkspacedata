@@ -2,18 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/michel.bernardo/Desktop/Projects/GuessTheFlag/GuessTheFlag/Roboto-Light.plist">
-   </FileRef>
-   <FileRef
-      location = "group:../GuessTheFlag/Roboto-Medium.plist">
-   </FileRef>
-   <FileRef
-      location = "group:../GuessTheFlag/Roboto-Regular.plist">
-   </FileRef>
-   <FileRef
-      location = "group:../GuessTheFlag/Roboto-Thin.plist">
-   </FileRef>
-   <FileRef
       location = "self:">
    </FileRef>
 </Workspace>

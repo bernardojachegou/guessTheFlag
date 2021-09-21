@@ -15,7 +15,7 @@ class RoundViewController: UIViewController {
         static var flagCorrectOption = 0
     }
     
-    private lazy var countRoundsLabel = buildCountRoundsLabel(with: "X/X\nCounter")
+    private lazy var countRoundsLabel = buildCountRoundsLabel()
     private lazy var navigationTitleView = buildCountRoundsView()
     private lazy var progressBar = buildProgressBar()
     private lazy var backgroundFlagView = buildBackgroundflagView()
@@ -26,13 +26,13 @@ class RoundViewController: UIViewController {
     private lazy var goFowardButton = buildGoFowardButton()
     
     private var timer = Timer()
-    private var counter = 100
+    private var counter = 5
     
     private var selectedIndex = 0
-    private var roundsLeft = 2
-    private var totalRounds = 2
-    
+    private var roundsLeft = 10
+    private var totalRounds = 10
     private var countRounds = 0
+    
     var scoreValue = 0
     var correctAnswers = 0
     var wrongAnswers = 0
@@ -45,15 +45,19 @@ class RoundViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        view.backgroundColor = .primaryColor
+        prepareViewBackground()
         configureNavigationBar()
-        addView()
+        addSubviews()
         prepareButtons()
-        super.viewDidLoad()
         roundList = loadJsonFile(fileName: "database")
+        super.viewDidLoad()
     }
     
-    private func addView() {
+    private func prepareViewBackground() {
+        view.backgroundColor = .primaryColor
+    }
+    
+    private func addSubviews() {
         view.addSubview(progressBar)
         view.addSubview(backgroundFlagView)
         view.addSubview(stackView)
@@ -103,8 +107,21 @@ class RoundViewController: UIViewController {
         navigationItem.titleView = navigationTitleView
     }
     
+    private func checkRoundsToGo() {
+        if self.roundsLeft != 1 {
+            self.prepareForTheNextRound()
+        } else {
+            timer.invalidate()
+            let vc = ResultBoardViewController()
+            vc.finalscore = handleFinalScoreValue()
+            vc.totalCorrectAnswers = self.correctAnswers
+            vc.totalWrongAnswers = self.wrongAnswers
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
     private func startTimer() {
-        counter = 10
+        counter = 5
         progressBar.setProgress(1, animated: false)
         timer.invalidate()
         timer = Timer.scheduledTimer(timeInterval: 1.0,
@@ -114,19 +131,14 @@ class RoundViewController: UIViewController {
                                      repeats: true)
     }
     
-    @objc private func onTimerTick() {
-        counter != 0 ? counter -= 1 : timer.invalidate()
-        progressBar.setProgress(Float(counter)/10.0, animated: true)
-    }
-    
-    func prepareButtons() {
+    private func prepareButtons() {
         goFowardButton.isUserInteractionEnabled = false
         goFowardButton.alpha = 0.5
         firstOptionButton.tag = CustomTags.firstOptionButtonTag
         secondOptionButton.tag = CustomTags.secondOptionButtonTag
     }
     
-    func checkAnswer(button: Int) {
+    private func checkAnswer(button: Int) {
         if button == CustomTags.flagCorrectOption {
             scoreValue += 30
             correctAnswers += 1
@@ -151,7 +163,16 @@ class RoundViewController: UIViewController {
         goFowardButton.alpha = 1.0
     }
     
-    func updateViewForNewRound() {
+    private func handleFinalScoreValue() -> Int {
+        if scoreValue <= 0 {
+            return 0
+        } else {
+            return scoreValue
+        }
+    }
+    
+    private func updateViewForNewRound() {
+        startTimer()
         if let round = roundList {
             
             countRounds += 1
@@ -167,7 +188,7 @@ class RoundViewController: UIViewController {
         }
     }
     
-    func prepareForTheNextRound() {
+    private func prepareForTheNextRound() {
         roundList?.roundList.remove(at: selectedIndex)
         firstOptionButton.backgroundColor = UIColor.secondaryColor
         secondOptionButton.backgroundColor = UIColor.secondaryColor
@@ -176,6 +197,11 @@ class RoundViewController: UIViewController {
         goFowardButton.isUserInteractionEnabled = false
         goFowardButton.alpha = 0.5
         roundsLeft -= 1
+    }
+    
+    @objc private func onTimerTick() {
+        counter != 0 ? counter -= 1 : checkRoundsToGo()
+        progressBar.setProgress(Float(counter)/5.0, animated: true)
     }
     
     @objc private func onAnswerButtonTap(_ sender: UIButton) {
@@ -190,24 +216,15 @@ class RoundViewController: UIViewController {
         goFowardButton.isUserInteractionEnabled = false
         let seconds = 0.5
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-            if self.roundsLeft != 1 {
-                self.prepareForTheNextRound()
-            } else {
-                let vc = ResultBoardViewController()
-                vc.finalscore = self.scoreValue
-                vc.totalCorrectAnswers = self.correctAnswers
-                vc.totalWrongAnswers = self.wrongAnswers
-                self.navigationController?.pushViewController(vc, animated: true)
-            }
+            self.checkRoundsToGo()
         }
     }
     
 }
 
 private extension RoundViewController {
-    private func buildCountRoundsLabel(with text: String?) -> UILabel {
+    private func buildCountRoundsLabel() -> UILabel {
         let label = UILabel()
-        label.text = text
         label.numberOfLines = 2
         label.textColor = .primaryColor
         label.font = ScaledFont.SFrobotoBold.font(forTextStyle: .callout)

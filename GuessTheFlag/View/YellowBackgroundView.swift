@@ -9,8 +9,8 @@ import UIKit
 
 class YellowBackgroundView: UIView {
     
-    lazy var scoreTopicLabel = buildlScoreTopicLabel(with: "Default Value:")
-    lazy var scorePointLabel = buildScorePointLabel(with: "0")
+    lazy var scoreTopicLabel = buildlScoreTopicLabel()
+    lazy var scorePointLabel = buildScorePointLabel()
     lazy var scorePointsView = buildScorePointsView()
     
     override init(frame: CGRect) {
@@ -53,9 +53,8 @@ class YellowBackgroundView: UIView {
         layer.shadowRadius = 0
     }
     
-    private func buildlScoreTopicLabel(with text: String) -> UILabel {
+    private func buildlScoreTopicLabel() -> UILabel {
         let label = UILabel()
-        label.text = text
         label.textAlignment = .left
         label.font = ScaledFont.SFrobotoBold.font(forTextStyle: .title2)
         label.textColor = .secondaryColor
@@ -64,9 +63,8 @@ class YellowBackgroundView: UIView {
         return label
     }
     
-    private func buildScorePointLabel(with score: String) -> UILabel {
+    private func buildScorePointLabel() -> UILabel {
         let label = UILabel()
-        label.text = score
         label.textAlignment = .center
         label.textColor = .primaryColor
         label.font = ScaledFont.SFrobotoBold.font(forTextStyle: .title1)

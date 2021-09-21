@@ -9,19 +9,23 @@ import UIKit
 
 class StartGameViewController: UIViewController {
     
-    private lazy var titleImageView = buildImageView(using: "flagHunter")
-    private lazy var heroImageView = buildImageView(using: "kidsLogo")
-    private lazy var playButton = buildSmallButton(with: "Play", action: #selector (onPlayButtonTap))
-    private lazy var scoreButton = buildSmallButton(with: "Score", action: #selector(onScoreButtonTap))
+    private lazy var titleImageView = buildImageView(usingImg: "flagHunter")
+    private lazy var heroImageView = buildImageView(usingImg: "kidsLogo")
+    private lazy var playButton = buildSmallButton(withLabel: "Play", OnActionSet: #selector                (playButtonTapped))
+    private lazy var scoreButton = buildSmallButton(withLabel: "Score", OnActionSet: #selector (ScoreButtonTapped))
     private lazy var stackView = buildStackView()
     
     override func viewDidLoad() {
-        view.backgroundColor = .primaryColor
-        addView()
+        prepareViewBackground()
+        addSubviews()
         super.viewDidLoad()
     }
     
-    private func addView() {
+    private func prepareViewBackground() {
+        view.backgroundColor = .primaryColor
+    }
+    
+    private func addSubviews() {
         view.addSubview(titleImageView)
         view.addSubview(heroImageView)
         view.addSubview(stackView)
@@ -40,14 +44,14 @@ class StartGameViewController: UIViewController {
         ])
     }
     
-    @objc private func onPlayButtonTap(sender: UIButton) {
+    @objc private func playButtonTapped(sender: UIButton) {
         sender.pulsate()
         let navigation = UINavigationController(rootViewController: RoundViewController())
         navigation.modalPresentationStyle = .fullScreen
         present(navigation, animated: true, completion: nil)
     }
     
-    @objc private func onScoreButtonTap(sender: UIButton) {
+    @objc private func ScoreButtonTapped(sender: UIButton) {
         sender.pulsate()
         let navigation = UINavigationController(rootViewController: ScoreboardTableViewController())
         navigation.modalPresentationStyle = .popover
@@ -56,7 +60,7 @@ class StartGameViewController: UIViewController {
 }
 
 private extension StartGameViewController {
-    private func buildImageView(using imageName: String) -> UIImageView {
+    private func buildImageView(usingImg imageName: String) -> UIImageView {
         let imageView = UIImageView()
         let image = UIImage(named: imageName)
         imageView.image = image
@@ -65,7 +69,7 @@ private extension StartGameViewController {
         return imageView
     }
     
-    private func buildSmallButton(with title: String, action selector: Selector) -> UIButton {
+    private func buildSmallButton(withLabel title: String, OnActionSet selector: Selector) -> UIButton {
         let button = UIButton()
         button.setTitle(title.uppercased(), for: .normal)
         button.titleLabel?.font = ScaledFont.SFrobotoBold.font(forTextStyle: .title1)

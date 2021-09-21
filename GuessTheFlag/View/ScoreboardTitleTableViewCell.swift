@@ -9,8 +9,8 @@ import UIKit
 
 class ScoreboardTitleTableViewCell: UITableViewCell {
     
-    private lazy var titleNameLabel = buildTitleLabel(with: "Name")
-    private lazy var titleScoreLabel = buildTitleLabel(with: "Score")
+    private lazy var titleNameLabel = buildTitleLabel(withLabel: "Name")
+    private lazy var titleScoreLabel = buildTitleLabel(withLabel: "Score")
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -39,7 +39,7 @@ class ScoreboardTitleTableViewCell: UITableViewCell {
 }
 
 extension ScoreboardTitleTableViewCell {
-    private func buildTitleLabel(with title: String) -> UILabel {
+    private func buildTitleLabel(withLabel title: String) -> UILabel {
         let label = UILabel()
         label.text = title
         label.textColor = .secondaryColor

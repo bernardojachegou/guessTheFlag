@@ -85,7 +85,7 @@ class ScoreboardTableViewController: UITableViewController {
         } else {
             return UITableViewCell()
         }
-
+        
     }
 }
 

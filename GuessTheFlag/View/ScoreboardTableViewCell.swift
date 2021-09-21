@@ -13,8 +13,8 @@ class ScoreboardTableViewCell: UITableViewCell {
     
     private lazy var userNameInfoBg = buildUserInfoView()
     private lazy var userScoreInfoBg = buildUserInfoView()
-    public lazy var userNameLabel = buildUserInfoLabel(with: "Michel Bernardo")
-    public lazy var userScoreLabel = buildUserInfoLabel(with: "100")
+    public lazy var userNameLabel = buildUserInfoLabel()
+    public lazy var userScoreLabel = buildUserInfoLabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -66,20 +66,13 @@ extension ScoreboardTableViewCell {
         return view
     }
     
-    private func buildUserInfoLabel(with userInfo: String) -> UILabel {
+    private func buildUserInfoLabel() -> UILabel {
         let label = UILabel()
-        label.text = userInfo
         label.textColor = .primaryColor
         label.textAlignment = .center
         label.font = ScaledFont.SFrobotoBold.font(forTextStyle: .body)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.adjustsFontForContentSizeCategory = true
-//        NSLayoutConstraint.activate([
-//            label.topAnchor.constraint(equalTo: topAnchor, constant: 10),
-//            label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-//            label.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
-//            label.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10)
-//        ])
         return label
     }
 }

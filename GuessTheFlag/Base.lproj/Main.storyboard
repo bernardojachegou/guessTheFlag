@@ -19,10 +19,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Start GameVC-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="start" id="BYZ-38-t0r" customClass="StartGameVC" customModule="GuessTheFlag" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="start" id="BYZ-38-t0r" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -113,10 +113,10 @@
             </objects>
             <point key="canvasLocation" x="1076.6355140186915" y="92.656587473002162"/>
         </scene>
-        <!--Score TableVC-->
+        <!--Table View Controller-->
         <scene sceneID="iTC-Yp-zUv">
             <objects>
-                <tableViewController id="eeb-nH-Vv4" customClass="ScoreTableVC" customModule="GuessTheFlag" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="eeb-nH-Vv4" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="4sR-K9-gGf">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -241,10 +241,10 @@
             </objects>
             <point key="canvasLocation" x="193" y="93"/>
         </scene>
-        <!--RoundVC-->
+        <!--View Controller-->
         <scene sceneID="SZN-IC-O0m">
             <objects>
-                <viewController id="d0o-wQ-FpR" customClass="RoundVC" customModule="GuessTheFlag" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="d0o-wQ-FpR" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ilf-Ng-JPF">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -370,10 +370,10 @@
             </objects>
             <point key="canvasLocation" x="1847.663551401869" y="-199.56803455723542"/>
         </scene>
-        <!--Result GameVC-->
+        <!--View Controller-->
         <scene sceneID="frJ-Fs-0fK">
             <objects>
-                <viewController storyboardIdentifier="result" id="YLj-dI-uMG" customClass="ResultGameVC" customModule="GuessTheFlag" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="result" id="YLj-dI-uMG" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QqR-H9-OwA">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

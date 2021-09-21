@@ -9,7 +9,7 @@ import UIKit
 
 class BlueBackgroundView: UIView {
     
-    lazy var messageLabel = buildConditionalLabel(with: "Text")
+    lazy var messageLabel = buildConditionalLabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -38,9 +38,8 @@ class BlueBackgroundView: UIView {
         layer.customEffectShadow(with: UIColor.secondaryShadowColor.cgColor)
     }
     
-    private func buildConditionalLabel(with text: String) -> UILabel {
+    private func buildConditionalLabel() -> UILabel {
         let label = UILabel()
-        label.text = text
         label.textAlignment = .center
         label.font = ScaledFont.SFrobotoBold.font(forTextStyle: .title2)
         label.textColor = .primaryColor
@@ -48,5 +47,4 @@ class BlueBackgroundView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }
-    
 }

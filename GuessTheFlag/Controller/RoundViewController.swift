@@ -29,8 +29,8 @@ class RoundViewController: UIViewController {
     private var counter = 5
     
     private var selectedIndex = 0
-    private var roundsLeft = 10
-    private var totalRounds = 10
+    private var roundsLeft = 2
+    private var totalRounds = 2
     private var countRounds = 0
     
     var scoreValue = 0
@@ -73,7 +73,7 @@ class RoundViewController: UIViewController {
             countRoundsLabel.bottomAnchor.constraint(equalTo: navigationTitleView.bottomAnchor),
             
             progressBar.heightAnchor.constraint(equalToConstant: 5),
-            progressBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            progressBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
             progressBar.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: -2),
             progressBar.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 2),
             

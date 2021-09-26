@@ -18,6 +18,8 @@ class ResultBoardViewController: UIViewController {
     private lazy var scoreBackgroundView = buildScoreResultBackgroundView()
     private lazy var bgBottomAnchorConstraint = scoreBackgroundView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
     private lazy var userInputValue = ""
+    private lazy var trophyWidthAnchorConstraint = 75
+    private lazy var trophyHeightAnchorConstraint = 75
     
     let maxLength = 15
     var finalscore = 0
@@ -30,6 +32,7 @@ class ResultBoardViewController: UIViewController {
     
     override func viewDidLoad() {
         prepareViewBackground()
+        checkDeviceToDisplayTrophyImage()
         addSubviews()
         configureNavigationBar()
         subscribeKeyboardNotifications()
@@ -82,11 +85,13 @@ class ResultBoardViewController: UIViewController {
             navigationTitleView.heightAnchor.constraint(equalToConstant: 44),
             
             progressBar.heightAnchor.constraint(equalToConstant: 5),
-            progressBar.topAnchor.constraint(equalTo: view.topAnchor, constant: 10),
+            progressBar.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
             progressBar.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: -2),
             progressBar.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 2),
             
             trophyImageView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
+            trophyImageView.heightAnchor.constraint(equalToConstant: CGFloat(trophyHeightAnchorConstraint)),
+            trophyImageView.widthAnchor.constraint(equalToConstant: CGFloat(trophyWidthAnchorConstraint)),
             
             conditionalMessage.topAnchor.constraint(equalTo: trophyImageView.bottomAnchor, constant: 10),
             conditionalMessage.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 20),
@@ -97,6 +102,14 @@ class ResultBoardViewController: UIViewController {
             scoreBackgroundView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
             scoreBackgroundView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
         ])
+    }
+    
+    private func checkDeviceToDisplayTrophyImage() {
+        print("Screen height: \(view.bounds.height)")
+        if view.bounds.height >= 730 {
+            trophyHeightAnchorConstraint = 125
+            trophyWidthAnchorConstraint = 125
+        }
     }
     
     private func configureNavigationBar() {

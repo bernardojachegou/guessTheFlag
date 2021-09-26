@@ -78,7 +78,16 @@ class ScoreboardTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: ScoreboardTableViewCell.identifier, for: indexPath) as? ScoreboardTableViewCell {
-            let score = scores[indexPath.row]
+            
+            let sortedScore = scores.sorted {
+                if let key1Int = Int($0.userScore), let key2Int = Int($1.userScore) {
+                    return key1Int > key2Int
+                }
+                return true
+            }
+            
+            let score = sortedScore[indexPath.row]
+            
             cell.userNameLabel.text = score.userName
             cell.userScoreLabel.text = score.userScore
             return cell

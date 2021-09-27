@@ -93,7 +93,7 @@ class ResultBoardViewController: UIViewController {
             trophyImageView.heightAnchor.constraint(equalToConstant: CGFloat(trophyHeightAnchorConstraint)),
             trophyImageView.widthAnchor.constraint(equalToConstant: CGFloat(trophyWidthAnchorConstraint)),
             
-            conditionalMessage.topAnchor.constraint(equalTo: trophyImageView.bottomAnchor, constant: 10),
+            conditionalMessage.topAnchor.constraint(equalTo: trophyImageView.bottomAnchor, constant: 20),
             conditionalMessage.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 20),
             conditionalMessage.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -20),
             
@@ -161,11 +161,11 @@ class ResultBoardViewController: UIViewController {
     private func handleConditionalMessage() -> String {
         var message = ""
         if totalCorrectAnswers >= 8 {
-            message = "You are the best player!"
+            message = "You are the best!"
         } else if totalCorrectAnswers > 5 && totalCorrectAnswers < 8 {
-            message = "You are a good player!"
+            message = "You are good!"
         } else {
-            message = "You must improve your skills :("
+            message = "You must practice!"
         }
         return message
     }

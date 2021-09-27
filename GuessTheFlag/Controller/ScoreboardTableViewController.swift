@@ -43,6 +43,7 @@ class ScoreboardTableViewController: UITableViewController {
         let label = UILabel()
         label.text = "Scoreboard"
         label.textColor = .secondaryColor
+        label.adjustsFontForContentSizeCategory = false
         label.font = ScaledFont.SFrobotoBold.font(forTextStyle: .title1)
         label.translatesAutoresizingMaskIntoConstraints = false
         let view = UIView()

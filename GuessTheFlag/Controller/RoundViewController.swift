@@ -227,6 +227,7 @@ private extension RoundViewController {
         let label = UILabel()
         label.numberOfLines = 2
         label.textColor = .primaryColor
+        label.adjustsFontForContentSizeCategory = false
         label.font = ScaledFont.SFrobotoBold.font(forTextStyle: .callout)
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false

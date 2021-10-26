@@ -12,6 +12,7 @@
 		9905C384269F1B3A008F82EE /* ScoreboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9905C383269F1B3A008F82EE /* ScoreboardTableViewCell.swift */; };
 		9905C386269F5B8D008F82EE /* UICustomShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9905C385269F5B8D008F82EE /* UICustomShadow.swift */; };
 		9905C388269F7E3A008F82EE /* ScoreboardTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9905C387269F7E39008F82EE /* ScoreboardTitleTableViewCell.swift */; };
+		990A878227286EFB00BE6A5B /* ResultBoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990A878127286EFB00BE6A5B /* ResultBoardViewModel.swift */; };
 		991C96D72688DA46007ABF3A /* ResultBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991C96D62688DA46007ABF3A /* ResultBoardViewController.swift */; };
 		99313B3226B429DE00F082A2 /* UserDefaultsPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99313B3126B429DE00F082A2 /* UserDefaultsPersistence.swift */; };
 		9937511426ED07BA00EA16A6 /* UICustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9937511326ED07BA00EA16A6 /* UICustomTextField.swift */; };
@@ -68,6 +69,7 @@
 		9905C383269F1B3A008F82EE /* ScoreboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardTableViewCell.swift; sourceTree = "<group>"; };
 		9905C385269F5B8D008F82EE /* UICustomShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustomShadow.swift; sourceTree = "<group>"; };
 		9905C387269F7E39008F82EE /* ScoreboardTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardTitleTableViewCell.swift; sourceTree = "<group>"; };
+		990A878127286EFB00BE6A5B /* ResultBoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultBoardViewModel.swift; sourceTree = "<group>"; };
 		991C96D62688DA46007ABF3A /* ResultBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultBoardViewController.swift; sourceTree = "<group>"; };
 		99313B3126B429DE00F082A2 /* UserDefaultsPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsPersistence.swift; sourceTree = "<group>"; };
 		9937511326ED07BA00EA16A6 /* UICustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustomTextField.swift; sourceTree = "<group>"; };
@@ -140,6 +142,14 @@
 				99B9DDC026F23C5100A38A56 /* FinalScoreValues.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		990A878027286EDC00BE6A5B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				990A878127286EFB00BE6A5B /* ResultBoardViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		99B3D67E2631E9E300D32384 /* Supporting Files */ = {
@@ -223,6 +233,7 @@
 		99FA6E29262DCA7E00E8FB9D /* GuessTheFlag */ = {
 			isa = PBXGroup;
 			children = (
+				990A878027286EDC00BE6A5B /* ViewModel */,
 				9903720C2637908800B32A4C /* Model */,
 				99B3D6E42631F9E900D32384 /* View */,
 				99B3D67F2631EA5000D32384 /* Controller */,
@@ -417,6 +428,7 @@
 				9975135D269CD7690039C344 /* ScoreboardTableViewController.swift in Sources */,
 				99313B3226B429DE00F082A2 /* UserDefaultsPersistence.swift in Sources */,
 				9905C388269F7E3A008F82EE /* ScoreboardTitleTableViewCell.swift in Sources */,
+				990A878227286EFB00BE6A5B /* ResultBoardViewModel.swift in Sources */,
 				99EF9429263C40FE002E1A71 /* StartGameViewController.swift in Sources */,
 				99AE1A2426404F3D0048BE00 /* Scoreboard.swift in Sources */,
 				9905C386269F5B8D008F82EE /* UICustomShadow.swift in Sources */,
@@ -607,7 +619,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K4939JV3B5;
 				INFOPLIST_FILE = GuessTheFlag/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -615,7 +627,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = michel.GuessTheFlag;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -627,7 +639,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K4939JV3B5;
 				INFOPLIST_FILE = GuessTheFlag/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -635,7 +647,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = michel.GuessTheFlag;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

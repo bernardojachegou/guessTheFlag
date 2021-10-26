@@ -9,7 +9,7 @@ import UIKit
 
 class ScoreboardTableViewCell: UITableViewCell {
     
-    static var identifier = "userScoreInfos"
+    static var identifier = "userScoreInfo"
     
     private lazy var userNameInfoBg = buildUserInfoView()
     private lazy var userScoreInfoBg = buildUserInfoView()

@@ -29,8 +29,8 @@ class RoundViewController: UIViewController {
     private var counter = 5
     
     private var selectedIndex = 0
-    private var roundsLeft = 10
-    private var totalRounds = 10
+    private var roundsLeft = 10 // must be refactored
+    private var totalRounds = 10 // must be refactored
     private var countRounds = 0
     
     var scoreValue = 0
@@ -138,6 +138,7 @@ class RoundViewController: UIViewController {
         secondOptionButton.tag = CustomTags.secondOptionButtonTag
     }
     
+    // data output
     private func checkAnswer(button: Int) {
         if button == CustomTags.flagCorrectOption {
             scoreValue += 30
@@ -163,6 +164,7 @@ class RoundViewController: UIViewController {
         goFowardButton.alpha = 1.0
     }
     
+    // kind of computed property
     private func handleFinalScoreValue() -> Int {
         if scoreValue <= 0 {
             return 0
@@ -173,8 +175,8 @@ class RoundViewController: UIViewController {
     
     private func updateViewForNewRound() {
         startTimer()
+        
         if let round = roundList {
-            
             countRounds += 1
             countRoundsLabel.text = "\(countRounds)/\(totalRounds)\nRounds"
             

@@ -104,6 +104,7 @@ class ResultBoardViewController: UIViewController {
         ])
     }
     
+    // def func to be removed
     private func checkDeviceToDisplayTrophyImage() {
         print("Screen height: \(view.bounds.height)")
         if view.bounds.height >= 730 {
@@ -145,7 +146,7 @@ class ResultBoardViewController: UIViewController {
                 }
             }
             
-            // Must be unwrapped
+            // Data input
             let scoreboard = Scoreboard(userName: userInputValue, userScore: String(finalscore))
             scores.append(scoreboard)
             
@@ -158,6 +159,7 @@ class ResultBoardViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    // a kind of computed property
     private func handleConditionalMessage() -> String {
         var message = ""
         if totalCorrectAnswers >= 8 {

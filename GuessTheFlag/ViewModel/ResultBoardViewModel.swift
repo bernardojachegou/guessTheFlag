@@ -14,10 +14,20 @@ enum ResultMessage: String {
 }
 
 class ResultBoardViewModel {
-    private var scoreValue: Int = 0
+    private var scoreValue: Int = 0 // in both
+    private var correctAnswers: Int = 0 // in both
+    private var wrongAnswers: Int = 0 // in both
+    
+    private var maxLength: Int = 0
+    private var finalscore: Int = 0
+    
+    public func setMaxLength(_ length: Int) {
+        maxLength = length
+    }
     
     public func setScore(_ value: Int) {
-        scoreValue = value < 0 ? 0 : value
+        let multiplier: Int = 30
+        scoreValue = value < 0 ? 0 : value * multiplier
     }
     
     public func getScore() -> Int {

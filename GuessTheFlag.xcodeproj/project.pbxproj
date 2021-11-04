@@ -33,6 +33,7 @@
 		99B4508A269BB82400D24B4F /* Roboto-Thin.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99B45089269BB82400D24B4F /* Roboto-Thin.plist */; };
 		99B4508D269BCBD200D24B4F /* YellowBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B4508C269BCBD200D24B4F /* YellowBackgroundView.swift */; };
 		99B9DDC126F23C5100A38A56 /* FinalScoreValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B9DDC026F23C5100A38A56 /* FinalScoreValues.swift */; };
+		99CCDDA8273368F8000D5A21 /* RoundViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CCDDA7273368F8000D5A21 /* RoundViewModel.swift */; };
 		99D8E09D2649990D0021C987 /* UICustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D8E09C2649990D0021C987 /* UICustomColors.swift */; };
 		99D8E0A226499D270021C987 /* UICustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D8E0A126499D270021C987 /* UICustomButton.swift */; };
 		99EF9429263C40FE002E1A71 /* StartGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EF9428263C40FE002E1A71 /* StartGameViewController.swift */; };
@@ -90,6 +91,7 @@
 		99B45089269BB82400D24B4F /* Roboto-Thin.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Roboto-Thin.plist"; sourceTree = "<group>"; };
 		99B4508C269BCBD200D24B4F /* YellowBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YellowBackgroundView.swift; sourceTree = "<group>"; };
 		99B9DDC026F23C5100A38A56 /* FinalScoreValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalScoreValues.swift; sourceTree = "<group>"; };
+		99CCDDA7273368F8000D5A21 /* RoundViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundViewModel.swift; sourceTree = "<group>"; };
 		99D8E09C2649990D0021C987 /* UICustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustomColors.swift; sourceTree = "<group>"; };
 		99D8E0A126499D270021C987 /* UICustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustomButton.swift; sourceTree = "<group>"; };
 		99EF9428263C40FE002E1A71 /* StartGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				990A878127286EFB00BE6A5B /* ResultBoardViewModel.swift */,
+				99CCDDA7273368F8000D5A21 /* RoundViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 				9905C384269F1B3A008F82EE /* ScoreboardTableViewCell.swift in Sources */,
 				997BF5D0268805F7008F5E44 /* RoundViewController.swift in Sources */,
 				99D8E09D2649990D0021C987 /* UICustomColors.swift in Sources */,
+				99CCDDA8273368F8000D5A21 /* RoundViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -154,7 +154,7 @@ class RoundViewController: UIViewController {
             }
         }
         
-        if roundsLeft == 1 {
+        if roundsLeft == 1 { // set a boolean value
             goFowardButton.setTitle("Finish".uppercased(), for: .normal)
         }
         

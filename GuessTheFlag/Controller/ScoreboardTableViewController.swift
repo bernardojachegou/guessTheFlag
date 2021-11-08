@@ -13,16 +13,14 @@ class ScoreboardTableViewController: UITableViewController {
     var scores: [Scoreboard] = []
     
     override func viewDidLoad() {
-        configureNavigationBar()
-        view.backgroundColor = .secondaryColor
-        tableView.register(ScoreboardTableViewCell.self, forCellReuseIdentifier: ScoreboardTableViewCell.identifier)
         super.viewDidLoad()
+        view.backgroundColor = .secondaryColor
+        configureNavigationBar()
+        tableView.register(ScoreboardTableViewCell.self, forCellReuseIdentifier: ScoreboardTableViewCell.identifier)
+        loadData()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        // data input
+    private func loadData() {
         if let data = UserDefaults.standard.data(forKey: "savedScore") {
             if let decodedScores = try? JSONDecoder().decode([Scoreboard].self, from: data) {
                 scores = decodedScores
@@ -32,6 +30,8 @@ class ScoreboardTableViewController: UITableViewController {
     }
     
     private func configureNavigationBar() {
+        navigationController?.navigationBar.update(backgroundColor: .secondaryColor, shadowColor: .secondaryColor)
+        
         let appearance = UINavigationBarAppearance()
         navigationItem.standardAppearance = appearance
         navigationItem.standardAppearance?.backgroundColor = .secondaryColor

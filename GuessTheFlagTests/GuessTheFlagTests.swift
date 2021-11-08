@@ -9,7 +9,10 @@ import XCTest
 @testable import GuessTheFlag
 
 class GuessTheFlagTests: XCTestCase {
-    var viewModel = ResultBoardViewModel()
+    
+    private var finalScoreValues: FinalScoreValues
+    
+    private let viewModel: ResultBoardViewModel
 
     override func setUpWithError() throws {
         viewModel.setScore(0)
@@ -21,7 +24,7 @@ class GuessTheFlagTests: XCTestCase {
 
     func testLowScoreLimit() throws {
         viewModel.setScore(-20)
-        XCTAssertEqual(viewModel.getScore(), 0)
+        XCTAssertEqual(Int(viewModel.getScore()), 0)
     }
     
     func testResultFinalMessage() throws {

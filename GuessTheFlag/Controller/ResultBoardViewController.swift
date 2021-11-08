@@ -14,17 +14,25 @@ class ResultBoardViewController: UIViewController {
     private lazy var navigationTitleView = buildCountRoundsView()
     private lazy var progressBar = buildProgressBar()
     private lazy var trophyImageView = buildTrophyImageView()
-    private lazy var conditionalMessage = buildConditionalMessage(with: handleConditionalMessage())
+    private lazy var conditionalMessage = buildConditionalMessage(with: viewModel.getFinalMessage().rawValue)
     private lazy var scoreBackgroundView = buildScoreResultBackgroundView()
     private lazy var bgBottomAnchorConstraint = scoreBackgroundView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
     private lazy var userInputValue = ""
     private lazy var trophyWidthAnchorConstraint = 75
     private lazy var trophyHeightAnchorConstraint = 75
+    private let viewModel: ResultBoardViewModel
+    private let maxLength = 15
+ 
     
-    let maxLength = 15
-    var finalscore = 0
-    var totalCorrectAnswers = 0
-    var totalWrongAnswers = 0
+    init(viewModel: ResultBoardViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     deinit {
         unsubscribeKeyboardNotifications()
@@ -147,7 +155,7 @@ class ResultBoardViewController: UIViewController {
             }
             
             // Data input
-            let scoreboard = Scoreboard(userName: userInputValue, userScore: String(finalscore))
+            let scoreboard = Scoreboard(userName: userInputValue, userScore: viewModel.getScore())
             scores.append(scoreboard)
             
             if let savedScore = try? JSONEncoder().encode(scores) {
@@ -157,19 +165,6 @@ class ResultBoardViewController: UIViewController {
             
         }
         dismiss(animated: true, completion: nil)
-    }
-    
-    // a kind of computed property
-    private func handleConditionalMessage() -> String {
-        var message = ""
-        if totalCorrectAnswers >= 8 {
-            message = "You are the best!"
-        } else if totalCorrectAnswers > 5 && totalCorrectAnswers < 8 {
-            message = "You are good!"
-        } else {
-            message = "You must practice!"
-        }
-        return message
     }
     
 }
@@ -297,7 +292,7 @@ extension ResultBoardViewController {
         let view = ScoreResultBackgroundView()
         view.userNameTextField.delegate = self
         view.delegate = self
-        view.setupViewValues(scoreValues: FinalScoreValues(wrongAnswers: String(totalWrongAnswers), correctAnswers: String(totalCorrectAnswers), finalScore: (String(finalscore))))
+        view.setupViewValues(scoreValues: viewModel.getFinalScoreValues())
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }

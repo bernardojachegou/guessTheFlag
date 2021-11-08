@@ -14,6 +14,7 @@
 		9905C388269F7E3A008F82EE /* ScoreboardTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9905C387269F7E39008F82EE /* ScoreboardTitleTableViewCell.swift */; };
 		990A878227286EFB00BE6A5B /* ResultBoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990A878127286EFB00BE6A5B /* ResultBoardViewModel.swift */; };
 		991C96D72688DA46007ABF3A /* ResultBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991C96D62688DA46007ABF3A /* ResultBoardViewController.swift */; };
+		99303A41273472DA00D0F765 /* UINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99303A40273472DA00D0F765 /* UINavigationBar.swift */; };
 		99313B3226B429DE00F082A2 /* UserDefaultsPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99313B3126B429DE00F082A2 /* UserDefaultsPersistence.swift */; };
 		9937511426ED07BA00EA16A6 /* UICustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9937511326ED07BA00EA16A6 /* UICustomTextField.swift */; };
 		994D316F26937DD7003F65AF /* BlueBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994D316E26937DD7003F65AF /* BlueBackgroundView.swift */; };
@@ -72,6 +73,7 @@
 		9905C387269F7E39008F82EE /* ScoreboardTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardTitleTableViewCell.swift; sourceTree = "<group>"; };
 		990A878127286EFB00BE6A5B /* ResultBoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultBoardViewModel.swift; sourceTree = "<group>"; };
 		991C96D62688DA46007ABF3A /* ResultBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultBoardViewController.swift; sourceTree = "<group>"; };
+		99303A40273472DA00D0F765 /* UINavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBar.swift; sourceTree = "<group>"; };
 		99313B3126B429DE00F082A2 /* UserDefaultsPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsPersistence.swift; sourceTree = "<group>"; };
 		9937511326ED07BA00EA16A6 /* UICustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustomTextField.swift; sourceTree = "<group>"; };
 		994D316E26937DD7003F65AF /* BlueBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueBackgroundView.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 				996523ED268BA21B008B76E1 /* UIScaledFonts.swift */,
 				9905C385269F5B8D008F82EE /* UICustomShadow.swift */,
 				9937511326ED07BA00EA16A6 /* UICustomTextField.swift */,
+				99303A40273472DA00D0F765 /* UINavigationBar.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -440,6 +443,7 @@
 				99FA6E2B262DCA7E00E8FB9D /* AppDelegate.swift in Sources */,
 				99FA6E2D262DCA7E00E8FB9D /* SceneDelegate.swift in Sources */,
 				99FE557226D3EF4400B399F5 /* ScoreResultBackgroundView.swift in Sources */,
+				99303A41273472DA00D0F765 /* UINavigationBar.swift in Sources */,
 				9903720E263790B400B32A4C /* Round.swift in Sources */,
 				9905C384269F1B3A008F82EE /* ScoreboardTableViewCell.swift in Sources */,
 				997BF5D0268805F7008F5E44 /* RoundViewController.swift in Sources */,

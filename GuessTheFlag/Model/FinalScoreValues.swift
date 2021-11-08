@@ -8,7 +8,7 @@
 import Foundation
 
 struct FinalScoreValues {
-    var wrongAnswers: String
-    var correctAnswers: String
-    var finalScore: String
+    var wrongAnswers: Int
+    var correctAnswers: Int
+    var scoreValue: Int
 }

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum ResultMessage: String {
     case best = "You are the best!"
@@ -14,30 +15,38 @@ enum ResultMessage: String {
 }
 
 class ResultBoardViewModel {
-    private var scoreValue: Int = 0 // in both
-    private var correctAnswers: Int = 0 // in both
-    private var wrongAnswers: Int = 0 // in both
     
-    private var maxLength: Int = 0
-    private var finalscore: Int = 0
+    private var finalScoreValues: FinalScoreValues
     
-    public func setMaxLength(_ length: Int) {
-        maxLength = length
+    init(finalScoreValues: FinalScoreValues) {
+        self.finalScoreValues = finalScoreValues
+    }
+    
+    public func getFinalScoreValues() -> FinalScoreValues {
+        return finalScoreValues
+    }
+    
+    public func getCorrectAnswers() -> String {
+        return String(finalScoreValues.correctAnswers)
+    }
+    
+    public func getWrongAnswers() -> String {
+        return String(finalScoreValues.wrongAnswers)
     }
     
     public func setScore(_ value: Int) {
         let multiplier: Int = 30
-        scoreValue = value < 0 ? 0 : value * multiplier
+        finalScoreValues.scoreValue = value < 0 ? 0 : value * multiplier
     }
     
-    public func getScore() -> Int {
-        return scoreValue
+    public func getScore() -> String {
+        return String(finalScoreValues.scoreValue)
     }
     
     public func getFinalMessage() -> ResultMessage {
-        if scoreValue >= 8 {
+        if finalScoreValues.scoreValue >= 240 {
             return .best
-        } else if scoreValue > 5 {
+        } else if finalScoreValues.scoreValue > 150 {
             return .good
         } else {
             return .bad

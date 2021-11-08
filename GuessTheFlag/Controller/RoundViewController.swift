@@ -99,6 +99,16 @@ class RoundViewController: UIViewController {
     }
     
     private func configureNavigationBar() {
+        
+        if #available(iOS 15, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = .primaryColor
+            appearance.shadowColor = .primaryColor
+            UINavigationBar.appearance().standardAppearance = appearance
+            UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        }
+        
         let appearance = UINavigationBarAppearance()
         navigationItem.standardAppearance = appearance
         navigationItem.standardAppearance?.backgroundColor = .primaryColor
@@ -112,10 +122,9 @@ class RoundViewController: UIViewController {
             self.prepareForTheNextRound()
         } else {
             timer.invalidate()
-            let vc = ResultBoardViewController()
-            vc.finalscore = handleFinalScoreValue()
-            vc.totalCorrectAnswers = self.correctAnswers
-            vc.totalWrongAnswers = self.wrongAnswers
+            let finalScoreValues = FinalScoreValues(wrongAnswers: wrongAnswers, correctAnswers: correctAnswers, scoreValue: handleFinalScoreValue())
+            let viewModel = ResultBoardViewModel(finalScoreValues: finalScoreValues)
+            let vc = ResultBoardViewController(viewModel: viewModel)
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }

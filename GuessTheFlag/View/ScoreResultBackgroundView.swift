@@ -27,9 +27,9 @@ class ScoreResultBackgroundView: UIView {
     }
     
     func setupViewValues(scoreValues: FinalScoreValues) {
-        wrongAnswersView.scorePointLabel.text = scoreValues.wrongAnswers
-        correctAnswersView.scorePointLabel.text = scoreValues.correctAnswers
-        finalScoreView.scorePointLabel.text = scoreValues.finalScore
+        wrongAnswersView.scorePointLabel.text = String(scoreValues.wrongAnswers)
+        correctAnswersView.scorePointLabel.text = String(scoreValues.correctAnswers)
+        finalScoreView.scorePointLabel.text = String(scoreValues.scoreValue)
     }
     
     func toggleSaveButton() {

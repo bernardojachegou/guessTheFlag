@@ -9,18 +9,30 @@ import XCTest
 @testable import GuessTheFlag
 
 class GuessTheFlagTests: XCTestCase {
+    
+    private var finalScoreValues: FinalScoreValues
+    
+    private let viewModel: ResultBoardViewModel
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        viewModel.setScore(0)
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        viewModel.setScore(0)
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testLowScoreLimit() throws {
+        viewModel.setScore(-20)
+        XCTAssertEqual(Int(viewModel.getScore()), 0)
+    }
+    
+    func testResultFinalMessage() throws {
+        XCTAssertEqual(viewModel.getFinalMessage(), .bad)
+        viewModel.setScore(6)
+        XCTAssertEqual(viewModel.getFinalMessage(), .good)
+        viewModel.setScore(9)
+        XCTAssertEqual(viewModel.getFinalMessage(), .best)
     }
 
     func testPerformanceExample() throws {

@@ -11,17 +11,22 @@ import XCTest
 class GuessTheFlagTests: XCTestCase {
     
     private var finalScoreValues: FinalScoreValues
-    
     private let viewModel: ResultBoardViewModel
-
+    
+    required init?(finalScoreValues: FinalScoreValues, viewModel: ResultBoardViewModel) {
+        self.finalScoreValues = finalScoreValues
+        self.viewModel = viewModel
+        super.init()
+    }
+    
     override func setUpWithError() throws {
         viewModel.setScore(0)
     }
-
+    
     override func tearDownWithError() throws {
         viewModel.setScore(0)
     }
-
+    
     func testLowScoreLimit() throws {
         viewModel.setScore(-20)
         XCTAssertEqual(Int(viewModel.getScore()), 0)
@@ -34,12 +39,12 @@ class GuessTheFlagTests: XCTestCase {
         viewModel.setScore(9)
         XCTAssertEqual(viewModel.getFinalMessage(), .best)
     }
-
+    
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
         self.measure {
             // Put the code you want to measure the time of here.
         }
     }
-
+    
 }

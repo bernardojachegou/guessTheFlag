@@ -52,4 +52,12 @@ class ResultBoardViewModel {
             return .bad
         }
     }
+    
+    public func getViewHeight(_ view: UIView) -> CGFloat {
+        return view.bounds.height
+    }
+    
+    public func setTrophyImageSize(_ view: UIView) -> Int {
+        view.bounds.height >= 750 ? 125 : 75
+    }
 }

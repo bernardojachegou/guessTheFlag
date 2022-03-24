@@ -67,8 +67,8 @@ class ResultBoardViewController: UIViewController {
         let endEditingGesture = UITapGestureRecognizer (target: self, action: #selector(endEditingTapped(_:)))
         view.addGestureRecognizer(endEditingGesture)
         
-//        trophyWidthAnchorConstraint = viewModel.setTrophyImageSize(view)
-//        trophyHeightAnchorConstraint = viewModel.setTrophyImageSize(view)
+        trophyWidthAnchorConstraint = viewModel.setTrophyImageSize(view)
+        trophyHeightAnchorConstraint = viewModel.setTrophyImageSize(view)
     }
 
     private func addSubviews() {

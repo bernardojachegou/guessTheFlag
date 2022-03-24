@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension  CALayer {
+extension CALayer {
     func customEffectShadow(with color: CGColor) {
         shadowColor = color
         shadowOpacity = 1

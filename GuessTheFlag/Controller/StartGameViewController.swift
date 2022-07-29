@@ -11,9 +11,9 @@ class StartGameViewController: UIViewController {
     
     private lazy var titleImageView = buildImageView(usingImg: "flagHunter")
     private lazy var heroImageView = buildImageView(usingImg: "kidsLogo")
-    private lazy var playButton = buildSmallButton(withLabel: "Play", OnActionSet: #selector                (playButtonTapped))
-    private lazy var scoreButton = buildSmallButton(withLabel: "Score", OnActionSet: #selector (ScoreButtonTapped))
     private lazy var stackView = buildStackView()
+    private lazy var playButton = buildSmallButton(withLabel: "Play", onActionSet: #selector (playButtonTapped))
+    private lazy var scoreButton = buildSmallButton(withLabel: "Score", onActionSet: #selector (scoreButtonTapped))
     
     override func viewDidLoad() {
         prepareViewBackground()
@@ -51,7 +51,7 @@ class StartGameViewController: UIViewController {
         present(navigation, animated: true, completion: nil)
     }
     
-    @objc private func ScoreButtonTapped(sender: UIButton) {
+    @objc private func scoreButtonTapped(sender: UIButton) {
         sender.pulsate()
         let navigation = UINavigationController(rootViewController: ScoreboardTableViewController())
         navigation.modalPresentationStyle = .popover
@@ -69,7 +69,7 @@ private extension StartGameViewController {
         return imageView
     }
     
-    private func buildSmallButton(withLabel title: String, OnActionSet selector: Selector) -> UIButton {
+    private func buildSmallButton(withLabel title: String, onActionSet selector: Selector) -> UIButton {
         let button = UIButton()
         button.setTitle(title.uppercased(), for: .normal)
         button.titleLabel?.font = ScaledFont.SFrobotoBold.font(forTextStyle: .title1)

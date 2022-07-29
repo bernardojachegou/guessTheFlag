@@ -14,14 +14,13 @@ class ScoreboardTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureNavigationBar()
         view.backgroundColor = .secondaryColor
+        configureNavigationBar()
         tableView.register(ScoreboardTableViewCell.self, forCellReuseIdentifier: ScoreboardTableViewCell.identifier)
+        loadData()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
+    private func loadData() {
         if let data = UserDefaults.standard.data(forKey: "savedScore") {
             if let decodedScores = try? JSONDecoder().decode([Scoreboard].self, from: data) {
                 scores = decodedScores
@@ -31,6 +30,8 @@ class ScoreboardTableViewController: UITableViewController {
     }
     
     private func configureNavigationBar() {
+        navigationController?.navigationBar.update(backgroundColor: .secondaryColor, shadowColor: .secondaryColor)
+        
         let appearance = UINavigationBarAppearance()
         navigationItem.standardAppearance = appearance
         navigationItem.standardAppearance?.backgroundColor = .secondaryColor
@@ -61,7 +62,7 @@ class ScoreboardTableViewController: UITableViewController {
         return view
     }
     
-    // MARK: - Table view data source
+    // MARK: - TableView dataSource
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -81,21 +82,22 @@ class ScoreboardTableViewController: UITableViewController {
         if let cell = tableView.dequeueReusableCell(withIdentifier: ScoreboardTableViewCell.identifier, for: indexPath) as? ScoreboardTableViewCell {
             
             let sortedScore = scores.sorted {
-                if let key1Int = Int($0.userScore), let key2Int = Int($1.userScore) {
-                    return key1Int > key2Int
+                if let playerScoreSet = Int($0.userScore), let nextPlayerScoreSet = Int($1.userScore) {
+                    return playerScoreSet > nextPlayerScoreSet
                 }
                 return true
             }
             
             let score = sortedScore[indexPath.row]
-            
             cell.userNameLabel.text = score.userName
             cell.userScoreLabel.text = score.userScore
+            
             return cell
+            
         } else {
+            
             return UITableViewCell()
         }
-        
     }
 }
 

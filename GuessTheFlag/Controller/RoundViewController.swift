@@ -29,8 +29,8 @@ class RoundViewController: UIViewController {
     private var counter = 5
     
     private var selectedIndex = 0
-    private var roundsLeft = 10
-    private var totalRounds = 10
+    private var roundsLeft = 10 // must be refactored
+    private var totalRounds = 10 // must be refactored
     private var countRounds = 0
     
     var scoreValue = 0
@@ -99,6 +99,16 @@ class RoundViewController: UIViewController {
     }
     
     private func configureNavigationBar() {
+        
+        if #available(iOS 15, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = .primaryColor
+            appearance.shadowColor = .primaryColor
+            UINavigationBar.appearance().standardAppearance = appearance
+            UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        }
+        
         let appearance = UINavigationBarAppearance()
         navigationItem.standardAppearance = appearance
         navigationItem.standardAppearance?.backgroundColor = .primaryColor
@@ -112,10 +122,9 @@ class RoundViewController: UIViewController {
             self.prepareForTheNextRound()
         } else {
             timer.invalidate()
-            let vc = ResultBoardViewController()
-            vc.finalscore = handleFinalScoreValue()
-            vc.totalCorrectAnswers = self.correctAnswers
-            vc.totalWrongAnswers = self.wrongAnswers
+            let finalScoreValues = FinalScoreValues(wrongAnswers: wrongAnswers, correctAnswers: correctAnswers, scoreValue: handleFinalScoreValue())
+            let viewModel = ResultBoardViewModel(finalScoreValues: finalScoreValues)
+            let vc = ResultBoardViewController(viewModel: viewModel)
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
@@ -138,6 +147,7 @@ class RoundViewController: UIViewController {
         secondOptionButton.tag = CustomTags.secondOptionButtonTag
     }
     
+    // data output
     private func checkAnswer(button: Int) {
         if button == CustomTags.flagCorrectOption {
             scoreValue += 30
@@ -153,7 +163,7 @@ class RoundViewController: UIViewController {
             }
         }
         
-        if roundsLeft == 1 {
+        if roundsLeft == 1 { // set a boolean value
             goFowardButton.setTitle("Finish".uppercased(), for: .normal)
         }
         
@@ -163,6 +173,7 @@ class RoundViewController: UIViewController {
         goFowardButton.alpha = 1.0
     }
     
+    // kind of computed property
     private func handleFinalScoreValue() -> Int {
         if scoreValue <= 0 {
             return 0
@@ -173,8 +184,8 @@ class RoundViewController: UIViewController {
     
     private func updateViewForNewRound() {
         startTimer()
+        
         if let round = roundList {
-            
             countRounds += 1
             countRoundsLabel.text = "\(countRounds)/\(totalRounds)\nRounds"
             

@@ -14,42 +14,63 @@ class ResultBoardViewController: UIViewController {
     private lazy var navigationTitleView = buildCountRoundsView()
     private lazy var progressBar = buildProgressBar()
     private lazy var trophyImageView = buildTrophyImageView()
-    private lazy var conditionalMessage = buildConditionalMessage(with: handleConditionalMessage())
+    private lazy var conditionalMessage = buildConditionalMessage(with: viewModel.getFinalMessage().rawValue)
     private lazy var scoreBackgroundView = buildScoreResultBackgroundView()
+    
     private lazy var bgBottomAnchorConstraint = scoreBackgroundView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-    private lazy var userInputValue = ""
     private lazy var trophyWidthAnchorConstraint = 75
     private lazy var trophyHeightAnchorConstraint = 75
+    private lazy var userInputValue = ""
+    private let maxCharLength = 15
     
-    let maxLength = 15
-    var finalscore = 0
-    var totalCorrectAnswers = 0
-    var totalWrongAnswers = 0
+    private let viewModel: ResultBoardViewModel
+    
+    init(viewModel: ResultBoardViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     deinit {
         unsubscribeKeyboardNotifications()
     }
     
     override func viewDidLoad() {
-        prepareViewBackground()
         checkDeviceToDisplayTrophyImage()
         addSubviews()
+        setUIFactory()
         configureNavigationBar()
         subscribeKeyboardNotifications()
         super.viewDidLoad()
-        
-        let endEditingGesture = UITapGestureRecognizer (target: self, action: #selector(endEditingTapped(_:)))
-        view.addGestureRecognizer(endEditingGesture)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         unsubscribeKeyboardNotifications()
     }
     
-    private func prepareViewBackground()  {
-        view.backgroundColor = .primaryColor
+    private func configureNavigationBar() {
+        let appearance = UINavigationBarAppearance()
+        navigationItem.standardAppearance = appearance
+        navigationItem.standardAppearance?.backgroundColor = UIColor.primaryColor
+        navigationItem.standardAppearance?.shadowColor = UIColor.primaryColor
+        navigationController?.navigationBar.isTranslucent = false
+        navigationItem.titleView = navigationTitleView
+        navigationItem.setHidesBackButton(true, animated: false)
     }
     
+    private func setUIFactory() {
+        view.backgroundColor = .primaryColor
+        
+        let endEditingGesture = UITapGestureRecognizer (target: self, action: #selector(endEditingTapped(_:)))
+        view.addGestureRecognizer(endEditingGesture)
+        
+        trophyWidthAnchorConstraint = viewModel.setTrophyImageSize(view)
+        trophyHeightAnchorConstraint = viewModel.setTrophyImageSize(view)
+    }
+
     private func addSubviews() {
         view.addSubview(scrollView)
         view.addSubview(progressBar)
@@ -105,25 +126,10 @@ class ResultBoardViewController: UIViewController {
     }
     
     private func checkDeviceToDisplayTrophyImage() {
-        print("Screen height: \(view.bounds.height)")
         if view.bounds.height >= 730 {
-            trophyHeightAnchorConstraint = 125
-            trophyWidthAnchorConstraint = 125
+            trophyHeightAnchorConstraint = 175
+            trophyWidthAnchorConstraint = 175
         }
-    }
-    
-    private func configureNavigationBar() {
-        let appearance = UINavigationBarAppearance()
-        navigationItem.standardAppearance = appearance
-        navigationItem.standardAppearance?.backgroundColor = UIColor.primaryColor
-        navigationItem.standardAppearance?.shadowColor = UIColor.primaryColor
-        navigationController?.navigationBar.isTranslucent = false
-        navigationItem.titleView = navigationTitleView
-        navigationItem.setHidesBackButton(true, animated: false)
-    }
-    
-    @objc func endEditingTapped(_ gestureRecognizer: UITapGestureRecognizer) {
-        view.endEditing(true)
     }
     
     func handleInputValue(userName: String) {
@@ -132,6 +138,12 @@ class ResultBoardViewController: UIViewController {
     
     func saveGameButton(_ sender: UIButton) {
         onSaveGameButtonTap(sender)
+    }
+    
+    // MARK: Actions
+    
+    @objc func endEditingTapped(_ gestureRecognizer: UITapGestureRecognizer) {
+        view.endEditing(true)
     }
     
     @objc private func onSaveGameButtonTap(_ sender: UIButton) {
@@ -145,8 +157,8 @@ class ResultBoardViewController: UIViewController {
                 }
             }
             
-            // Must be unwrapped
-            let scoreboard = Scoreboard(userName: userInputValue, userScore: String(finalscore))
+            // Data input
+            let scoreboard = Scoreboard(userName: userInputValue, userScore: viewModel.getScore())
             scores.append(scoreboard)
             
             if let savedScore = try? JSONEncoder().encode(scores) {
@@ -157,20 +169,9 @@ class ResultBoardViewController: UIViewController {
         }
         dismiss(animated: true, completion: nil)
     }
-    
-    private func handleConditionalMessage() -> String {
-        var message = ""
-        if totalCorrectAnswers >= 8 {
-            message = "You are the best!"
-        } else if totalCorrectAnswers > 5 && totalCorrectAnswers < 8 {
-            message = "You are good!"
-        } else {
-            message = "You must practice!"
-        }
-        return message
-    }
-    
 }
+
+// MARK: Keyboard Settings
 
 extension ResultBoardViewController {
     
@@ -212,12 +213,14 @@ extension ResultBoardViewController {
     }
 }
 
+// MARK: Textfield Settings
+
 extension ResultBoardViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if let value = textField.text {
             scoreBackgroundView.toggleSaveButton()
             handleInputValue(userName: "\(value)\(string)")
-            return value.count <= maxLength
+            return value.count <= maxCharLength
         }
         return true
     }
@@ -227,6 +230,8 @@ extension ResultBoardViewController: UITextFieldDelegate {
         return true
     }
 }
+
+// MARK: UI Factory
 
 extension ResultBoardViewController {
     private func makeContainerView() -> UIView {
@@ -295,7 +300,7 @@ extension ResultBoardViewController {
         let view = ScoreResultBackgroundView()
         view.userNameTextField.delegate = self
         view.delegate = self
-        view.setupViewValues(scoreValues: FinalScoreValues(wrongAnswers: String(totalWrongAnswers), correctAnswers: String(totalCorrectAnswers), finalScore: (String(finalscore))))
+        view.setupViewValues(scoreValues: viewModel.getFinalScoreValues())
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }

@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D26F34B88AE75DF9720C752 /* Pods_GuessTheFlagTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD91AB61FC0DCF2042445B8 /* Pods_GuessTheFlagTests.framework */; };
+		857A7C45C65FA019BE61A710 /* Pods_GuessTheFlag_GuessTheFlagUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9259F9DE7837930D46FF9D94 /* Pods_GuessTheFlag_GuessTheFlagUITests.framework */; };
 		99037205263789DF00B32A4C /* database.json in Resources */ = {isa = PBXBuildFile; fileRef = 99037204263789DF00B32A4C /* database.json */; };
 		9903720E263790B400B32A4C /* Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9903720D263790B400B32A4C /* Round.swift */; };
 		9905C384269F1B3A008F82EE /* ScoreboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9905C383269F1B3A008F82EE /* ScoreboardTableViewCell.swift */; };
@@ -46,6 +48,7 @@
 		99FA6E42262DCA7F00E8FB9D /* GuessTheFlagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FA6E41262DCA7F00E8FB9D /* GuessTheFlagTests.swift */; };
 		99FA6E4D262DCA7F00E8FB9D /* GuessTheFlagUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FA6E4C262DCA7F00E8FB9D /* GuessTheFlagUITests.swift */; };
 		99FE557226D3EF4400B399F5 /* ScoreResultBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FE557126D3EF4400B399F5 /* ScoreResultBackgroundView.swift */; };
+		BA606731524D51242E066982 /* Pods_GuessTheFlag.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D319FC880D17C8CD5BD4F7F8 /* Pods_GuessTheFlag.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +69,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3FD91AB61FC0DCF2042445B8 /* Pods_GuessTheFlagTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GuessTheFlagTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D782B946A2E50A5F54E1855 /* Pods-GuessTheFlag-GuessTheFlagUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuessTheFlag-GuessTheFlagUITests.debug.xcconfig"; path = "Target Support Files/Pods-GuessTheFlag-GuessTheFlagUITests/Pods-GuessTheFlag-GuessTheFlagUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		9259F9DE7837930D46FF9D94 /* Pods_GuessTheFlag_GuessTheFlagUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GuessTheFlag_GuessTheFlagUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99037204263789DF00B32A4C /* database.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = database.json; sourceTree = "<group>"; };
 		9903720D263790B400B32A4C /* Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Round.swift; sourceTree = "<group>"; };
 		9905C383269F1B3A008F82EE /* ScoreboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardTableViewCell.swift; sourceTree = "<group>"; };
@@ -111,6 +117,12 @@
 		99FA6E4C262DCA7F00E8FB9D /* GuessTheFlagUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessTheFlagUITests.swift; sourceTree = "<group>"; };
 		99FA6E4E262DCA7F00E8FB9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99FE557126D3EF4400B399F5 /* ScoreResultBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreResultBackgroundView.swift; sourceTree = "<group>"; };
+		A3A670AD35D4A530A62D534C /* Pods-GuessTheFlagTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuessTheFlagTests.release.xcconfig"; path = "Target Support Files/Pods-GuessTheFlagTests/Pods-GuessTheFlagTests.release.xcconfig"; sourceTree = "<group>"; };
+		B54B1843B816F207ECE26F2F /* Pods-GuessTheFlag-GuessTheFlagUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuessTheFlag-GuessTheFlagUITests.release.xcconfig"; path = "Target Support Files/Pods-GuessTheFlag-GuessTheFlagUITests/Pods-GuessTheFlag-GuessTheFlagUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B76A9D58305813EA54F34729 /* Pods-GuessTheFlag.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuessTheFlag.release.xcconfig"; path = "Target Support Files/Pods-GuessTheFlag/Pods-GuessTheFlag.release.xcconfig"; sourceTree = "<group>"; };
+		D319FC880D17C8CD5BD4F7F8 /* Pods_GuessTheFlag.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GuessTheFlag.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF0756329D3BF3D3533E69EC /* Pods-GuessTheFlag.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuessTheFlag.debug.xcconfig"; path = "Target Support Files/Pods-GuessTheFlag/Pods-GuessTheFlag.debug.xcconfig"; sourceTree = "<group>"; };
+		E526480316CA64BA33813179 /* Pods-GuessTheFlagTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuessTheFlagTests.debug.xcconfig"; path = "Target Support Files/Pods-GuessTheFlagTests/Pods-GuessTheFlagTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA606731524D51242E066982 /* Pods_GuessTheFlag.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D26F34B88AE75DF9720C752 /* Pods_GuessTheFlagTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,12 +146,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				857A7C45C65FA019BE61A710 /* Pods_GuessTheFlag_GuessTheFlagUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		286027899B8C9A3AA00BD2B7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D319FC880D17C8CD5BD4F7F8 /* Pods_GuessTheFlag.framework */,
+				9259F9DE7837930D46FF9D94 /* Pods_GuessTheFlag_GuessTheFlagUITests.framework */,
+				3FD91AB61FC0DCF2042445B8 /* Pods_GuessTheFlagTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9903720C2637908800B32A4C /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +248,8 @@
 				99FA6E40262DCA7F00E8FB9D /* GuessTheFlagTests */,
 				99FA6E4B262DCA7F00E8FB9D /* GuessTheFlagUITests */,
 				99FA6E28262DCA7E00E8FB9D /* Products */,
+				AADC47381B1F661BEC57B55B /* Pods */,
+				286027899B8C9A3AA00BD2B7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -285,6 +312,19 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		AADC47381B1F661BEC57B55B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DF0756329D3BF3D3533E69EC /* Pods-GuessTheFlag.debug.xcconfig */,
+				B76A9D58305813EA54F34729 /* Pods-GuessTheFlag.release.xcconfig */,
+				8D782B946A2E50A5F54E1855 /* Pods-GuessTheFlag-GuessTheFlagUITests.debug.xcconfig */,
+				B54B1843B816F207ECE26F2F /* Pods-GuessTheFlag-GuessTheFlagUITests.release.xcconfig */,
+				E526480316CA64BA33813179 /* Pods-GuessTheFlagTests.debug.xcconfig */,
+				A3A670AD35D4A530A62D534C /* Pods-GuessTheFlagTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -292,9 +332,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 99FA6E51262DCA7F00E8FB9D /* Build configuration list for PBXNativeTarget "GuessTheFlag" */;
 			buildPhases = (
+				4BF2086B7102F2340D15562C /* [CP] Check Pods Manifest.lock */,
 				99FA6E23262DCA7E00E8FB9D /* Sources */,
 				99FA6E24262DCA7E00E8FB9D /* Frameworks */,
 				99FA6E25262DCA7E00E8FB9D /* Resources */,
+				2D1FAED3FF7955C0456F812E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -309,6 +351,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 99FA6E54262DCA7F00E8FB9D /* Build configuration list for PBXNativeTarget "GuessTheFlagTests" */;
 			buildPhases = (
+				2807BFD7293BD6F54A255DD5 /* [CP] Check Pods Manifest.lock */,
 				99FA6E39262DCA7F00E8FB9D /* Sources */,
 				99FA6E3A262DCA7F00E8FB9D /* Frameworks */,
 				99FA6E3B262DCA7F00E8FB9D /* Resources */,
@@ -327,9 +370,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 99FA6E57262DCA7F00E8FB9D /* Build configuration list for PBXNativeTarget "GuessTheFlagUITests" */;
 			buildPhases = (
+				679097C90D7715E2F6F3D52A /* [CP] Check Pods Manifest.lock */,
 				99FA6E44262DCA7F00E8FB9D /* Sources */,
 				99FA6E45262DCA7F00E8FB9D /* Frameworks */,
 				99FA6E46262DCA7F00E8FB9D /* Resources */,
+				D47565AB838F44A5EDF32BC6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -420,6 +465,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2807BFD7293BD6F54A255DD5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GuessTheFlagTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2D1FAED3FF7955C0456F812E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GuessTheFlag/Pods-GuessTheFlag-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GuessTheFlag/Pods-GuessTheFlag-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GuessTheFlag/Pods-GuessTheFlag-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4BF2086B7102F2340D15562C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GuessTheFlag-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		679097C90D7715E2F6F3D52A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GuessTheFlag-GuessTheFlagUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D47565AB838F44A5EDF32BC6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GuessTheFlag-GuessTheFlagUITests/Pods-GuessTheFlag-GuessTheFlagUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GuessTheFlag-GuessTheFlagUITests/Pods-GuessTheFlag-GuessTheFlagUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GuessTheFlag-GuessTheFlagUITests/Pods-GuessTheFlag-GuessTheFlagUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		99FA6E23262DCA7E00E8FB9D /* Sources */ = {
@@ -621,11 +769,12 @@
 		};
 		99FA6E52262DCA7F00E8FB9D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF0756329D3BF3D3533E69EC /* Pods-GuessTheFlag.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = K4939JV3B5;
+				DEVELOPMENT_TEAM = V7Y5H7S234;
 				INFOPLIST_FILE = GuessTheFlag/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -641,11 +790,12 @@
 		};
 		99FA6E53262DCA7F00E8FB9D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B76A9D58305813EA54F34729 /* Pods-GuessTheFlag.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = K4939JV3B5;
+				DEVELOPMENT_TEAM = V7Y5H7S234;
 				INFOPLIST_FILE = GuessTheFlag/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -661,6 +811,7 @@
 		};
 		99FA6E55262DCA7F00E8FB9D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E526480316CA64BA33813179 /* Pods-GuessTheFlagTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -683,6 +834,7 @@
 		};
 		99FA6E56262DCA7F00E8FB9D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A3A670AD35D4A530A62D534C /* Pods-GuessTheFlagTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -705,6 +857,7 @@
 		};
 		99FA6E58262DCA7F00E8FB9D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D782B946A2E50A5F54E1855 /* Pods-GuessTheFlag-GuessTheFlagUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -725,6 +878,7 @@
 		};
 		99FA6E59262DCA7F00E8FB9D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B54B1843B816F207ECE26F2F /* Pods-GuessTheFlag-GuessTheFlagUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

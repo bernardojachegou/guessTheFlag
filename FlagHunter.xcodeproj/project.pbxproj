@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D26F34B88AE75DF9720C752 /* Pods_GuessTheFlagTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD91AB61FC0DCF2042445B8 /* Pods_GuessTheFlagTests.framework */; };
-		857A7C45C65FA019BE61A710 /* Pods_GuessTheFlag_GuessTheFlagUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9259F9DE7837930D46FF9D94 /* Pods_GuessTheFlag_GuessTheFlagUITests.framework */; };
+		4B67A1DB81C4716FA4D168A0 /* Pods_FlagHunter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1D9967FA82D4720971B97E1 /* Pods_FlagHunter.framework */; };
 		99037205263789DF00B32A4C /* database.json in Resources */ = {isa = PBXBuildFile; fileRef = 99037204263789DF00B32A4C /* database.json */; };
 		9903720E263790B400B32A4C /* Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9903720D263790B400B32A4C /* Round.swift */; };
 		9905C384269F1B3A008F82EE /* ScoreboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9905C383269F1B3A008F82EE /* ScoreboardTableViewCell.swift */; };
@@ -45,33 +44,10 @@
 		99FA6E32262DCA7E00E8FB9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99FA6E30262DCA7E00E8FB9D /* Main.storyboard */; };
 		99FA6E34262DCA7F00E8FB9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99FA6E33262DCA7F00E8FB9D /* Assets.xcassets */; };
 		99FA6E37262DCA7F00E8FB9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99FA6E35262DCA7F00E8FB9D /* LaunchScreen.storyboard */; };
-		99FA6E42262DCA7F00E8FB9D /* GuessTheFlagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FA6E41262DCA7F00E8FB9D /* GuessTheFlagTests.swift */; };
-		99FA6E4D262DCA7F00E8FB9D /* GuessTheFlagUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FA6E4C262DCA7F00E8FB9D /* GuessTheFlagUITests.swift */; };
 		99FE557226D3EF4400B399F5 /* ScoreResultBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FE557126D3EF4400B399F5 /* ScoreResultBackgroundView.swift */; };
-		BA606731524D51242E066982 /* Pods_GuessTheFlag.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D319FC880D17C8CD5BD4F7F8 /* Pods_GuessTheFlag.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		99FA6E3E262DCA7F00E8FB9D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 99FA6E1F262DCA7E00E8FB9D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 99FA6E26262DCA7E00E8FB9D;
-			remoteInfo = GuessTheFlag;
-		};
-		99FA6E49262DCA7F00E8FB9D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 99FA6E1F262DCA7E00E8FB9D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 99FA6E26262DCA7E00E8FB9D;
-			remoteInfo = GuessTheFlag;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		3FD91AB61FC0DCF2042445B8 /* Pods_GuessTheFlagTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GuessTheFlagTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8D782B946A2E50A5F54E1855 /* Pods-GuessTheFlag-GuessTheFlagUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuessTheFlag-GuessTheFlagUITests.debug.xcconfig"; path = "Target Support Files/Pods-GuessTheFlag-GuessTheFlagUITests/Pods-GuessTheFlag-GuessTheFlagUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		9259F9DE7837930D46FF9D94 /* Pods_GuessTheFlag_GuessTheFlagUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GuessTheFlag_GuessTheFlagUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99037204263789DF00B32A4C /* database.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = database.json; sourceTree = "<group>"; };
 		9903720D263790B400B32A4C /* Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Round.swift; sourceTree = "<group>"; };
 		9905C383269F1B3A008F82EE /* ScoreboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardTableViewCell.swift; sourceTree = "<group>"; };
@@ -103,26 +79,17 @@
 		99D8E09C2649990D0021C987 /* UICustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustomColors.swift; sourceTree = "<group>"; };
 		99D8E0A126499D270021C987 /* UICustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustomButton.swift; sourceTree = "<group>"; };
 		99EF9428263C40FE002E1A71 /* StartGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameViewController.swift; sourceTree = "<group>"; };
-		99FA6E27262DCA7E00E8FB9D /* GuessTheFlag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuessTheFlag.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		99FA6E27262DCA7E00E8FB9D /* FlagHunter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlagHunter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99FA6E2A262DCA7E00E8FB9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99FA6E2C262DCA7E00E8FB9D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		99FA6E31262DCA7E00E8FB9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		99FA6E33262DCA7F00E8FB9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		99FA6E36262DCA7F00E8FB9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		99FA6E38262DCA7F00E8FB9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		99FA6E3D262DCA7F00E8FB9D /* GuessTheFlagTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuessTheFlagTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		99FA6E41262DCA7F00E8FB9D /* GuessTheFlagTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessTheFlagTests.swift; sourceTree = "<group>"; };
-		99FA6E43262DCA7F00E8FB9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		99FA6E48262DCA7F00E8FB9D /* GuessTheFlagUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuessTheFlagUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		99FA6E4C262DCA7F00E8FB9D /* GuessTheFlagUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessTheFlagUITests.swift; sourceTree = "<group>"; };
-		99FA6E4E262DCA7F00E8FB9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99FE557126D3EF4400B399F5 /* ScoreResultBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreResultBackgroundView.swift; sourceTree = "<group>"; };
-		A3A670AD35D4A530A62D534C /* Pods-GuessTheFlagTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuessTheFlagTests.release.xcconfig"; path = "Target Support Files/Pods-GuessTheFlagTests/Pods-GuessTheFlagTests.release.xcconfig"; sourceTree = "<group>"; };
-		B54B1843B816F207ECE26F2F /* Pods-GuessTheFlag-GuessTheFlagUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuessTheFlag-GuessTheFlagUITests.release.xcconfig"; path = "Target Support Files/Pods-GuessTheFlag-GuessTheFlagUITests/Pods-GuessTheFlag-GuessTheFlagUITests.release.xcconfig"; sourceTree = "<group>"; };
-		B76A9D58305813EA54F34729 /* Pods-GuessTheFlag.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuessTheFlag.release.xcconfig"; path = "Target Support Files/Pods-GuessTheFlag/Pods-GuessTheFlag.release.xcconfig"; sourceTree = "<group>"; };
-		D319FC880D17C8CD5BD4F7F8 /* Pods_GuessTheFlag.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GuessTheFlag.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DF0756329D3BF3D3533E69EC /* Pods-GuessTheFlag.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuessTheFlag.debug.xcconfig"; path = "Target Support Files/Pods-GuessTheFlag/Pods-GuessTheFlag.debug.xcconfig"; sourceTree = "<group>"; };
-		E526480316CA64BA33813179 /* Pods-GuessTheFlagTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuessTheFlagTests.debug.xcconfig"; path = "Target Support Files/Pods-GuessTheFlagTests/Pods-GuessTheFlagTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A1D9967FA82D4720971B97E1 /* Pods_FlagHunter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlagHunter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEE66D751F635E46582DD56C /* Pods-FlagHunter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlagHunter.release.xcconfig"; path = "Target Support Files/Pods-FlagHunter/Pods-FlagHunter.release.xcconfig"; sourceTree = "<group>"; };
+		E568CCF030758E1A498CEEC1 /* Pods-FlagHunter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlagHunter.debug.xcconfig"; path = "Target Support Files/Pods-FlagHunter/Pods-FlagHunter.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,35 +97,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA606731524D51242E066982 /* Pods_GuessTheFlag.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		99FA6E3A262DCA7F00E8FB9D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1D26F34B88AE75DF9720C752 /* Pods_GuessTheFlagTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		99FA6E45262DCA7F00E8FB9D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				857A7C45C65FA019BE61A710 /* Pods_GuessTheFlag_GuessTheFlagUITests.framework in Frameworks */,
+				4B67A1DB81C4716FA4D168A0 /* Pods_FlagHunter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		286027899B8C9A3AA00BD2B7 /* Frameworks */ = {
+		5558E7829EEAE8C9172EE44E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D319FC880D17C8CD5BD4F7F8 /* Pods_GuessTheFlag.framework */,
-				9259F9DE7837930D46FF9D94 /* Pods_GuessTheFlag_GuessTheFlagUITests.framework */,
-				3FD91AB61FC0DCF2042445B8 /* Pods_GuessTheFlagTests.framework */,
+				A1D9967FA82D4720971B97E1 /* Pods_FlagHunter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -244,26 +193,22 @@
 		99FA6E1E262DCA7E00E8FB9D = {
 			isa = PBXGroup;
 			children = (
-				99FA6E29262DCA7E00E8FB9D /* GuessTheFlag */,
-				99FA6E40262DCA7F00E8FB9D /* GuessTheFlagTests */,
-				99FA6E4B262DCA7F00E8FB9D /* GuessTheFlagUITests */,
+				99FA6E29262DCA7E00E8FB9D /* FlagHunter */,
 				99FA6E28262DCA7E00E8FB9D /* Products */,
 				AADC47381B1F661BEC57B55B /* Pods */,
-				286027899B8C9A3AA00BD2B7 /* Frameworks */,
+				5558E7829EEAE8C9172EE44E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		99FA6E28262DCA7E00E8FB9D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				99FA6E27262DCA7E00E8FB9D /* GuessTheFlag.app */,
-				99FA6E3D262DCA7F00E8FB9D /* GuessTheFlagTests.xctest */,
-				99FA6E48262DCA7F00E8FB9D /* GuessTheFlagUITests.xctest */,
+				99FA6E27262DCA7E00E8FB9D /* FlagHunter.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		99FA6E29262DCA7E00E8FB9D /* GuessTheFlag */ = {
+		99FA6E29262DCA7E00E8FB9D /* FlagHunter */ = {
 			isa = PBXGroup;
 			children = (
 				990A878027286EDC00BE6A5B /* ViewModel */,
@@ -279,25 +224,7 @@
 				99037204263789DF00B32A4C /* database.json */,
 				99FA6E38262DCA7F00E8FB9D /* Info.plist */,
 			);
-			path = GuessTheFlag;
-			sourceTree = "<group>";
-		};
-		99FA6E40262DCA7F00E8FB9D /* GuessTheFlagTests */ = {
-			isa = PBXGroup;
-			children = (
-				99FA6E41262DCA7F00E8FB9D /* GuessTheFlagTests.swift */,
-				99FA6E43262DCA7F00E8FB9D /* Info.plist */,
-			);
-			path = GuessTheFlagTests;
-			sourceTree = "<group>";
-		};
-		99FA6E4B262DCA7F00E8FB9D /* GuessTheFlagUITests */ = {
-			isa = PBXGroup;
-			children = (
-				99FA6E4C262DCA7F00E8FB9D /* GuessTheFlagUITests.swift */,
-				99FA6E4E262DCA7F00E8FB9D /* Info.plist */,
-			);
-			path = GuessTheFlagUITests;
+			path = FlagHunter;
 			sourceTree = "<group>";
 		};
 		99FA6E61262E3C6500E8FB9D /* Fonts */ = {
@@ -315,12 +242,8 @@
 		AADC47381B1F661BEC57B55B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				DF0756329D3BF3D3533E69EC /* Pods-GuessTheFlag.debug.xcconfig */,
-				B76A9D58305813EA54F34729 /* Pods-GuessTheFlag.release.xcconfig */,
-				8D782B946A2E50A5F54E1855 /* Pods-GuessTheFlag-GuessTheFlagUITests.debug.xcconfig */,
-				B54B1843B816F207ECE26F2F /* Pods-GuessTheFlag-GuessTheFlagUITests.release.xcconfig */,
-				E526480316CA64BA33813179 /* Pods-GuessTheFlagTests.debug.xcconfig */,
-				A3A670AD35D4A530A62D534C /* Pods-GuessTheFlagTests.release.xcconfig */,
+				E568CCF030758E1A498CEEC1 /* Pods-FlagHunter.debug.xcconfig */,
+				BEE66D751F635E46582DD56C /* Pods-FlagHunter.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -328,63 +251,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		99FA6E26262DCA7E00E8FB9D /* GuessTheFlag */ = {
+		99FA6E26262DCA7E00E8FB9D /* FlagHunter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 99FA6E51262DCA7F00E8FB9D /* Build configuration list for PBXNativeTarget "GuessTheFlag" */;
+			buildConfigurationList = 99FA6E51262DCA7F00E8FB9D /* Build configuration list for PBXNativeTarget "FlagHunter" */;
 			buildPhases = (
-				4BF2086B7102F2340D15562C /* [CP] Check Pods Manifest.lock */,
+				0646AC3D4300E9C2A53F1C69 /* [CP] Check Pods Manifest.lock */,
 				99FA6E23262DCA7E00E8FB9D /* Sources */,
 				99FA6E24262DCA7E00E8FB9D /* Frameworks */,
 				99FA6E25262DCA7E00E8FB9D /* Resources */,
-				2D1FAED3FF7955C0456F812E /* [CP] Embed Pods Frameworks */,
+				0516425F6C0A3BEF82D7C1BE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = GuessTheFlag;
+			name = FlagHunter;
 			productName = GuessTheFlag;
-			productReference = 99FA6E27262DCA7E00E8FB9D /* GuessTheFlag.app */;
+			productReference = 99FA6E27262DCA7E00E8FB9D /* FlagHunter.app */;
 			productType = "com.apple.product-type.application";
-		};
-		99FA6E3C262DCA7F00E8FB9D /* GuessTheFlagTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 99FA6E54262DCA7F00E8FB9D /* Build configuration list for PBXNativeTarget "GuessTheFlagTests" */;
-			buildPhases = (
-				2807BFD7293BD6F54A255DD5 /* [CP] Check Pods Manifest.lock */,
-				99FA6E39262DCA7F00E8FB9D /* Sources */,
-				99FA6E3A262DCA7F00E8FB9D /* Frameworks */,
-				99FA6E3B262DCA7F00E8FB9D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				99FA6E3F262DCA7F00E8FB9D /* PBXTargetDependency */,
-			);
-			name = GuessTheFlagTests;
-			productName = GuessTheFlagTests;
-			productReference = 99FA6E3D262DCA7F00E8FB9D /* GuessTheFlagTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		99FA6E47262DCA7F00E8FB9D /* GuessTheFlagUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 99FA6E57262DCA7F00E8FB9D /* Build configuration list for PBXNativeTarget "GuessTheFlagUITests" */;
-			buildPhases = (
-				679097C90D7715E2F6F3D52A /* [CP] Check Pods Manifest.lock */,
-				99FA6E44262DCA7F00E8FB9D /* Sources */,
-				99FA6E45262DCA7F00E8FB9D /* Frameworks */,
-				99FA6E46262DCA7F00E8FB9D /* Resources */,
-				D47565AB838F44A5EDF32BC6 /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				99FA6E4A262DCA7F00E8FB9D /* PBXTargetDependency */,
-			);
-			name = GuessTheFlagUITests;
-			productName = GuessTheFlagUITests;
-			productReference = 99FA6E48262DCA7F00E8FB9D /* GuessTheFlagUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -398,17 +282,9 @@
 					99FA6E26262DCA7E00E8FB9D = {
 						CreatedOnToolsVersion = 12.4;
 					};
-					99FA6E3C262DCA7F00E8FB9D = {
-						CreatedOnToolsVersion = 12.4;
-						TestTargetID = 99FA6E26262DCA7E00E8FB9D;
-					};
-					99FA6E47262DCA7F00E8FB9D = {
-						CreatedOnToolsVersion = 12.4;
-						TestTargetID = 99FA6E26262DCA7E00E8FB9D;
-					};
 				};
 			};
-			buildConfigurationList = 99FA6E22262DCA7E00E8FB9D /* Build configuration list for PBXProject "GuessTheFlag" */;
+			buildConfigurationList = 99FA6E22262DCA7E00E8FB9D /* Build configuration list for PBXProject "FlagHunter" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -421,9 +297,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				99FA6E26262DCA7E00E8FB9D /* GuessTheFlag */,
-				99FA6E3C262DCA7F00E8FB9D /* GuessTheFlagTests */,
-				99FA6E47262DCA7F00E8FB9D /* GuessTheFlagUITests */,
+				99FA6E26262DCA7E00E8FB9D /* FlagHunter */,
 			);
 		};
 /* End PBXProject section */
@@ -450,63 +324,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		99FA6E3B262DCA7F00E8FB9D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		99FA6E46262DCA7F00E8FB9D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2807BFD7293BD6F54A255DD5 /* [CP] Check Pods Manifest.lock */ = {
+		0516425F6C0A3BEF82D7C1BE /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-GuessTheFlagTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2D1FAED3FF7955C0456F812E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GuessTheFlag/Pods-GuessTheFlag-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-FlagHunter/Pods-FlagHunter-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GuessTheFlag/Pods-GuessTheFlag-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-FlagHunter/Pods-FlagHunter-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GuessTheFlag/Pods-GuessTheFlag-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FlagHunter/Pods-FlagHunter-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4BF2086B7102F2340D15562C /* [CP] Check Pods Manifest.lock */ = {
+		0646AC3D4300E9C2A53F1C69 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -521,50 +359,11 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-GuessTheFlag-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-FlagHunter-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		679097C90D7715E2F6F3D52A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-GuessTheFlag-GuessTheFlagUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D47565AB838F44A5EDF32BC6 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GuessTheFlag-GuessTheFlagUITests/Pods-GuessTheFlag-GuessTheFlagUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GuessTheFlag-GuessTheFlagUITests/Pods-GuessTheFlag-GuessTheFlagUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GuessTheFlag-GuessTheFlagUITests/Pods-GuessTheFlag-GuessTheFlagUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -600,36 +399,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		99FA6E39262DCA7F00E8FB9D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				99FA6E42262DCA7F00E8FB9D /* GuessTheFlagTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		99FA6E44262DCA7F00E8FB9D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				99FA6E4D262DCA7F00E8FB9D /* GuessTheFlagUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		99FA6E3F262DCA7F00E8FB9D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 99FA6E26262DCA7E00E8FB9D /* GuessTheFlag */;
-			targetProxy = 99FA6E3E262DCA7F00E8FB9D /* PBXContainerItemProxy */;
-		};
-		99FA6E4A262DCA7F00E8FB9D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 99FA6E26262DCA7E00E8FB9D /* GuessTheFlag */;
-			targetProxy = 99FA6E49262DCA7F00E8FB9D /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		99FA6E30262DCA7E00E8FB9D /* Main.storyboard */ = {
@@ -769,19 +539,19 @@
 		};
 		99FA6E52262DCA7F00E8FB9D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DF0756329D3BF3D3533E69EC /* Pods-GuessTheFlag.debug.xcconfig */;
+			baseConfigurationReference = E568CCF030758E1A498CEEC1 /* Pods-FlagHunter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V7Y5H7S234;
-				INFOPLIST_FILE = GuessTheFlag/Info.plist;
+				INFOPLIST_FILE = FlagHunter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = michel.GuessTheFlag;
+				PRODUCT_BUNDLE_IDENTIFIER = michel.FlagHunter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -790,117 +560,29 @@
 		};
 		99FA6E53262DCA7F00E8FB9D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B76A9D58305813EA54F34729 /* Pods-GuessTheFlag.release.xcconfig */;
+			baseConfigurationReference = BEE66D751F635E46582DD56C /* Pods-FlagHunter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V7Y5H7S234;
-				INFOPLIST_FILE = GuessTheFlag/Info.plist;
+				INFOPLIST_FILE = FlagHunter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = michel.GuessTheFlag;
+				PRODUCT_BUNDLE_IDENTIFIER = michel.FlagHunter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
-		99FA6E55262DCA7F00E8FB9D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E526480316CA64BA33813179 /* Pods-GuessTheFlagTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = K4939JV3B5;
-				INFOPLIST_FILE = GuessTheFlagTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = michel.GuessTheFlagTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GuessTheFlag.app/GuessTheFlag";
-			};
-			name = Debug;
-		};
-		99FA6E56262DCA7F00E8FB9D /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A3A670AD35D4A530A62D534C /* Pods-GuessTheFlagTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = K4939JV3B5;
-				INFOPLIST_FILE = GuessTheFlagTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = michel.GuessTheFlagTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GuessTheFlag.app/GuessTheFlag";
-			};
-			name = Release;
-		};
-		99FA6E58262DCA7F00E8FB9D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8D782B946A2E50A5F54E1855 /* Pods-GuessTheFlag-GuessTheFlagUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = K4939JV3B5;
-				INFOPLIST_FILE = GuessTheFlagUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = michel.GuessTheFlagUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = GuessTheFlag;
-			};
-			name = Debug;
-		};
-		99FA6E59262DCA7F00E8FB9D /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B54B1843B816F207ECE26F2F /* Pods-GuessTheFlag-GuessTheFlagUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = K4939JV3B5;
-				INFOPLIST_FILE = GuessTheFlagUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = michel.GuessTheFlagUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = GuessTheFlag;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		99FA6E22262DCA7E00E8FB9D /* Build configuration list for PBXProject "GuessTheFlag" */ = {
+		99FA6E22262DCA7E00E8FB9D /* Build configuration list for PBXProject "FlagHunter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				99FA6E4F262DCA7F00E8FB9D /* Debug */,
@@ -909,29 +591,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		99FA6E51262DCA7F00E8FB9D /* Build configuration list for PBXNativeTarget "GuessTheFlag" */ = {
+		99FA6E51262DCA7F00E8FB9D /* Build configuration list for PBXNativeTarget "FlagHunter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				99FA6E52262DCA7F00E8FB9D /* Debug */,
 				99FA6E53262DCA7F00E8FB9D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		99FA6E54262DCA7F00E8FB9D /* Build configuration list for PBXNativeTarget "GuessTheFlagTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				99FA6E55262DCA7F00E8FB9D /* Debug */,
-				99FA6E56262DCA7F00E8FB9D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		99FA6E57262DCA7F00E8FB9D /* Build configuration list for PBXNativeTarget "GuessTheFlagUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				99FA6E58262DCA7F00E8FB9D /* Debug */,
-				99FA6E59262DCA7F00E8FB9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

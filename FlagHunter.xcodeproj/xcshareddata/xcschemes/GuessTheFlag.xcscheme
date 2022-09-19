@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "99FA6E26262DCA7E00E8FB9D"
-               BuildableName = "GuessTheFlag.app"
-               BlueprintName = "GuessTheFlag"
-               ReferencedContainer = "container:GuessTheFlag.xcodeproj">
+               BuildableName = "FlagHunter.app"
+               BlueprintName = "FlagHunter"
+               ReferencedContainer = "container:FlagHunter.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "99FA6E3C262DCA7F00E8FB9D"
                BuildableName = "GuessTheFlagTests.xctest"
-               BlueprintName = "GuessTheFlagTests"
-               ReferencedContainer = "container:GuessTheFlag.xcodeproj">
+               BlueprintName = "FlagHunterTests"
+               ReferencedContainer = "container:FlagHunter.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "99FA6E47262DCA7F00E8FB9D"
-               BuildableName = "GuessTheFlagUITests.xctest"
-               BlueprintName = "GuessTheFlagUITests"
-               ReferencedContainer = "container:GuessTheFlag.xcodeproj">
+               BuildableName = "FlagHunterUITests.xctest"
+               BlueprintName = "FlagHunterUITests"
+               ReferencedContainer = "container:FlagHunter.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -65,9 +65,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "99FA6E26262DCA7E00E8FB9D"
-            BuildableName = "GuessTheFlag.app"
-            BlueprintName = "GuessTheFlag"
-            ReferencedContainer = "container:GuessTheFlag.xcodeproj">
+            BuildableName = "FlagHunter.app"
+            BlueprintName = "FlagHunter"
+            ReferencedContainer = "container:FlagHunter.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -82,9 +82,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "99FA6E26262DCA7E00E8FB9D"
-            BuildableName = "GuessTheFlag.app"
-            BlueprintName = "GuessTheFlag"
-            ReferencedContainer = "container:GuessTheFlag.xcodeproj">
+            BuildableName = "FlagHunter.app"
+            BlueprintName = "FlagHunter"
+            ReferencedContainer = "container:FlagHunter.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

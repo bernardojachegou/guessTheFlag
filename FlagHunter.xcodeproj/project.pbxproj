@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2265137C28D8012000EC28EC /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2265137B28D8012000EC28EC /* Coordinator.swift */; };
+		2265137E28D801C800EC28EC /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2265137D28D801C800EC28EC /* MainCoordinator.swift */; };
 		4B67A1DB81C4716FA4D168A0 /* Pods_FlagHunter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1D9967FA82D4720971B97E1 /* Pods_FlagHunter.framework */; };
 		99037205263789DF00B32A4C /* database.json in Resources */ = {isa = PBXBuildFile; fileRef = 99037204263789DF00B32A4C /* database.json */; };
 		9903720E263790B400B32A4C /* Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9903720D263790B400B32A4C /* Round.swift */; };
@@ -48,6 +50,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2265137B28D8012000EC28EC /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		2265137D28D801C800EC28EC /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		99037204263789DF00B32A4C /* database.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = database.json; sourceTree = "<group>"; };
 		9903720D263790B400B32A4C /* Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Round.swift; sourceTree = "<group>"; };
 		9905C383269F1B3A008F82EE /* ScoreboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardTableViewCell.swift; sourceTree = "<group>"; };
@@ -104,6 +108,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2265137A28D8011100EC28EC /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				2265137B28D8012000EC28EC /* Coordinator.swift */,
+				2265137D28D801C800EC28EC /* MainCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		5558E7829EEAE8C9172EE44E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +224,7 @@
 		99FA6E29262DCA7E00E8FB9D /* FlagHunter */ = {
 			isa = PBXGroup;
 			children = (
+				2265137A28D8011100EC28EC /* Coordinator */,
 				990A878027286EDC00BE6A5B /* ViewModel */,
 				9903720C2637908800B32A4C /* Model */,
 				99B3D6E42631F9E900D32384 /* View */,
@@ -381,10 +395,12 @@
 				9975135D269CD7690039C344 /* ScoreboardTableViewController.swift in Sources */,
 				99313B3226B429DE00F082A2 /* UserDefaultsPersistence.swift in Sources */,
 				9905C388269F7E3A008F82EE /* ScoreboardTitleTableViewCell.swift in Sources */,
+				2265137C28D8012000EC28EC /* Coordinator.swift in Sources */,
 				990A878227286EFB00BE6A5B /* ResultBoardViewModel.swift in Sources */,
 				99EF9429263C40FE002E1A71 /* StartGameViewController.swift in Sources */,
 				99AE1A2426404F3D0048BE00 /* Scoreboard.swift in Sources */,
 				9905C386269F5B8D008F82EE /* UICustomShadow.swift in Sources */,
+				2265137E28D801C800EC28EC /* MainCoordinator.swift in Sources */,
 				991C96D72688DA46007ABF3A /* ResultBoardViewController.swift in Sources */,
 				99B9DDC126F23C5100A38A56 /* FinalScoreValues.swift in Sources */,
 				99FA6E2B262DCA7E00E8FB9D /* AppDelegate.swift in Sources */,

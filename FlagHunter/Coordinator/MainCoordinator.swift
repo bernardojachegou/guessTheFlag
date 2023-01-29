@@ -21,15 +21,17 @@ class MainCoordinator: Coordinator {
         switch type {
         case .buttonTapped:
             let viewController = RoundViewController()
-            navigationController.pushViewController(viewController, animated: true)
+            pushController(viewController)
         }
     }
 
     func start() {
-        let viewController = StartGameViewController()
-        viewController.coordinator = self
-        navigationController.pushViewController(viewController, animated: false)
+        let viewModel = Scene.FlagHunter.Start.ViewModel(coordinator: self)
+        let viewController = Scene.FlagHunter.Start.ViewController(viewModel: viewModel)
+        pushController(viewController, false)
     }
 
-
+    private func pushController(_ viewController: UIViewController, _ animated: Bool = true) {
+        navigationController.pushViewController(viewController, animated: animated)
+    }
 }

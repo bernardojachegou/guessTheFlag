@@ -7,7 +7,11 @@
 
 import UIKit
 
-class StartGameViewController: UIViewController {
+class StartGameViewController: UIViewController, Coordinating {
+
+    var coordinator: Coordinator?
+
+    // MARK: Properties
     
     private lazy var titleImageView = buildImageView(usingImg: "flagHunter")
     private lazy var heroImageView = buildImageView(usingImg: "kidsLogo")
@@ -46,9 +50,7 @@ class StartGameViewController: UIViewController {
     
     @objc private func playButtonTapped(sender: UIButton) {
         sender.pulsate()
-        let navigation = UINavigationController(rootViewController: RoundViewController())
-        navigation.modalPresentationStyle = .fullScreen
-        present(navigation, animated: true, completion: nil)
+        coordinator?.eventOccurred(with: .buttonTapped)
     }
     
     @objc private func scoreButtonTapped(sender: UIButton) {

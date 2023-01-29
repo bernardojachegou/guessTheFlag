@@ -49,7 +49,7 @@ extension Scene.FlagHunter.Start {
 
         let playButton: UIButton = {
             let button = UIButton()
-            button.setTitle("PLAY", for: .normal)
+            button.setTitle("", for: .normal)
             button.titleLabel?.font = ScaledFont.SFrobotoBold.font(forTextStyle: .title1)
             button.setTitleColor(.primaryColor, for: .normal)
             button.backgroundColor = .secondaryColor
@@ -61,7 +61,7 @@ extension Scene.FlagHunter.Start {
 
         let scoreButton: UIButton = {
             let button = UIButton()
-            button.setTitle("SCORE", for: .normal)
+            button.setTitle("", for: .normal)
             button.titleLabel?.font = ScaledFont.SFrobotoBold.font(forTextStyle: .title1)
             button.setTitleColor(.primaryColor, for: .normal)
             button.backgroundColor = .secondaryColor

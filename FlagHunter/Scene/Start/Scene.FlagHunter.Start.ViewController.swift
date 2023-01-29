@@ -20,8 +20,7 @@ extension Scene.FlagHunter.Start {
 
             super.init(nibName: nil, bundle: nil)
         }
-
-        @available(*, unavailable)
+        
         required init?(coder: NSCoder) {
             fatalError("init(coder:) has not been implemented")
         }
@@ -33,15 +32,34 @@ extension Scene.FlagHunter.Start {
         // MARK: Life Cycle
         override func viewDidLoad() {
             super.viewDidLoad()
+            setupStrings()
+            setupActions()
         }
 
         // MARK: Custom Methods
+        private func setupActions() {
+            mainView.playButton.addTarget(self, action: #selector(didTapPlayButton), for: .touchUpInside)
+            mainView.scoreButton.addTarget(self, action: #selector(didTapScoreButton), for: .touchUpInside)
+        }
+
+        private func setupStrings() {
+            mainView.playButton.setTitle("PLAY", for: .normal)
+            mainView.scoreButton.setTitle("SCORE", for: .normal)
+        }
 
 
         // MARK: Actions
         @objc
-        private func doneButtonDidTap() {
-//            mainView.
+        private func didTapPlayButton(sender: UIButton) {
+            sender.pulsate()
+            viewModel.startGame()
+        }
+
+        @objc
+        private func didTapScoreButton(sender: UIButton) {
+            sender.pulsate()
+            viewModel.openScoreBoard()
+
         }
     }
 }

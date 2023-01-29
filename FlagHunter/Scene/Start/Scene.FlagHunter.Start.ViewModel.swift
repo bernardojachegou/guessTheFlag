@@ -8,10 +8,21 @@
 extension Scene.FlagHunter.Start {
     class ViewModel: Coordinating {
 
+        // MARK: Variables
         var coordinator: Coordinator?
 
+        // MARK: Init
         init(coordinator: MainCoordinator) {
             self.coordinator = coordinator
+        }
+
+        // MARK: Custom Methods
+        func startGame() {
+            #warning("chamar tela para iniciar o jogo")
+        }
+
+        func openScoreBoard() {
+            #warning("chamar tela de score")
         }
 
         func closeView() {

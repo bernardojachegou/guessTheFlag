@@ -18,7 +18,7 @@ extension Scene.FlagHunter.Start {
 
         // MARK: Custom Methods
         func startGame() {
-            #warning("chamar tela para iniciar o jogo")
+            coordinator?.trigger(.round)
         }
 
         func openScoreBoard() {

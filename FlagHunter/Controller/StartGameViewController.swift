@@ -49,8 +49,7 @@ class StartGameViewController: UIViewController, Coordinating {
     }
     
     @objc private func playButtonTapped(sender: UIButton) {
-        sender.pulsate()
-        coordinator?.eventOccurred(with: .buttonTapped)
+//        coordinator?.eventOccurred(with: .round)
     }
     
     @objc private func scoreButtonTapped(sender: UIButton) {

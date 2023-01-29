@@ -74,7 +74,7 @@ extension Scene.FlagHunter.Start {
         // MARK: Initializers
         init() {
             super.init(frame: .zero)
-
+            
             setupView()
         }
 

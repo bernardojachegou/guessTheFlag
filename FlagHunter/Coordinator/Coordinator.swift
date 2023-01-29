@@ -8,15 +8,17 @@
 import Foundation
 import UIKit
 
-enum Event {
-    case buttonTapped
+enum Route {
+    case round
+    case scoreboard
+    case result
 }
 
 protocol Coordinator {
     var childCoordinators: [Coordinator] { get set }
     var navigationController: UINavigationController { get set }
 
-    func eventOccurred(with type: Event)
+    func trigger(_ type: Route)
     func start()
 }
 

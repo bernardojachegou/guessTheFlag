@@ -17,11 +17,16 @@ class MainCoordinator: Coordinator {
         self.navigationController = navigationController
     }
 
-    func eventOccurred(with type: Event) {
+    func trigger(_ type: Route) {
         switch type {
-        case .buttonTapped:
+        case .round:
             let viewController = RoundViewController()
             pushController(viewController)
+        case .scoreboard:
+            let viewController = ScoreboardTableViewController()
+            pushController(viewController)
+        case .result:
+            return
         }
     }
 
